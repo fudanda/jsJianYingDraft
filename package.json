@@ -1,6 +1,6 @@
 {
   "name": "jsjianyingdraft",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "TypeScript JianYing draft generator (migration from pyJianYingDraft)",
   "license": "MIT",
   "type": "module",
