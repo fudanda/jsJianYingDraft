@@ -61,12 +61,75 @@ function withAliases<T extends Record<string, EffectMeta>, A extends Record<stri
   return output as T & { [K in keyof A]: T[A[K]] };
 }
 
+function pickByProp<
+  T extends Record<string, object>,
+  P extends string,
+  V extends string | number | boolean
+>(source: T, prop: P, value: V): T {
+  const output: Record<string, object> = {};
+  for (const [key, meta] of Object.entries(source) as Array<[keyof T & string, T[keyof T]]>) {
+    if ((meta as Record<string, unknown>)[prop] === value) {
+      output[key] = meta;
+    }
+  }
+  return output as T;
+}
+
 export const VIDEO_SCENE_EFFECT_PRESETS = withAliases(GENERATED_VIDEO_SCENE_EFFECT_PRESETS, VIDEO_SCENE_ALIASES);
 export const VIDEO_CHARACTER_EFFECT_PRESETS = withAliases(
   GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS,
   VIDEO_CHARACTER_ALIASES
 );
 export const FILTER_PRESETS = withAliases(GENERATED_FILTER_PRESETS, FILTER_ALIASES);
+
+// Python metadata enum-style exports for migration friendliness.
+export const VideoSceneEffectType = VIDEO_SCENE_EFFECT_PRESETS;
+export const VideoCharacterEffectType = VIDEO_CHARACTER_EFFECT_PRESETS;
+export const FilterType = FILTER_PRESETS;
+export const AudioSceneEffectType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "sound_effect");
+export const ToneEffectType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "tone");
+export const SpeechToSongType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "speech_to_song");
+export const IntroType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "in");
+export const OutroType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "out");
+export const GroupAnimationType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "group");
+export const TextIntro = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "in");
+export const TextOutro = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "out");
+export const TextLoopAnim = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "loop");
+export const TransitionType = TRANSITION_PRESETS;
+export const MaskType = MASK_PRESETS;
+export const MixModeType = MIX_MODE_PRESETS;
+
+// Deprecated snake_case compatibility aliases.
+/** @deprecated Use VideoSceneEffectType instead. */
+export const Video_scene_effect_type = VideoSceneEffectType;
+/** @deprecated Use VideoCharacterEffectType instead. */
+export const Video_character_effect_type = VideoCharacterEffectType;
+/** @deprecated Use FilterType instead. */
+export const Filter_type = FilterType;
+/** @deprecated Use AudioSceneEffectType instead. */
+export const Audio_scene_effect_type = AudioSceneEffectType;
+/** @deprecated Use ToneEffectType instead. */
+export const Tone_effect_type = ToneEffectType;
+/** @deprecated Use SpeechToSongType instead. */
+export const Speech_to_song_type = SpeechToSongType;
+/** @deprecated Use IntroType instead. */
+export const Intro_type = IntroType;
+/** @deprecated Use OutroType instead. */
+export const Outro_type = OutroType;
+/** @deprecated Use GroupAnimationType instead. */
+export const Group_animation_type = GroupAnimationType;
+/** @deprecated Use TextIntro instead. */
+export const Text_intro = TextIntro;
+/** @deprecated Use TextOutro instead. */
+export const Text_outro = TextOutro;
+/** @deprecated Use TextLoopAnim instead. */
+export const Text_loop_anim = TextLoopAnim;
+/** @deprecated Use TransitionType instead. */
+export const Transition_type = TransitionType;
+/** @deprecated Use MaskType instead. */
+export const Mask_type = MaskType;
+/** @deprecated Use MixModeType instead. */
+export const Mix_mode_type = MixModeType;
 
 export type VideoSceneEffectPresetKey = keyof typeof VIDEO_SCENE_EFFECT_PRESETS;
 export type VideoCharacterEffectPresetKey = keyof typeof VIDEO_CHARACTER_EFFECT_PRESETS;

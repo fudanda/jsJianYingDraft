@@ -2,7 +2,7 @@
 
 TypeScript migration of `pyJianYingDraft` with npm packaging support.
 
-## Current scope (v0.2.x)
+## Current scope (v0.3.x)
 
 - Draft folder operations: create/list/remove/load/duplicate
 - Core draft file read/write: `ScriptFile`
@@ -16,6 +16,8 @@ TypeScript migration of `pyJianYingDraft` with npm packaging support.
 - Preset string shortcuts for audio effects / video-text animations / transitions / masks / mix modes
 - Full metadata preset collections (subpath import): `jsjianyingdraft/metadata`
 - Bundled JianYing draft templates
+- Python-style compatibility aliases (`snake_case`) for smoother migration
+- Python-style metadata enum aliases under `jsjianyingdraft/metadata` (for example: `VideoSceneEffectType`, `FilterType`, `TextIntro`)
 
 ## Install
 
@@ -83,5 +85,7 @@ script
 - `addEffect` and `addFilter` now accept either a custom metadata object or a typed preset key (for example: `"vcr"`, `"boom"`, `"lofi2"`).
 - `AudioSegment.addEffect`, `VideoSegment.addAnimation` / `addMask` / `addTransition` / `setMixMode`, and `TextSegment.addAnimation` also accept preset strings (for example: `"echo"`, `"fadeIn"`, `"dissolve"`, `"circle"`, `"screen"`).
 - Text `addEffect()` writes both material refs and `content.styles.effectStyle`, which matches pyJianYingDraft draft behavior more closely.
+- Most core classes/methods also provide deprecated Python-style aliases (for example: `Script_file`, `Draft_folder`, `add_track`, `replace_material_by_seg`) to reduce migration friction.
+- `jsjianyingdraft/metadata` now also exports Python-style enum objects and deprecated snake_case aliases (for example: `VideoSceneEffectType` / `Video_scene_effect_type`).
 - Full preset catalogs are exported from `jsjianyingdraft/metadata`; import a preset object and pass it to `addEffect` / `addFilter` for any advanced effect name.
 - Metadata presets are auto-generated from `pyJianYingDraft`; regenerate with `npm run generate:metadata`.

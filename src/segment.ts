@@ -823,6 +823,11 @@ export class VisualSegment extends MediaSegment {
     return this;
   }
 
+  /** @deprecated Use addKeyframe instead. */
+  add_keyframe(property: KeyframeProperty, timeOffset: string | number, value: number): this {
+    return this.addKeyframe(property, timeOffset, value);
+  }
+
   exportJson(): Record<string, unknown> {
     const base = super.exportJson();
     return {
@@ -1047,6 +1052,46 @@ export class VideoSegment extends VisualSegment {
     return this;
   }
 
+  /** @deprecated Use addFade instead. */
+  add_fade(inDuration: string | number, outDuration: string | number): this {
+    return this.addFade(inDuration, outDuration);
+  }
+
+  /** @deprecated Use addAnimation instead. */
+  add_animation(animationMeta: VideoAnimationMeta | VideoAnimationPresetInput, duration?: string | number): this {
+    return this.addAnimation(animationMeta, duration);
+  }
+
+  /** @deprecated Use addEffect instead. */
+  add_effect(meta: EffectMeta | VideoEffectPresetInput, options: Omit<VideoEffectOptions, "applyTargetType"> = {}): this {
+    return this.addEffect(meta, options);
+  }
+
+  /** @deprecated Use addFilter instead. */
+  add_filter(meta: EffectMeta | FilterPresetInput, intensity = 100): this {
+    return this.addFilter(meta, intensity);
+  }
+
+  /** @deprecated Use setMixMode instead. */
+  set_mix_mode(meta: EffectMeta | MixModePresetInput): this {
+    return this.setMixMode(meta);
+  }
+
+  /** @deprecated Use addMask instead. */
+  add_mask(maskMeta: MaskMeta | MaskPresetInput, options: AddMaskOptions = {}): this {
+    return this.addMask(maskMeta, options);
+  }
+
+  /** @deprecated Use addTransition instead. */
+  add_transition(transitionMeta: TransitionMeta | TransitionPresetInput, duration?: string | number): this {
+    return this.addTransition(transitionMeta, duration);
+  }
+
+  /** @deprecated Use addBackgroundFilling instead. */
+  add_background_filling(fillType: "blur" | "color", blur = 0.0625, color = "#00000000"): this {
+    return this.addBackgroundFilling(fillType, blur, color);
+  }
+
   exportJson(): Record<string, unknown> {
     const base = super.exportJson();
     return {
@@ -1137,6 +1182,21 @@ export class AudioSegment extends MediaSegment {
     keyframeList.addKeyframe(offsetUs, volume);
     this.commonKeyframes.push(keyframeList);
     return this;
+  }
+
+  /** @deprecated Use addFade instead. */
+  add_fade(inDuration: string | number, outDuration: string | number): this {
+    return this.addFade(inDuration, outDuration);
+  }
+
+  /** @deprecated Use addEffect instead. */
+  add_effect(meta: AudioEffectMeta | AudioEffectPresetInput, params?: Array<number | null>): this {
+    return this.addEffect(meta, params);
+  }
+
+  /** @deprecated Use addKeyframe instead. */
+  add_keyframe(timeOffset: string | number, volume: number): this {
+    return this.addKeyframe(timeOffset, volume);
   }
 
   exportJson(): Record<string, unknown> {
@@ -1520,9 +1580,19 @@ export class TextSegment extends VisualSegment {
     return copied;
   }
 
+  /** @deprecated Use createFromTemplate instead. */
+  static create_from_template(text: string, timerange: Timerange, template: TextSegment): TextSegment {
+    return TextSegment.createFromTemplate(text, timerange, template);
+  }
+
   setFont(fontMeta: FontMeta): this {
     this.font = { ...fontMeta };
     return this;
+  }
+
+  /** @deprecated Use setFont instead. */
+  set_font(fontMeta: FontMeta): this {
+    return this.setFont(fontMeta);
   }
 
   addAnimation(animationMeta: TextAnimationMeta | TextAnimationPresetInput, duration?: string | number): this {
@@ -1553,16 +1623,31 @@ export class TextSegment extends VisualSegment {
     return this;
   }
 
+  /** @deprecated Use addAnimation instead. */
+  add_animation(animationMeta: TextAnimationMeta | TextAnimationPresetInput, duration?: string | number): this {
+    return this.addAnimation(animationMeta, duration);
+  }
+
   addBubble(effectId: string, resourceId: string): this {
     this.bubble = new TextBubble(effectId, resourceId);
     this.extraMaterialRefs.push(this.bubble.globalId);
     return this;
   }
 
+  /** @deprecated Use addBubble instead. */
+  add_bubble(effectId: string, resourceId: string): this {
+    return this.addBubble(effectId, resourceId);
+  }
+
   addEffect(effectId: string): this {
     this.effect = new TextEffect(effectId, effectId);
     this.extraMaterialRefs.push(this.effect.globalId);
     return this;
+  }
+
+  /** @deprecated Use addEffect instead. */
+  add_effect(effectId: string): this {
+    return this.addEffect(effectId);
   }
 
   exportMaterial(): Record<string, unknown> {

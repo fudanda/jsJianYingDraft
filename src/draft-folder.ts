@@ -27,8 +27,18 @@ export class DraftFolder {
     });
   }
 
+  /** @deprecated Use listDrafts instead. */
+  list_drafts(): string[] {
+    return this.listDrafts();
+  }
+
   hasDraft(draftName: string): boolean {
     return this.listDrafts().includes(draftName);
+  }
+
+  /** @deprecated Use hasDraft instead. */
+  has_draft(draftName: string): boolean {
+    return this.hasDraft(draftName);
   }
 
   remove(draftName: string): void {
@@ -37,6 +47,11 @@ export class DraftFolder {
       throw new Error(`Draft folder "${draftName}" does not exist`);
     }
     rmSync(draftPath, { recursive: true, force: true });
+  }
+
+  /** @deprecated Use remove instead. */
+  remove_draft(draftName: string): void {
+    this.remove(draftName);
   }
 
   createDraft(draftName: string, width: number, height: number, options: CreateDraftOptions = {}): ScriptFile {
@@ -62,12 +77,22 @@ export class DraftFolder {
     return script;
   }
 
+  /** @deprecated Use createDraft instead. */
+  create_draft(draftName: string, width: number, height: number, options: CreateDraftOptions = {}): ScriptFile {
+    return this.createDraft(draftName, width, height, options);
+  }
+
   loadTemplate(draftName: string): ScriptFile {
     const draftPath = join(this.folderPath, draftName);
     if (!existsSync(draftPath)) {
       throw new Error(`Draft folder "${draftName}" does not exist`);
     }
     return ScriptFile.loadTemplate(join(draftPath, "draft_content.json"));
+  }
+
+  /** @deprecated Use loadTemplate instead. */
+  load_template(draftName: string): ScriptFile {
+    return this.loadTemplate(draftName);
   }
 
   duplicateAsTemplate(templateName: string, newDraftName: string, allowReplace = false): ScriptFile {
@@ -86,12 +111,27 @@ export class DraftFolder {
     return this.loadTemplate(newDraftName);
   }
 
+  /** @deprecated Use duplicateAsTemplate instead. */
+  duplicate_as_template(templateName: string, newDraftName: string, allowReplace = false): ScriptFile {
+    return this.duplicateAsTemplate(templateName, newDraftName, allowReplace);
+  }
+
   inspectMaterial(draftName: string): void {
     this.loadTemplate(draftName).inspectMaterial();
+  }
+
+  /** @deprecated Use inspectMaterial instead. */
+  inspect_material(draftName: string): void {
+    this.inspectMaterial(draftName);
   }
 
   readDraftJson(draftName: string): string {
     const filePath = join(this.folderPath, draftName, "draft_content.json");
     return readFileSync(filePath, "utf8");
+  }
+
+  /** @deprecated Use readDraftJson instead. */
+  read_draft_json(draftName: string): string {
+    return this.readDraftJson(draftName);
   }
 }

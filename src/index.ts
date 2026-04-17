@@ -1,4 +1,5 @@
 export * from "./assets.js";
+export * from "./compat.js";
 export * from "./draft-folder.js";
 export * from "./errors.js";
 export * from "./materials.js";

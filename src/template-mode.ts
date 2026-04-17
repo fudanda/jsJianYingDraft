@@ -144,11 +144,21 @@ export class EditableTrack extends ImportedTrack {
     return this.segments[0]?.start ?? 0;
   }
 
+  /** @deprecated Use startTime instead. */
+  get start_time(): number {
+    return this.startTime;
+  }
+
   get endTime(): number {
     if (this.segments.length === 0) {
       return 0;
     }
     return this.segments[this.segments.length - 1]?.end ?? 0;
+  }
+
+  /** @deprecated Use endTime instead. */
+  get end_time(): number {
+    return this.endTime;
   }
 
   exportJson(): JsonRecord {
@@ -186,6 +196,11 @@ export class ImportedMediaTrack extends EditableTrack {
       return true;
     }
     return false;
+  }
+
+  /** @deprecated Use checkMaterialType instead. */
+  check_material_type(material: VideoMaterial | AudioMaterial): boolean {
+    return this.checkMaterialType(material);
   }
 
   processTimerange(segIndex: number, sourceTimerange: Timerange, shrink: ShrinkMode, extend: ExtendMode[]): void {
@@ -264,6 +279,11 @@ export class ImportedMediaTrack extends EditableTrack {
     }
 
     segment.sourceTimerange = sourceTimerange;
+  }
+
+  /** @deprecated Use processTimerange instead. */
+  process_timerange(segIndex: number, sourceTimerange: Timerange, shrink: ShrinkMode, extend: ExtendMode[]): void {
+    this.processTimerange(segIndex, sourceTimerange, shrink, extend);
   }
 }
 

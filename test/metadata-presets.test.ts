@@ -12,14 +12,30 @@ import {
 } from "../src/index.js";
 import {
   AUDIO_EFFECT_PRESETS,
+  AudioSceneEffectType,
   FILTER_PRESETS,
+  FilterType,
+  GroupAnimationType,
+  IntroType,
   MASK_PRESETS,
+  MaskType,
   MIX_MODE_PRESETS,
+  MixModeType,
+  OutroType,
+  SpeechToSongType,
   TEXT_ANIMATION_PRESETS,
+  TextIntro,
+  TextLoopAnim,
+  TextOutro,
+  ToneEffectType,
   TRANSITION_PRESETS,
+  TransitionType,
   VIDEO_ANIMATION_PRESETS,
+  VideoCharacterEffectType,
   VIDEO_CHARACTER_EFFECT_PRESETS,
+  VideoSceneEffectType,
   VIDEO_SCENE_EFFECT_PRESETS,
+  Video_scene_effect_type,
   resolveAudioEffectMeta,
   resolveFilterMeta,
   resolveMaskMeta,
@@ -74,6 +90,30 @@ describe("metadata presets", () => {
     expect(resolveTransitionMeta("dissolve").effectId).toBe(TRANSITION_PRESETS.dissolve.effectId);
     expect(resolveMaskMeta("circle").resourceType).toBe("circle");
     expect(resolveMixModeMeta("screen").effectId).toBe(MIX_MODE_PRESETS.screen.effectId);
+  });
+
+  it("exports python-style metadata enum aliases", () => {
+    expect(VideoSceneEffectType.vcr.effectId).toBe(VIDEO_SCENE_EFFECT_PRESETS.vcr.effectId);
+    expect(VideoCharacterEffectType.boom.effectId).toBe(VIDEO_CHARACTER_EFFECT_PRESETS.boom.effectId);
+    expect(FilterType.lofi2.effectId).toBe(FILTER_PRESETS.lofi2.effectId);
+
+    expect(AudioSceneEffectType.echo.categoryId).toBe("sound_effect");
+    expect(ToneEffectType.maleTone.categoryId).toBe("tone");
+    expect(SpeechToSongType.lofiSong.categoryId).toBe("speech_to_song");
+
+    expect(IntroType.fadeIn.animationType).toBe("in");
+    expect(OutroType.fadeOut.animationType).toBe("out");
+    expect(GroupAnimationType.split3.animationType).toBe("group");
+    expect(TextIntro.textFadeIn.animationType).toBe("in");
+    expect(TextOutro.textFadeOut.animationType).toBe("out");
+    expect(TextLoopAnim.textGlitchLoop.animationType).toBe("loop");
+
+    expect(TransitionType.dissolve.effectId).toBe(TRANSITION_PRESETS.dissolve.effectId);
+    expect(MaskType.circle.resourceType).toBe("circle");
+    expect(MixModeType.screen.effectId).toBe(MIX_MODE_PRESETS.screen.effectId);
+
+    // snake_case compatibility alias
+    expect(Video_scene_effect_type.vcr.effectId).toBe(VideoSceneEffectType.vcr.effectId);
   });
 
   it("resolves scene/character effect preset keys", () => {

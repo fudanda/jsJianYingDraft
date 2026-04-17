@@ -217,6 +217,11 @@ export class ScriptFile {
     return script;
   }
 
+  /** @deprecated Use loadTemplate instead. */
+  static load_template(jsonPath: string): ScriptFile {
+    return ScriptFile.loadTemplate(jsonPath);
+  }
+
   addMaterial(material: VideoMaterial | AudioMaterial): this {
     if (material instanceof VideoMaterial) {
       if (!this.materials.videos.some((item) => item.materialId === material.materialId)) {
@@ -902,5 +907,73 @@ export class ScriptFile {
       throw new Error("savePath is not set. This usually means you are not in template mode.");
     }
     this.dump(this.savePath);
+  }
+
+  /** @deprecated Use addMaterial instead. */
+  add_material(material: VideoMaterial | AudioMaterial): this {
+    return this.addMaterial(material);
+  }
+
+  /** @deprecated Use addTrack instead. */
+  add_track(trackType: TrackType, trackName?: string, options: AddTrackOptions = {}): this {
+    return this.addTrack(trackType, trackName, options);
+  }
+
+  /** @deprecated Use addSegment instead. */
+  add_segment(
+    segment: VideoSegment | AudioSegment | TextSegment | StickerSegment | EffectSegment | FilterSegment,
+    trackName?: string
+  ): this {
+    return this.addSegment(segment, trackName);
+  }
+
+  /** @deprecated Use addEffect instead. */
+  add_effect(
+    effectMeta: EffectMeta | VideoEffectPresetInput,
+    tRange: Timerange,
+    trackName?: string,
+    options: AddEffectOptions = {}
+  ): this {
+    return this.addEffect(effectMeta, tRange, trackName, options);
+  }
+
+  /** @deprecated Use addFilter instead. */
+  add_filter(filterMeta: EffectMeta | FilterPresetInput, tRange: Timerange, trackName?: string, intensity = 100): this {
+    return this.addFilter(filterMeta, tRange, trackName, intensity);
+  }
+
+  /** @deprecated Use importSrt instead. */
+  import_srt(srtPath: string, trackName: string, options: ImportSrtOptions = {}): this {
+    return this.importSrt(srtPath, trackName, options);
+  }
+
+  /** @deprecated Use getImportedTrack instead. */
+  get_imported_track(trackType: TrackType.video | TrackType.audio | TrackType.text, name?: string, index?: number): EditableTrack {
+    return this.getImportedTrack(trackType, name, index);
+  }
+
+  /** @deprecated Use importTrack instead. */
+  import_track(sourceFile: ScriptFile, track: EditableTrack, options: ImportTrackOptions = {}): this {
+    return this.importTrack(sourceFile, track, options);
+  }
+
+  /** @deprecated Use replaceMaterialByName instead. */
+  replace_material_by_name(materialName: string, material: VideoMaterial | AudioMaterial, replaceCrop = false): this {
+    return this.replaceMaterialByName(materialName, material, replaceCrop);
+  }
+
+  /** @deprecated Use replaceMaterialBySeg instead. */
+  replace_material_by_seg(
+    track: EditableTrack,
+    segmentIndex: number,
+    material: VideoMaterial | AudioMaterial,
+    options: ReplaceMaterialBySegOptions = {}
+  ): this {
+    return this.replaceMaterialBySeg(track, segmentIndex, material, options);
+  }
+
+  /** @deprecated Use replaceText instead. */
+  replace_text(track: EditableTrack, segmentIndex: number, text: string | string[], recalcStyle = true): this {
+    return this.replaceText(track, segmentIndex, text, recalcStyle);
   }
 }

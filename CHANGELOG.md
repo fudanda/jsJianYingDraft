@@ -1,5 +1,21 @@
 # jsjianyingdraft
 
+## 0.4.0
+
+### Minor Changes
+
+- Add Python-style compatibility aliases to ease migration from `pyJianYingDraft`.
+
+  - Export legacy class/enum aliases (for example `Script_file`, `Draft_folder`, `Track_type`, `Shrink_mode`).
+  - Add deprecated `snake_case` method aliases on core APIs (`ScriptFile`, `DraftFolder`, segment classes, and template media track helpers).
+  - Add tests covering alias exports and method behavior.
+
+- Add Python-style metadata enum exports and compatibility aliases under `jsjianyingdraft/metadata`.
+
+  - Add enum-style preset groups like `VideoSceneEffectType`, `VideoCharacterEffectType`, `FilterType`, `AudioSceneEffectType`, `ToneEffectType`, `SpeechToSongType`, `IntroType`, `OutroType`, `GroupAnimationType`, `TextIntro`, `TextOutro`, `TextLoopAnim`, `TransitionType`, `MaskType`, and `MixModeType`.
+  - Add deprecated snake_case metadata aliases for migration compatibility (for example `Video_scene_effect_type`, `Filter_type`, `Text_intro`).
+  - Add tests and docs for the new metadata compatibility exports.
+
 ## 0.3.0
 
 ### Minor Changes
