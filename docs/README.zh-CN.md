@@ -1,37 +1,36 @@
-# jsJianYingDraft
+# jsJianYingDraft 中文说明
 
-TypeScript migration of `pyJianYingDraft` with npm packaging support.
+`jsjianyingdraft` 是 `pyJianYingDraft` 的 TypeScript 迁移版本，支持 npm 安装与发布，适合在 Node.js/TS 项目中生成和编辑剪映草稿。
 
-## Why this package
+## 项目定位
 
-`jsjianyingdraft` aims to keep py-style editing workflows while providing:
+本包重点是“保持 Python 迁移体验 + 提供 TypeScript 工程能力”：
 
-- first-class TypeScript typing and npm distribution
-- ESM + CJS builds
-- migration-friendly snake_case compatibility aliases
-- generated metadata presets from `pyJianYingDraft`
+- 提供完整类型定义（TypeScript 友好）
+- 支持 ESM + CJS 双构建产物
+- 保留大量 Python 风格 `snake_case` 兼容别名
+- 支持从 `pyJianYingDraft` 自动生成的 metadata 预设集
 
-## Feature snapshot (v0.7.x)
+## 功能概览（v0.7.x）
 
-- Draft folder lifecycle: create/list/remove/load/duplicate
-- Draft editing core: `ScriptFile`, `Track`, segment/material classes
-- Time helpers: `SEC`, `tim`, `Timerange`, `trange`, `srtTstamp`
-- Template workflow: `loadTemplate`, `getImportedTrack`, `replaceMaterialByName`, `replaceMaterialBySeg`, `replaceText`, `importTrack`
-- Segment effects and filters: `addEffect`, `addFilter`, `EffectSegment`, `FilterSegment`
-- Video advanced controls: keyframe / animation / mask / transition / mix mode / background filling
-- Full metadata subpath export: `jsjianyingdraft/metadata`
-- Python-style enum aliases and `from_name` support for metadata objects
-- Python-style class and method aliases (`snake_case`) for smoother migration
-- Windows automation export controller: `JianyingController`
-- Media metadata auto-probing support (duration/width/height when available)
+- 草稿目录管理：创建、读取、删除、复制
+- 草稿编辑核心：`ScriptFile`、`Track`、各类 `Segment` / `Material`
+- 时间工具：`SEC`、`tim`、`Timerange`、`trange`、`srtTstamp`
+- 模板编辑流程：`loadTemplate`、`getImportedTrack`、`replaceMaterialByName`、`replaceMaterialBySeg`、`replaceText`、`importTrack`
+- 特效与滤镜：全局与片段级 `addEffect` / `addFilter`
+- 视频高级能力：关键帧、动画、遮罩、转场、混合模式、背景填充
+- 元数据子路径导出：`jsjianyingdraft/metadata`
+- Python 风格 metadata 枚举对象与 `from_name` 查找
+- Windows 自动化导出控制器：`JianyingController`
+- 媒体信息自动探测（可用时自动识别时长/宽高）
 
-## Install
+## 安装
 
 ```bash
 npm install jsjianyingdraft
 ```
 
-## Quick start
+## 快速开始
 
 ```ts
 import {
@@ -63,11 +62,9 @@ script
   .save();
 ```
 
-For a minimal runnable sample, see [`examples/minimal.ts`](./examples/minimal.ts).
+## 从 pyJianYingDraft 迁移（速查）
 
-## Migration quick map (`pyJianYingDraft` -> `jsJianYingDraft`)
-
-| py-style | Preferred TS API | Compatibility alias in this package |
+| Python 风格 | 推荐 TS API | 当前兼容别名 |
 | --- | --- | --- |
 | `Draft_folder` | `DraftFolder` | `Draft_folder` |
 | `Script_file` | `ScriptFile` | `Script_file` |
@@ -80,11 +77,11 @@ For a minimal runnable sample, see [`examples/minimal.ts`](./examples/minimal.ts
 | `import_srt` | `importSrt` | `import_srt` |
 | `replace_material_by_seg` | `replaceMaterialBySeg` | `replace_material_by_seg` |
 
-Detailed migration notes are in [`docs/migration-from-py.md`](./docs/migration-from-py.md).
+详细迁移说明可查看同目录文档：`migration-from-py.md`。
 
-## Common recipes
+## 常见用法
 
-### 1) Build segments directly from file paths
+### 1) 直接用文件路径构造 Segment
 
 ```ts
 import { AudioSegment, Timerange, VideoSegment } from "jsjianyingdraft";
@@ -98,12 +95,12 @@ const audioSeg = new AudioSegment("D:/assets/music.mp3", new Timerange(0, 3_000_
 });
 ```
 
-Notes:
+说明：
 
-- `materialOptions` is the recommended field.
-- `material_options` is still available as a deprecated migration alias.
+- 推荐使用 `materialOptions`
+- `material_options` 仍可用（兼容别名，已标记为废弃）
 
-### 2) `importSrt` with `styleReference` and clip behavior
+### 2) `importSrt` 的 `styleReference` 语义
 
 ```ts
 import { ClipSettings, ScriptFile, TextSegment, TextStyle, Timerange } from "jsjianyingdraft";
@@ -120,13 +117,13 @@ script.importSrt("D:/assets/subtitle.srt", "subtitle", {
 });
 ```
 
-Behavior aligned with `pyJianYingDraft`:
+与 py 行为对齐：
 
-- when `styleReference` is set and `clipSettings` is omitted, clip settings are reset to default
-- when `clipSettings: null` is passed, clip settings from `styleReference` are reused
-- snake_case aliases are available: `style_reference`, `clip_settings`, `text_style`, `time_offset`
+- 设置了 `styleReference` 且未传 `clipSettings`：`clipSettings` 重置为默认值
+- 显式传 `clipSettings: null`：继承 `styleReference` 的 `clipSettings`
+- 兼容别名：`style_reference`、`clip_settings`、`text_style`、`time_offset`
 
-### 3) Metadata presets + `from_name` lookup
+### 3) metadata 预设与 `from_name`
 
 ```ts
 import { ScriptFile, Timerange, TrackType } from "jsjianyingdraft";
@@ -142,13 +139,13 @@ script.addEffect(vcr, new Timerange(0, 1_000_000));
 script.addFilter(lofi2, new Timerange(0, 1_000_000));
 ```
 
-Notes:
+说明：
 
-- metadata enum-style exports support `from_name` / `fromName`
-- metadata lookup ignores case, spaces, and underscores
-- `TrackType.from_name` is stricter and expects exact track names (`video`, `audio`, `text`, ...)
+- metadata 枚举对象支持 `from_name` / `fromName`
+- metadata 查找会忽略大小写、空格、下划线
+- `TrackType.from_name` 更严格，要求精确 track 名（例如 `video`、`audio`）
 
-### 4) Windows automation export with explicit timeout handling
+### 4) Windows 自动化导出与超时错误
 
 ```ts
 import {
@@ -170,32 +167,34 @@ try {
   });
 } catch (error) {
   if (error instanceof DraftNotFoundError) {
-    // draft name not found in JianYing
+    // 草稿不存在
   } else if (error instanceof ExportTimeoutError) {
-    // export exceeded timeout
+    // 导出超时
   } else {
-    // other automation failures
+    // 其他自动化错误
   }
 }
 ```
 
-## Media auto-probing
+## 媒体自动探测
 
-`VideoMaterial` and `AudioMaterial` attempt to auto-detect metadata from local files.
+`VideoMaterial` / `AudioMaterial` 会尝试自动探测媒体信息：
 
-- Preferred path: `ffprobe` (when available)
-- Fallback parsing:
-  - image dimensions for PNG/JPEG/GIF/BMP
-  - WAV duration
-- If detection is not possible, pass explicit constructor options (`duration`, `width`, `height`)
+- 优先使用 `ffprobe`（若环境可用）
+- 回退解析：
+  - 图片尺寸（PNG/JPEG/GIF/BMP）
+  - WAV 时长
+- 若仍无法探测，请在构造时手动传入 `duration`（以及视频的 `width`/`height`）
 
-## Known limitations
+## 已知限制
 
-- `JianyingController` is Windows-only and relies on UI automation.
-- Current Windows automation export flow targets JianYing 6.x and below.
-- For some media formats, duration probing depends on local `ffprobe` availability.
+- `JianyingController` 依赖 Windows UI 自动化，仅支持 Windows。
+- 自动化导出流程当前主要面向剪映 6.x 及以下版本。
+- 某些媒体格式的自动探测结果依赖本机 `ffprobe` 可用性。
 
-## Development
+## 开发与发布
+
+开发常用命令：
 
 ```bash
 npm install
@@ -204,7 +203,7 @@ npm run typecheck
 npm run test
 ```
 
-## Versioning and release
+版本与发布：
 
 ```bash
 npm run changeset
@@ -212,10 +211,8 @@ npm run version-packages
 npm run release
 ```
 
-Pre-publish validation:
+发布前校验（包含 `tsdown`、`Vitest`、`publint`、`Are the types wrong?`）：
 
 ```bash
 npm run check:release
 ```
-
-`check:release` includes `tsdown` build, `Vitest`, `publint`, and `Are the types wrong?`.
