@@ -2,12 +2,19 @@
 
 TypeScript migration of `pyJianYingDraft` with npm packaging support.
 
-## Current scope (v0.1.0)
+## Current scope (v0.2.x)
 
 - Draft folder operations: create/list/remove/load/duplicate
 - Core draft file read/write: `ScriptFile`
 - Core time helpers: `SEC`, `tim`, `Timerange`, `trange`, `srtTstamp`
-- Basic tracks and segments: video/audio/text
+- Basic tracks and segments: video/audio/text/sticker
+- Advanced text style: `TextBorder`, `TextBackground`, `TextShadow`, font meta (`TextSegment` `font` / `setFont`)
+- Keyframe APIs: `VisualSegment.addKeyframe`, `AudioSegment.addKeyframe`, `KeyframeProperty`
+- Video advanced APIs: `addAnimation`, `addMask`, `addTransition`, `setMixMode`, `addBackgroundFilling`
+- Template-mode editing APIs: `loadTemplate`, `getImportedTrack`, `replaceMaterialByName`, `replaceMaterialBySeg`, `replaceText`, `importTrack`
+- Global and segment-level visual effect APIs: `addEffect`, `addFilter`, `EffectSegment`, `FilterSegment`
+- Preset string shortcuts for audio effects / video-text animations / transitions / masks / mix modes
+- Full metadata preset collections (subpath import): `jsjianyingdraft/metadata`
 - Bundled JianYing draft templates
 
 ## Install
@@ -73,4 +80,8 @@ script
 ## Notes
 
 - Media auto-probing is not included in this first TypeScript batch; pass media duration/size manually.
-- Full metadata and advanced effects migration can be added in the next phase.
+- `addEffect` and `addFilter` now accept either a custom metadata object or a typed preset key (for example: `"vcr"`, `"boom"`, `"lofi2"`).
+- `AudioSegment.addEffect`, `VideoSegment.addAnimation` / `addMask` / `addTransition` / `setMixMode`, and `TextSegment.addAnimation` also accept preset strings (for example: `"echo"`, `"fadeIn"`, `"dissolve"`, `"circle"`, `"screen"`).
+- Text `addEffect()` writes both material refs and `content.styles.effectStyle`, which matches pyJianYingDraft draft behavior more closely.
+- Full preset catalogs are exported from `jsjianyingdraft/metadata`; import a preset object and pass it to `addEffect` / `addFilter` for any advanced effect name.
+- Metadata presets are auto-generated from `pyJianYingDraft`; regenerate with `npm run generate:metadata`.

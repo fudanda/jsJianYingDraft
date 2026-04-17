@@ -4,5 +4,6 @@ export * from "./errors.js";
 export * from "./materials.js";
 export * from "./script-file.js";
 export * from "./segment.js";
+export * from "./template-mode.js";
 export * from "./time.js";
 export * from "./track.js";

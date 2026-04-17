@@ -1,0 +1,5 @@
+{
+  "main": "../dist/metadata.cjs",
+  "module": "../dist/metadata.mjs",
+  "types": "../dist/metadata.d.cts"
+}

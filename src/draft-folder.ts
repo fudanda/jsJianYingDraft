@@ -87,32 +87,7 @@ export class DraftFolder {
   }
 
   inspectMaterial(draftName: string): void {
-    const script = this.loadTemplate(draftName);
-    const materials = (script.content.materials ?? {}) as Record<string, unknown>;
-    const stickers = (materials.stickers ?? []) as Record<string, unknown>[];
-    const effects = (materials.effects ?? []) as Record<string, unknown>[];
-
-    const lines: string[] = [];
-    lines.push("Stickers:");
-    for (const sticker of stickers) {
-      lines.push(`  resource_id=${String(sticker.resource_id ?? "")} name=${String(sticker.name ?? "")}`);
-    }
-
-    lines.push("Text bubble effects:");
-    for (const effect of effects) {
-      if (effect.type === "text_shape") {
-        lines.push(`  effect_id=${String(effect.effect_id ?? "")} resource_id=${String(effect.resource_id ?? "")}`);
-      }
-    }
-
-    lines.push("Text effects:");
-    for (const effect of effects) {
-      if (effect.type === "text_effect") {
-        lines.push(`  resource_id=${String(effect.resource_id ?? "")}`);
-      }
-    }
-
-    process.stdout.write(`${lines.join("\n")}\n`);
+    this.loadTemplate(draftName).inspectMaterial();
   }
 
   readDraftJson(draftName: string): string {

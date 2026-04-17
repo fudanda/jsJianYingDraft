@@ -1,6 +1,6 @@
 {
   "name": "jsjianyingdraft",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "description": "TypeScript JianYing draft generator (migration from pyJianYingDraft)",
   "license": "MIT",
   "type": "module",
@@ -17,13 +17,25 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
+    },
+    "./metadata": {
+      "import": {
+        "types": "./dist/metadata.d.mts",
+        "default": "./dist/metadata.mjs"
+      },
+      "require": {
+        "types": "./dist/metadata.d.cts",
+        "default": "./dist/metadata.cjs"
+      }
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "metadata"
   ],
   "scripts": {
-    "build": "tsdown src/index.ts --format esm,cjs --dts --sourcemap --clean --out-dir dist",
+    "generate:metadata": "py scripts/generate_metadata_presets.py",
+    "build": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts --sourcemap --clean --out-dir dist",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
