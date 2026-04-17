@@ -105,6 +105,7 @@ ctrl.exportDraft("demo-ts", {
 - Windows automation export flow currently targets JianYing 6.x and below (same limitation as pyJianYingDraft).
 - `VideoMaterial` and `AudioMaterial` now auto-detect media metadata when possible (prefers `ffprobe`, with lightweight fallback parsing for common PNG/JPEG/GIF/BMP images and WAV audio).
 - You can still override detected values manually via constructor options (for example `duration`, `width`, `height`).
+- `importSrt` now supports advanced style options: `styleReference` and `clipSettings` (plus deprecated snake_case aliases `style_reference` / `clip_settings` / `text_style` / `time_offset`).
 - `addEffect` and `addFilter` now accept either a custom metadata object or a typed preset key (for example: `"vcr"`, `"boom"`, `"lofi2"`).
 - `AudioSegment.addEffect`, `VideoSegment.addAnimation` / `addMask` / `addTransition` / `setMixMode`, and `TextSegment.addAnimation` also accept preset strings (for example: `"echo"`, `"fadeIn"`, `"dissolve"`, `"circle"`, `"screen"`).
 - Text `addEffect()` writes both material refs and `content.styles.effectStyle`, which matches pyJianYingDraft draft behavior more closely.

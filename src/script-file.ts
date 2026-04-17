@@ -15,6 +15,7 @@ import {
   BackgroundFilling,
   AudioFade,
   AudioSegment,
+  ClipSettings,
   EffectMeta,
   EffectSegment,
   Filter,
@@ -146,6 +147,16 @@ export interface AddTrackOptions {
 export interface ImportSrtOptions {
   timeOffset?: string | number;
   textStyle?: TextStyle;
+  styleReference?: TextSegment;
+  clipSettings?: ClipSettings | null;
+  /** @deprecated Use timeOffset instead. */
+  time_offset?: string | number;
+  /** @deprecated Use textStyle instead. */
+  text_style?: TextStyle;
+  /** @deprecated Use styleReference instead. */
+  style_reference?: TextSegment;
+  /** @deprecated Use clipSettings instead. */
+  clip_settings?: ClipSettings | null;
 }
 
 export interface ImportTrackOptions {
@@ -447,8 +458,12 @@ export class ScriptFile {
   }
 
   importSrt(srtPath: string, trackName: string, options: ImportSrtOptions = {}): this {
-    const timeOffset = tim(options.timeOffset ?? 0);
-    const textStyle = options.textStyle ?? new TextStyle({ size: 5, align: 1, autoWrapping: true });
+    const timeOffset = tim(options.timeOffset ?? options.time_offset ?? 0);
+    const resolvedTextStyle = options.textStyle ?? options.text_style;
+    const styleReference = options.styleReference ?? options.style_reference;
+    const hasClipSettingsOverride = "clipSettings" in options || "clip_settings" in options;
+    const clipSettingsOverride = options.clipSettings !== undefined ? options.clipSettings : options.clip_settings;
+    const defaultSubtitleStyle = new TextStyle({ size: 5, align: 1, autoWrapping: true });
 
     if (!this.tracks.has(trackName)) {
       this.addTrack(TrackType.text, trackName, { relativeIndex: 999 });
@@ -486,7 +501,34 @@ export class ScriptFile {
         continue;
       }
 
-      const segment = new TextSegment(text, new Timerange(start, end - start), { style: textStyle });
+      const timerange = new Timerange(start, end - start);
+      let segment: TextSegment;
+
+      if (styleReference) {
+        segment = TextSegment.createFromTemplate(text, timerange, styleReference);
+
+        if (resolvedTextStyle) {
+          segment.style = new TextStyle({ ...resolvedTextStyle });
+        }
+
+        if (!hasClipSettingsOverride) {
+          // Keep pyJianYingDraft behavior: style_reference does not copy clip_settings by default.
+          segment.clipSettings = new ClipSettings();
+        } else if (clipSettingsOverride === null) {
+          // Keep pyJianYingDraft behavior: explicit null means use style_reference clip_settings.
+          segment.clipSettings = new ClipSettings({ ...styleReference.clipSettings });
+        } else if (clipSettingsOverride) {
+          segment.clipSettings = new ClipSettings({ ...clipSettingsOverride });
+        } else {
+          segment.clipSettings = new ClipSettings();
+        }
+      } else {
+        segment = new TextSegment(text, timerange, {
+          style: new TextStyle({ ...(resolvedTextStyle ?? defaultSubtitleStyle) }),
+          clipSettings: clipSettingsOverride ? new ClipSettings({ ...clipSettingsOverride }) : undefined
+        });
+      }
+
       this.addSegment(segment, trackName);
     }
 
