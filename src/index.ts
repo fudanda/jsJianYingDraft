@@ -2,6 +2,7 @@ export * from "./assets.js";
 export * from "./compat.js";
 export * from "./draft-folder.js";
 export * from "./errors.js";
+export * from "./jianying-controller.js";
 export * from "./materials.js";
 export * from "./script-file.js";
 export * from "./segment.js";

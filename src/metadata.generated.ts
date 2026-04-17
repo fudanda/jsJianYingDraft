@@ -2,7 +2,7 @@
 // Source: pyJianYingDraft metadata enums.
 // Regenerate with: py scripts/generate_metadata_presets.py
 
-import type { EffectMeta } from "./segment.js";
+import type { EffectMeta, FontMeta } from "./segment.js";
 
 export const GENERATED_VIDEO_SCENE_EFFECT_PRESETS = {
   "_1998": {
@@ -41311,3 +41311,3996 @@ export const GENERATED_FILTER_PRESETS = {
     "effectId": "7252674245396942139"
   }
 } as const satisfies Record<string, EffectMeta>;
+
+export const GENERATED_FONT_PRESETS = {
+  "_3D_만화": {
+    "name": "3D 만화",
+    "resourceId": "6841117833447870990",
+    "effectId": "20402387"
+  },
+  "A1明朝": {
+    "name": "A1明朝",
+    "resourceId": "7246698168547545602",
+    "effectId": "20403949"
+  },
+  "AlexBrush": {
+    "name": "AlexBrush",
+    "resourceId": "7241838813960475173",
+    "effectId": "14864426"
+  },
+  "Alice_Regular": {
+    "name": "Alice-Regular",
+    "resourceId": "7238874837500826170",
+    "effectId": "14443129"
+  },
+  "Alike_Regular": {
+    "name": "Alike-Regular",
+    "resourceId": "7238879091334582821",
+    "effectId": "14443547"
+  },
+  "Allura_Regular": {
+    "name": "Allura-Regular",
+    "resourceId": "7239181917067678266",
+    "effectId": "14864457"
+  },
+  "Amble_Regular": {
+    "name": "Amble-Regular",
+    "resourceId": "7236679983140180539",
+    "effectId": "14138187"
+  },
+  "Amigate": {
+    "name": "Amigate",
+    "resourceId": "7042231710112551431",
+    "effectId": "1485328"
+  },
+  "Anson": {
+    "name": "Anson",
+    "resourceId": "7312373886476096001",
+    "effectId": "37083210"
+  },
+  "Anton": {
+    "name": "Anton",
+    "resourceId": "6807743423336944142",
+    "effectId": "643585"
+  },
+  "Arizonia_Regular": {
+    "name": "Arizonia-Regular",
+    "resourceId": "7239188828425032252",
+    "effectId": "14864444"
+  },
+  "Arvo": {
+    "name": "Arvo",
+    "resourceId": "7238901809073361467",
+    "effectId": "14451489"
+  },
+  "Ballet": {
+    "name": "Ballet",
+    "resourceId": "7241838661656908343",
+    "effectId": "14864427"
+  },
+  "Barrio_Regular": {
+    "name": "Barrio-Regular",
+    "resourceId": "7239174980292842044",
+    "effectId": "14471579"
+  },
+  "Belleza_Regular": {
+    "name": "Belleza-Regular",
+    "resourceId": "7234404156780319288",
+    "effectId": "13824767"
+  },
+  "Bevan_Regular": {
+    "name": "Bevan-Regular",
+    "resourceId": "7238530249451901496",
+    "effectId": "14400121"
+  },
+  "Bilbo_Regular": {
+    "name": "Bilbo-Regular",
+    "resourceId": "7239189505289228861",
+    "effectId": "14864440"
+  },
+  "BlackMango_Regular": {
+    "name": "BlackMango-Regular",
+    "resourceId": "7306445155244970497",
+    "effectId": "41472093"
+  },
+  "Blinker_Thin": {
+    "name": "Blinker-Thin",
+    "resourceId": "7209874013324055098",
+    "effectId": "10587620"
+  },
+  "Boxing": {
+    "name": "Boxing",
+    "resourceId": "7078972382651617805",
+    "effectId": "1648729"
+  },
+  "Bungee_Regular": {
+    "name": "Bungee-Regular",
+    "resourceId": "7314592672792973826",
+    "effectId": "37039650"
+  },
+  "Caladea_Regular": {
+    "name": "Caladea-Regular",
+    "resourceId": "7209874013319860797",
+    "effectId": "10587623"
+  },
+  "Calfine": {
+    "name": "Calfine",
+    "resourceId": "7076269550299255309",
+    "effectId": "1632683"
+  },
+  "Candal_Regular": {
+    "name": "Candal-Regular",
+    "resourceId": "7234514498579599928",
+    "effectId": "13854523"
+  },
+  "Candice": {
+    "name": "Candice",
+    "resourceId": "7080446593123488286",
+    "effectId": "1656182"
+  },
+  "Carattere_Regular": {
+    "name": "Carattere-Regular",
+    "resourceId": "7277869798401249851",
+    "effectId": "22621896"
+  },
+  "Cardo_Regular": {
+    "name": "Cardo-Regular",
+    "resourceId": "7209874013324055101",
+    "effectId": "10587624"
+  },
+  "Caveat_Bold": {
+    "name": "Caveat-Bold",
+    "resourceId": "7239187536675869242",
+    "effectId": "14864446"
+  },
+  "Caveat_Regular": {
+    "name": "Caveat-Regular",
+    "resourceId": "7277872672304796217",
+    "effectId": "22621892"
+  },
+  "Chonburi_Regular": {
+    "name": "Chonburi-Regular",
+    "resourceId": "7209944750021939771",
+    "effectId": "10608872"
+  },
+  "Cinzel_Regular": {
+    "name": "Cinzel-Regular",
+    "resourceId": "7209874013324055095",
+    "effectId": "10587622"
+  },
+  "Coda_Heavy": {
+    "name": "Coda-Heavy",
+    "resourceId": "7234514878008922681",
+    "effectId": "13854593"
+  },
+  "Coiny_Regular": {
+    "name": "Coiny-Regular",
+    "resourceId": "7203293403990200834",
+    "effectId": "27240316"
+  },
+  "Cola": {
+    "name": "Cola",
+    "resourceId": "7076270486740537863",
+    "effectId": "1632682"
+  },
+  "Cookie_Regular": {
+    "name": "Cookie-Regular",
+    "resourceId": "7239182754624049720",
+    "effectId": "14864454"
+  },
+  "Cormorant_Garamond_Medium": {
+    "name": "Cormorant Garamond-Medium",
+    "resourceId": "7238899812190392888",
+    "effectId": "14451211"
+  },
+  "Coustard_Regular": {
+    "name": "Coustard-Regular",
+    "resourceId": "7209874014028698172",
+    "effectId": "10587614"
+  },
+  "Crimson_SemiboldItalic": {
+    "name": "Crimson-SemiboldItalic",
+    "resourceId": "7239227834273632827",
+    "effectId": "14864433"
+  },
+  "Dynalight_Regular": {
+    "name": "Dynalight-Regular",
+    "resourceId": "7239227395088060987",
+    "effectId": "14864435"
+  },
+  "Exo": {
+    "name": "Exo",
+    "resourceId": "7003588519440421413",
+    "effectId": "1349503"
+  },
+  "Facon": {
+    "name": "Facon",
+    "resourceId": "6807743498851193352",
+    "effectId": "643587"
+  },
+  "FiraSans_Book": {
+    "name": "FiraSans-Book",
+    "resourceId": "7236005080040739388",
+    "effectId": "14037099"
+  },
+  "Fraunces_Black": {
+    "name": "Fraunces-Black",
+    "resourceId": "7209874014221636155",
+    "effectId": "10587607"
+  },
+  "Fulbo_Argenta": {
+    "name": "Fulbo-Argenta",
+    "resourceId": "7239234097267085861",
+    "effectId": "14490123"
+  },
+  "Gallery": {
+    "name": "Gallery",
+    "resourceId": "7030677248797577765",
+    "effectId": "1441466"
+  },
+  "GenWanMinJP_Light_源云明体": {
+    "name": "GenWanMinJP-Light（源云明体）",
+    "resourceId": "7265529261530812985",
+    "effectId": "20356559"
+  },
+  "GenWanMinJP_Medium_源云明体": {
+    "name": "GenWanMinJP-Medium（源云明体）",
+    "resourceId": "7265529620802310713",
+    "effectId": "20356561"
+  },
+  "GenWanMinJP_Regular_源云明体": {
+    "name": "GenWanMinJP-Regular（源云明体）",
+    "resourceId": "7265529744542667322",
+    "effectId": "20356563"
+  },
+  "GenWanMinJP_SB_源云明体": {
+    "name": "GenWanMinJP-SB（源云明体）",
+    "resourceId": "7265529923547173413",
+    "effectId": "20356565"
+  },
+  "Giveny": {
+    "name": "Giveny",
+    "resourceId": "7030676531156357645",
+    "effectId": "1441468"
+  },
+  "Great_Vibes_Regular": {
+    "name": "Great Vibes-Regular",
+    "resourceId": "7239229310119187001",
+    "effectId": "14864431"
+  },
+  "Grenze_Thin": {
+    "name": "Grenze-Thin",
+    "resourceId": "7209874014951445051",
+    "effectId": "10587602"
+  },
+  "HG行書体": {
+    "name": "HG行書体",
+    "resourceId": "6808052324217393677",
+    "effectId": "20402937"
+  },
+  "HarmonyOSCn_Ltlt": {
+    "name": "HarmonyOSCn-Ltlt",
+    "resourceId": "7265589159580930621",
+    "effectId": "20373125"
+  },
+  "HarmonyOS_Sans_SC_Bold": {
+    "name": "HarmonyOS_Sans_SC_Bold",
+    "resourceId": "7265594890002633272",
+    "effectId": "20374146"
+  },
+  "HarmonyOS_Sans_SC_Light": {
+    "name": "HarmonyOS_Sans_SC_Light",
+    "resourceId": "7265595050145354295",
+    "effectId": "20374151"
+  },
+  "HarmonyOS_Sans_SC_Medium": {
+    "name": "HarmonyOS_Sans_SC_Medium",
+    "resourceId": "7265595177916437050",
+    "effectId": "20374140"
+  },
+  "HarmonyOS_Sans_SC_Regular": {
+    "name": "HarmonyOS_Sans_SC_Regular",
+    "resourceId": "7265595305163231781",
+    "effectId": "20374142"
+  },
+  "HarmonyOS_Sans_TC_Bold": {
+    "name": "HarmonyOS_Sans_TC_Bold",
+    "resourceId": "7265530043495879226",
+    "effectId": "20356569"
+  },
+  "HarmonyOS_Sans_TC_Light": {
+    "name": "HarmonyOS_Sans_TC_Light",
+    "resourceId": "7265530445658329661",
+    "effectId": "20356571"
+  },
+  "HarmonyOS_Sans_TC_Medium": {
+    "name": "HarmonyOS_Sans_TC_Medium",
+    "resourceId": "7265530519687795255",
+    "effectId": "20356573"
+  },
+  "HarmonyOS_Sans_TC_Regular": {
+    "name": "HarmonyOS_Sans_TC_Regular",
+    "resourceId": "7265530629050077754",
+    "effectId": "20356575"
+  },
+  "HeptaSlab_Light": {
+    "name": "HeptaSlab-Light",
+    "resourceId": "7277873865001275964",
+    "effectId": "22621897"
+  },
+  "Inter_SemiBold": {
+    "name": "Inter-SemiBold",
+    "resourceId": "7314592494006571522",
+    "effectId": "37039662"
+  },
+  "Italianno": {
+    "name": "Italianno",
+    "resourceId": "7241839293499445820",
+    "effectId": "14864422"
+  },
+  "Jellee_Bold": {
+    "name": "Jellee-Bold",
+    "resourceId": "7239233471132996153",
+    "effectId": "14489881"
+  },
+  "Kanit_ExtraBoldItalic": {
+    "name": "Kanit-ExtraBoldItalic",
+    "resourceId": "7341281330442801665",
+    "effectId": "48512062"
+  },
+  "Kanit_Regular": {
+    "name": "Kanit-Regular",
+    "resourceId": "7341281459799331330",
+    "effectId": "48512024"
+  },
+  "KaushanScript": {
+    "name": "KaushanScript",
+    "resourceId": "7241838959305691707",
+    "effectId": "14864425"
+  },
+  "Koulen_Regular": {
+    "name": "Koulen-Regular",
+    "resourceId": "7341281656319250945",
+    "effectId": "48512036"
+  },
+  "LXGWWenKai_Bold": {
+    "name": "LXGWWenKai-Bold",
+    "resourceId": "7265591538472718903",
+    "effectId": "20373127"
+  },
+  "LXGWWenKai_Light": {
+    "name": "LXGWWenKai-Light",
+    "resourceId": "7265592227118715448",
+    "effectId": "20373111"
+  },
+  "LXGWWenKai_Regular": {
+    "name": "LXGWWenKai-Regular",
+    "resourceId": "7265591946897265212",
+    "effectId": "20373101"
+  },
+  "Letter": {
+    "name": "Letter",
+    "resourceId": "6740438320989344263",
+    "effectId": "349325"
+  },
+  "Lexend_Tera_Regular": {
+    "name": "Lexend Tera-Regular",
+    "resourceId": "7234820388151104061",
+    "effectId": "13897171"
+  },
+  "Lora_Regular": {
+    "name": "Lora-Regular",
+    "resourceId": "7238875962530599481",
+    "effectId": "14443153"
+  },
+  "Love": {
+    "name": "Love",
+    "resourceId": "6766522308593979917",
+    "effectId": "459276"
+  },
+  "Luxury": {
+    "name": "Luxury",
+    "resourceId": "7291876268541219329",
+    "effectId": "41472051"
+  },
+  "Maler": {
+    "name": "Maler",
+    "resourceId": "7080115730963763743",
+    "effectId": "1654362"
+  },
+  "Marker": {
+    "name": "Marker",
+    "resourceId": "6766523474354639373",
+    "effectId": "459282"
+  },
+  "Mirza_Regular": {
+    "name": "Mirza-Regular",
+    "resourceId": "7239174396349256249",
+    "effectId": "14471319"
+  },
+  "Misto": {
+    "name": "Misto",
+    "resourceId": "7078972749472862757",
+    "effectId": "1648728"
+  },
+  "Modern": {
+    "name": "Modern",
+    "resourceId": "6740498577912500749",
+    "effectId": "349479"
+  },
+  "Mokgech": {
+    "name": "Mokgech",
+    "resourceId": "7042232545433358878",
+    "effectId": "1485324"
+  },
+  "Montserrat_Black": {
+    "name": "Montserrat-Black",
+    "resourceId": "7314592902414340609",
+    "effectId": "37039624"
+  },
+  "Montserrat_Thin": {
+    "name": "Montserrat-Thin",
+    "resourceId": "7209944750529450554",
+    "effectId": "10608863"
+  },
+  "Nunito": {
+    "name": "Nunito",
+    "resourceId": "6807743644842332685",
+    "effectId": "643589"
+  },
+  "OldStandardTT_Regular": {
+    "name": "OldStandardTT-Regular",
+    "resourceId": "7277874282493907512",
+    "effectId": "22621894"
+  },
+  "Parisienne_Regular": {
+    "name": "Parisienne-Regular",
+    "resourceId": "7239229422367150652",
+    "effectId": "14864430"
+  },
+  "Playfair_Display_SC_Re": {
+    "name": "Playfair Display SC-Re",
+    "resourceId": "7238897435437699639",
+    "effectId": "14450193"
+  },
+  "PlayfairDisplay_Italic": {
+    "name": "PlayfairDisplay-Italic",
+    "resourceId": "7238900597125026341",
+    "effectId": "14451355"
+  },
+  "Plunct": {
+    "name": "Plunct",
+    "resourceId": "7035916496484176421",
+    "effectId": "1459552"
+  },
+  "Polly": {
+    "name": "Polly",
+    "resourceId": "7078971156350374431",
+    "effectId": "1648730"
+  },
+  "Poppins_Bold": {
+    "name": "Poppins-Bold",
+    "resourceId": "7312373689708712449",
+    "effectId": "41472095"
+  },
+  "Poppins_Regular": {
+    "name": "Poppins-Regular",
+    "resourceId": "7202912523383738881",
+    "effectId": "41472101"
+  },
+  "Prata": {
+    "name": "Prata",
+    "resourceId": "6807743776916771335",
+    "effectId": "643593"
+  },
+  "Quattrocento_Regular": {
+    "name": "Quattrocento-Regular",
+    "resourceId": "7238898734724026917",
+    "effectId": "14450839"
+  },
+  "RedHatDisplay_BoldItalic": {
+    "name": "RedHatDisplay-BoldItalic",
+    "resourceId": "7341281783637348865",
+    "effectId": "48512032"
+  },
+  "RedHatDisplay_Light": {
+    "name": "RedHatDisplay-Light",
+    "resourceId": "7341282109987754497",
+    "effectId": "48512058"
+  },
+  "ReenieBeanie_Regular": {
+    "name": "ReenieBeanie-Regular",
+    "resourceId": "7277866226397745701",
+    "effectId": "22618063"
+  },
+  "ResourceHanRoundedCN_Bold": {
+    "name": "ResourceHanRoundedCN-Bold",
+    "resourceId": "7265596195949515319",
+    "effectId": "20374132"
+  },
+  "ResourceHanRoundedCN_Lt": {
+    "name": "ResourceHanRoundedCN-Lt",
+    "resourceId": "7265596294683431485",
+    "effectId": "20374136"
+  },
+  "ResourceHanRoundedCN_Md": {
+    "name": "ResourceHanRoundedCN-Md",
+    "resourceId": "7265596408491676197",
+    "effectId": "20374131"
+  },
+  "ResourceHanRoundedCN_Nl": {
+    "name": "ResourceHanRoundedCN-Nl",
+    "resourceId": "7265596514955694649",
+    "effectId": "20374148"
+  },
+  "Rix독도": {
+    "name": "Rix독도",
+    "resourceId": "6808056629678838286",
+    "effectId": "645449"
+  },
+  "Romantic": {
+    "name": "Romantic",
+    "resourceId": "6807743277853315597",
+    "effectId": "643581"
+  },
+  "Rubik": {
+    "name": "Rubik",
+    "resourceId": "7003588607231398430",
+    "effectId": "1349502"
+  },
+  "SansitaSwashed_Regular": {
+    "name": "SansitaSwashed-Regular",
+    "resourceId": "7314592065168347650",
+    "effectId": "37108558"
+  },
+  "SecularOne_Regular": {
+    "name": "SecularOne-Regular",
+    "resourceId": "7312374157725929986",
+    "effectId": "37082988"
+  },
+  "Serrat": {
+    "name": "Serrat",
+    "resourceId": "7068208488563872286",
+    "effectId": "1588332"
+  },
+  "Signature": {
+    "name": "Signature",
+    "resourceId": "7042230917837885965",
+    "effectId": "1485330"
+  },
+  "Soap": {
+    "name": "Soap",
+    "resourceId": "7076269202771808804",
+    "effectId": "1632684"
+  },
+  "SourceHanSansCN_Bold": {
+    "name": "SourceHanSansCN-Bold",
+    "resourceId": "7265596643066516029",
+    "effectId": "20374122"
+  },
+  "SourceHanSansCN_Light": {
+    "name": "SourceHanSansCN-Light",
+    "resourceId": "7265596753926165050",
+    "effectId": "20374126"
+  },
+  "SourceHanSansCN_Medium": {
+    "name": "SourceHanSansCN-Medium",
+    "resourceId": "7265596846465094199",
+    "effectId": "20374144"
+  },
+  "SourceHanSansCN_Normal": {
+    "name": "SourceHanSansCN-Normal",
+    "resourceId": "7265596944867660346",
+    "effectId": "20374137"
+  },
+  "SourceHanSansCN_Regular": {
+    "name": "SourceHanSansCN-Regular",
+    "resourceId": "7265597035946971705",
+    "effectId": "20374128"
+  },
+  "SourceHanSansTW_Bold": {
+    "name": "SourceHanSansTW-Bold",
+    "resourceId": "7265530703364756026",
+    "effectId": "20356585"
+  },
+  "SourceHanSansTW_Light": {
+    "name": "SourceHanSansTW-Light",
+    "resourceId": "7265530900580930085",
+    "effectId": "20356587"
+  },
+  "SourceHanSansTW_Medium": {
+    "name": "SourceHanSansTW-Medium",
+    "resourceId": "7265530989479203389",
+    "effectId": "20356589"
+  },
+  "SourceHanSansTW_Normal": {
+    "name": "SourceHanSansTW-Normal",
+    "resourceId": "7265531070680928828",
+    "effectId": "20356591"
+  },
+  "SourceHanSansTW_Regular": {
+    "name": "SourceHanSansTW-Regular",
+    "resourceId": "7265531198548480568",
+    "effectId": "20356593"
+  },
+  "SourceHanSerifCN_Bold": {
+    "name": "SourceHanSerifCN-Bold",
+    "resourceId": "7265597144600416827",
+    "effectId": "20374153"
+  },
+  "SourceHanSerifCN_Light": {
+    "name": "SourceHanSerifCN-Light",
+    "resourceId": "7265597259708895803",
+    "effectId": "20374143"
+  },
+  "SourceHanSerifCN_Medium": {
+    "name": "SourceHanSerifCN-Medium",
+    "resourceId": "7265597365539574329",
+    "effectId": "20374123"
+  },
+  "SourceHanSerifCN_Regular": {
+    "name": "SourceHanSerifCN-Regular",
+    "resourceId": "7265597449262076474",
+    "effectId": "20374152"
+  },
+  "SourceHanSerifCN_SemiBold": {
+    "name": "SourceHanSerifCN-SemiBold",
+    "resourceId": "7265598654294004281",
+    "effectId": "20374118"
+  },
+  "SourceHanSerifTW_Bold": {
+    "name": "SourceHanSerifTW-Bold",
+    "resourceId": "7265534770845585980",
+    "effectId": "20356595"
+  },
+  "SourceHanSerifTW_Light": {
+    "name": "SourceHanSerifTW-Light",
+    "resourceId": "7265535017625850429",
+    "effectId": "20356597"
+  },
+  "SourceHanSerifTW_Medium": {
+    "name": "SourceHanSerifTW-Medium",
+    "resourceId": "7265535154775396919",
+    "effectId": "20356599"
+  },
+  "SourceHanSerifTW_Regular": {
+    "name": "SourceHanSerifTW-Regular",
+    "resourceId": "7265535307322233399",
+    "effectId": "20356601"
+  },
+  "SourceHanSerifTW_SemiBold": {
+    "name": "SourceHanSerifTW-SemiBold",
+    "resourceId": "7265535436594876984",
+    "effectId": "20356603"
+  },
+  "SourceSansPro_Regular": {
+    "name": "SourceSansPro-Regular",
+    "resourceId": "7235998842880004665",
+    "effectId": "14035983"
+  },
+  "Specta": {
+    "name": "Specta",
+    "resourceId": "7039992016805040671",
+    "effectId": "1478300"
+  },
+  "Spicy_Rice_Regular": {
+    "name": "Spicy Rice-Regular",
+    "resourceId": "7239229520828437053",
+    "effectId": "14864429"
+  },
+  "Staatliches_Regular": {
+    "name": "Staatliches-Regular",
+    "resourceId": "7312373990083793409",
+    "effectId": "37083204"
+  },
+  "Sunset": {
+    "name": "Sunset",
+    "resourceId": "6807743703436759566",
+    "effectId": "643591"
+  },
+  "Thrive": {
+    "name": "Thrive",
+    "resourceId": "7290877082660246071",
+    "effectId": "26148239"
+  },
+  "Thunder": {
+    "name": "Thunder",
+    "resourceId": "7050422198724465189",
+    "effectId": "1511612"
+  },
+  "Work_Sans_ExtraBoldItalic": {
+    "name": "Work Sans-ExtraBoldItalic",
+    "resourceId": "7209944751246676517",
+    "effectId": "10608852"
+  },
+  "WorkSans_BlackItalic": {
+    "name": "WorkSans-BlackItalic",
+    "resourceId": "7236677807634387511",
+    "effectId": "14137039"
+  },
+  "WorkSans_Regular": {
+    "name": "WorkSans-Regular",
+    "resourceId": "7242301481699775032",
+    "effectId": "14963149"
+  },
+  "ZEN丸コ_シック": {
+    "name": "ZEN丸ゴシック",
+    "resourceId": "7236735800514187831",
+    "effectId": "20403385"
+  },
+  "ZEN紅道": {
+    "name": "ZEN紅道",
+    "resourceId": "7244104371372298754",
+    "effectId": "20403919"
+  },
+  "ZY_Alluring_Regular": {
+    "name": "ZY Alluring-Regular",
+    "resourceId": "7277862842190008891",
+    "effectId": "22616627"
+  },
+  "ZY_Azure": {
+    "name": "ZY Azure",
+    "resourceId": "7230715188326961721",
+    "effectId": "13314774"
+  },
+  "ZY_Bless": {
+    "name": "ZY Bless",
+    "resourceId": "7229615361967002172",
+    "effectId": "13168499"
+  },
+  "ZY_Coconut_Regular": {
+    "name": "ZY Coconut-Regular",
+    "resourceId": "7277865493736722981",
+    "effectId": "22618062"
+  },
+  "ZY_Dexterous": {
+    "name": "ZY Dexterous",
+    "resourceId": "7320169657841750529",
+    "effectId": "38698692"
+  },
+  "ZY_Diligent": {
+    "name": "ZY Diligent",
+    "resourceId": "7270787894317421093",
+    "effectId": "21346088"
+  },
+  "ZY_Etiquette": {
+    "name": "ZY Etiquette",
+    "resourceId": "7262284005293167160",
+    "effectId": "19649099"
+  },
+  "ZY_Fervent": {
+    "name": "ZY Fervent",
+    "resourceId": "7325315777014272514",
+    "effectId": "40751208"
+  },
+  "ZY_Heaven": {
+    "name": "ZY Heaven",
+    "resourceId": "7256754129400238649",
+    "effectId": "18436001"
+  },
+  "ZY_Hope": {
+    "name": "ZY Hope",
+    "resourceId": "7276364919165948474",
+    "effectId": "22346588"
+  },
+  "ZY_Innocent": {
+    "name": "ZY Innocent",
+    "resourceId": "7256754220588601913",
+    "effectId": "18436002"
+  },
+  "ZY_Modest": {
+    "name": "ZY Modest",
+    "resourceId": "7276365485812224571",
+    "effectId": "22346583"
+  },
+  "ZY_Oliver": {
+    "name": "ZY Oliver",
+    "resourceId": "7230715372683399740",
+    "effectId": "13314772"
+  },
+  "ZY_Panorama": {
+    "name": "ZY Panorama",
+    "resourceId": "7262284073026982460",
+    "effectId": "19649101"
+  },
+  "ZY_Radiance": {
+    "name": "ZY Radiance",
+    "resourceId": "7248820625366585915",
+    "effectId": "16174404"
+  },
+  "ZY_Rainbow": {
+    "name": "ZY Rainbow",
+    "resourceId": "7276365019292373559",
+    "effectId": "22346586"
+  },
+  "ZY_Resolve": {
+    "name": "ZY Resolve",
+    "resourceId": "7317175475195875841",
+    "effectId": "37544856"
+  },
+  "ZY_Superb_Regular": {
+    "name": "ZY Superb-Regular",
+    "resourceId": "7277866017231999525",
+    "effectId": "22618066"
+  },
+  "ZY_Vibrant": {
+    "name": "ZY Vibrant",
+    "resourceId": "7276365787147801145",
+    "effectId": "22346584"
+  },
+  "ZY_Wonder": {
+    "name": "ZY Wonder",
+    "resourceId": "7270788266683535932",
+    "effectId": "21346084"
+  },
+  "ZYCherish": {
+    "name": "ZYCherish",
+    "resourceId": "7290485005162123813",
+    "effectId": "26013701"
+  },
+  "Zapfino": {
+    "name": "Zapfino",
+    "resourceId": "7076271146110292494",
+    "effectId": "1632681"
+  },
+  "いろは角クラシックE": {
+    "name": "いろは角クラシックE",
+    "resourceId": "7236735800514187833",
+    "effectId": "20403373"
+  },
+  "いろは角クラシックM": {
+    "name": "いろは角クラシックM",
+    "resourceId": "7236735800501604924",
+    "effectId": "20403369"
+  },
+  "きさ_はし金陵": {
+    "name": "きざはし金陵",
+    "resourceId": "7246698168547545601",
+    "effectId": "20403943"
+  },
+  "くり抜く": {
+    "name": "くり抜く",
+    "resourceId": "6990291609376002562",
+    "effectId": "20403197"
+  },
+  "しっほ_りアンチック": {
+    "name": "しっぽりアンチック",
+    "resourceId": "7236735800442884645",
+    "effectId": "20403443"
+  },
+  "すす_むし": {
+    "name": "すずむし",
+    "resourceId": "7246698168543351297",
+    "effectId": "20404003"
+  },
+  "た_るまと_ろっふ": {
+    "name": "だるまどろっぷ",
+    "resourceId": "7236735800388358715",
+    "effectId": "20403579"
+  },
+  "つきみ丸コ_かな_B": {
+    "name": "つきみ丸ゴかな B",
+    "resourceId": "7236735800371581501",
+    "effectId": "20403581"
+  },
+  "つきみ丸コ_かな_R": {
+    "name": "つきみ丸ゴかな R",
+    "resourceId": "7236735800363192891",
+    "effectId": "20403643"
+  },
+  "はちきるホ_ッフ": {
+    "name": "はちきるポップ",
+    "resourceId": "7236735799817933368",
+    "effectId": "20403715"
+  },
+  "ひな明朝": {
+    "name": "ひな明朝",
+    "resourceId": "7236735799817933367",
+    "effectId": "20403717"
+  },
+  "ほ_ってり": {
+    "name": "ぽってり",
+    "resourceId": "7246698168551739906",
+    "effectId": "20403945"
+  },
+  "オとマのヘ": {
+    "name": "オとマのペ",
+    "resourceId": "7236735800459661861",
+    "effectId": "20403367"
+  },
+  "キ_カ_丸": {
+    "name": "ギガ丸",
+    "resourceId": "7246698169348657665",
+    "effectId": "20403939"
+  },
+  "キャビン": {
+    "name": "キャビン",
+    "resourceId": "6841482472102826510",
+    "effectId": "20403069"
+  },
+  "クレー_One": {
+    "name": "クレー One",
+    "resourceId": "7236735800442884667",
+    "effectId": "20403427"
+  },
+  "コ_シック": {
+    "name": "ゴシック",
+    "resourceId": "7246698168543367682",
+    "effectId": "20404037"
+  },
+  "コスギ": {
+    "name": "コスギ",
+    "resourceId": "6808051939150926344",
+    "effectId": "20402991"
+  },
+  "ゴシック": {
+    "name": "ゴシック",
+    "resourceId": "6766522798685819399",
+    "effectId": "459278"
+  },
+  "タイムマシンわ号": {
+    "name": "タイムマシンわ号",
+    "resourceId": "7236735800430301753",
+    "effectId": "20404343"
+  },
+  "チェリーホ_ム": {
+    "name": "チェリーボム",
+    "resourceId": "7239261205582320129",
+    "effectId": "20403877"
+  },
+  "テ_ラコ_シック": {
+    "name": "デラゴシック",
+    "resourceId": "7236735799822127674",
+    "effectId": "20403647"
+  },
+  "ト_ットコ_シック_16": {
+    "name": "ドットゴシック 16",
+    "resourceId": "7236735799813739069",
+    "effectId": "20403657"
+  },
+  "ニューテコ_ミン": {
+    "name": "ニューテゴミン",
+    "resourceId": "7236735799822127653",
+    "effectId": "20403683"
+  },
+  "ビジネス": {
+    "name": "ビジネス",
+    "resourceId": "6808051344142766599",
+    "effectId": "20402993"
+  },
+  "ブロック": {
+    "name": "ブロック",
+    "resourceId": "6841483116922540558",
+    "effectId": "20403043"
+  },
+  "ヘ_ンレタ": {
+    "name": "ペンレタ",
+    "resourceId": "7246698168543384066",
+    "effectId": "20404089"
+  },
+  "ホ_ッタ": {
+    "name": "ポッタ",
+    "resourceId": "7236735799817933370",
+    "effectId": "20404337"
+  },
+  "ポジティブ": {
+    "name": "ポジティブ",
+    "resourceId": "7013643531847733761",
+    "effectId": "20403295"
+  },
+  "ミンサン書体B": {
+    "name": "ミンサン書体B",
+    "resourceId": "7239261205586514433",
+    "effectId": "20403895"
+  },
+  "ミンサン書体R": {
+    "name": "ミンサン書体R",
+    "resourceId": "7239261205594903041",
+    "effectId": "20403909"
+  },
+  "メモ": {
+    "name": "メモ",
+    "resourceId": "6841483408602829326",
+    "effectId": "20403011"
+  },
+  "メモ帳": {
+    "name": "メモ帳",
+    "resourceId": "6990291446100136449",
+    "effectId": "20403233"
+  },
+  "モッチーホ_ッフ": {
+    "name": "モッチーポップ",
+    "resourceId": "7236735799813739045",
+    "effectId": "20403817"
+  },
+  "ランハ_ート": {
+    "name": "ランパート",
+    "resourceId": "7236735799817933373",
+    "effectId": "20403869"
+  },
+  "レケ_エ_One": {
+    "name": "レゲエ One",
+    "resourceId": "7236735799813739068",
+    "effectId": "20403871"
+  },
+  "ロックンロール": {
+    "name": "ロックンロール",
+    "resourceId": "7236735799809544763",
+    "effectId": "20403875"
+  },
+  "ローマ": {
+    "name": "ローマ",
+    "resourceId": "6841482587446186509",
+    "effectId": "20403063"
+  },
+  "中秀体": {
+    "name": "中秀体",
+    "resourceId": "6917512631515353607",
+    "effectId": "1014410"
+  },
+  "书南体": {
+    "name": "书南体",
+    "resourceId": "7290445475461730875",
+    "effectId": "25998982"
+  },
+  "云魅手书": {
+    "name": "云魅手书",
+    "resourceId": "7174434449080193550",
+    "effectId": "7048145"
+  },
+  "今宋体": {
+    "name": "今宋体",
+    "resourceId": "7216598549809599032",
+    "effectId": "11443544"
+  },
+  "仓耳与墨W05": {
+    "name": "仓耳与墨W05",
+    "resourceId": "7265576717970838076",
+    "effectId": "20373115"
+  },
+  "仓耳周珂正大榜书": {
+    "name": "仓耳周珂正大榜书",
+    "resourceId": "7265577040110162492",
+    "effectId": "20373112"
+  },
+  "仓耳小丸子": {
+    "name": "仓耳小丸子",
+    "resourceId": "7265576611347436093",
+    "effectId": "20373117"
+  },
+  "仓耳舒圆体W02": {
+    "name": "仓耳舒圆体W02",
+    "resourceId": "7265576364948853303",
+    "effectId": "20373116"
+  },
+  "仓耳非白W02": {
+    "name": "仓耳非白W02",
+    "resourceId": "7265576127073096250",
+    "effectId": "20373124"
+  },
+  "仓耳非白W04": {
+    "name": "仓耳非白W04",
+    "resourceId": "7265576259957035579",
+    "effectId": "20373114"
+  },
+  "以梦为马": {
+    "name": "以梦为马",
+    "resourceId": "7197366059056239141",
+    "effectId": "9182767"
+  },
+  "优设好身体": {
+    "name": "优设好身体",
+    "resourceId": "7265610359807939132",
+    "effectId": "20379296"
+  },
+  "优设标题圆": {
+    "name": "优设标题圆",
+    "resourceId": "7260808713844298295",
+    "effectId": "19366221"
+  },
+  "优设标题黑": {
+    "name": "优设标题黑",
+    "resourceId": "7068207165277737502",
+    "effectId": "1588336"
+  },
+  "伯兮体": {
+    "name": "伯兮体",
+    "resourceId": "7290440685616894522",
+    "effectId": "25999024"
+  },
+  "佑字_朴": {
+    "name": "佑字 朴",
+    "resourceId": "7236735801042670136",
+    "effectId": "20403343"
+  },
+  "佑字_舞": {
+    "name": "佑字 舞",
+    "resourceId": "7236735801021698619",
+    "effectId": "20403425"
+  },
+  "佳妙体": {
+    "name": "佳妙体",
+    "resourceId": "7290443628554490423",
+    "effectId": "25998997"
+  },
+  "俊雅体": {
+    "name": "俊雅体",
+    "resourceId": "7078971008769593887",
+    "effectId": "1648731"
+  },
+  "俪金黑": {
+    "name": "俪金黑",
+    "resourceId": "6740499317733200388",
+    "effectId": "349465"
+  },
+  "像素体": {
+    "name": "像素体",
+    "resourceId": "6770944991167517192",
+    "effectId": "466469"
+  },
+  "元也": {
+    "name": "元也",
+    "resourceId": "6990291473216311809",
+    "effectId": "20403229"
+  },
+  "元气泡泡体": {
+    "name": "元气泡泡体",
+    "resourceId": "7203664981080937021",
+    "effectId": "9898775"
+  },
+  "元瑶体": {
+    "name": "元瑶体",
+    "resourceId": "7290447082886795832",
+    "effectId": "25999023"
+  },
+  "先锋体": {
+    "name": "先锋体",
+    "resourceId": "7043775345333375519",
+    "effectId": "1488720"
+  },
+  "光远体": {
+    "name": "光远体",
+    "resourceId": "7290442818584056357",
+    "effectId": "25999003"
+  },
+  "兰亭圆": {
+    "name": "兰亭圆",
+    "resourceId": "7173608955527041567",
+    "effectId": "6949825"
+  },
+  "凌东齐伋体_combo": {
+    "name": "凌东齐伋体-combo",
+    "resourceId": "7265611544820453948",
+    "effectId": "20379306"
+  },
+  "凌东齐伋体_fallback": {
+    "name": "凌东齐伋体-fallback",
+    "resourceId": "7265611310132367931",
+    "effectId": "20379309"
+  },
+  "凝琴体": {
+    "name": "凝琴体",
+    "resourceId": "7290444849298281021",
+    "effectId": "25999011"
+  },
+  "刘炳森": {
+    "name": "刘炳森",
+    "resourceId": "6852190696930021902",
+    "effectId": "814922"
+  },
+  "初尘体": {
+    "name": "初尘体",
+    "resourceId": "7290441058238861879",
+    "effectId": "25998986"
+  },
+  "匹喏曹": {
+    "name": "匹喏曹",
+    "resourceId": "7043773350555947551",
+    "effectId": "1488716"
+  },
+  "半梦体": {
+    "name": "半梦体",
+    "resourceId": "7290439421625635385",
+    "effectId": "25999018"
+  },
+  "南廱明體": {
+    "name": "南廱明體",
+    "resourceId": "7265535751624856101",
+    "effectId": "20356611"
+  },
+  "卡酷体": {
+    "name": "卡酷体",
+    "resourceId": "7045187669847970341",
+    "effectId": "1494864"
+  },
+  "古典体": {
+    "name": "古典体",
+    "resourceId": "7035911487646339598",
+    "effectId": "1459456"
+  },
+  "古印宋简": {
+    "name": "古印宋简",
+    "resourceId": "7216598368791827002",
+    "effectId": "11443545"
+  },
+  "古雅体": {
+    "name": "古雅体",
+    "resourceId": "7025895760583463438",
+    "effectId": "1425152"
+  },
+  "古风小楷": {
+    "name": "古风小楷",
+    "resourceId": "7216598671016596029",
+    "effectId": "11443543"
+  },
+  "台北黑体_Bold": {
+    "name": "台北黑体-Bold",
+    "resourceId": "7265536086472921658",
+    "effectId": "20356617"
+  },
+  "台北黑体_Light": {
+    "name": "台北黑体-Light",
+    "resourceId": "7265536169083933242",
+    "effectId": "20356619"
+  },
+  "台北黑体_Regular": {
+    "name": "台北黑体-Regular",
+    "resourceId": "7265536307932172861",
+    "effectId": "20356621"
+  },
+  "后现代体": {
+    "name": "后现代体",
+    "resourceId": "6740435494053614093",
+    "effectId": "349307"
+  },
+  "启功行楷": {
+    "name": "启功行楷",
+    "resourceId": "6852190785740214791",
+    "effectId": "814921"
+  },
+  "吹き出し": {
+    "name": "吹き出し",
+    "resourceId": "6841482925955879431",
+    "effectId": "20403057"
+  },
+  "唐瑜体": {
+    "name": "唐瑜体",
+    "resourceId": "7290445542331519525",
+    "effectId": "25998993"
+  },
+  "喜悦体": {
+    "name": "喜悦体",
+    "resourceId": "7045187886924173861",
+    "effectId": "1494856"
+  },
+  "喜鹊万人造字": {
+    "name": "喜鹊万人造字",
+    "resourceId": "7208056956471218748",
+    "effectId": "10379503"
+  },
+  "喜鹊梅花楷": {
+    "name": "喜鹊梅花楷",
+    "resourceId": "7208056839089427002",
+    "effectId": "10379504"
+  },
+  "喵魂体": {
+    "name": "喵魂体",
+    "resourceId": "6740436949040894475",
+    "effectId": "349315"
+  },
+  "嘉木体": {
+    "name": "嘉木体",
+    "resourceId": "7290443820041245241",
+    "effectId": "25999016"
+  },
+  "圆体": {
+    "name": "圆体",
+    "resourceId": "6740436583247254029",
+    "effectId": "349313"
+  },
+  "基础像素": {
+    "name": "基础像素",
+    "resourceId": "7203638484752405049",
+    "effectId": "9893377"
+  },
+  "墩墩体": {
+    "name": "墩墩体",
+    "resourceId": "7043772438898807304",
+    "effectId": "1488712"
+  },
+  "大字报": {
+    "name": "大字报",
+    "resourceId": "7054126026267300382",
+    "effectId": "1530068"
+  },
+  "天云体": {
+    "name": "天云体",
+    "resourceId": "7290445618533634617",
+    "effectId": "25998981"
+  },
+  "妙松体": {
+    "name": "妙松体",
+    "resourceId": "7290444755811439141",
+    "effectId": "25998991"
+  },
+  "妙黑体": {
+    "name": "妙黑体",
+    "resourceId": "7203638484756599333",
+    "effectId": "9893375"
+  },
+  "子どもたち": {
+    "name": "子どもたち",
+    "resourceId": "6766524209620324877",
+    "effectId": "20402995"
+  },
+  "字制区喜脉体": {
+    "name": "字制区喜脉体",
+    "resourceId": "7391765808835203647",
+    "effectId": "75248650"
+  },
+  "字制区喜脉喜欢体": {
+    "name": "字制区喜脉喜欢体",
+    "resourceId": "7391765873716892199",
+    "effectId": "75248705"
+  },
+  "孤月体": {
+    "name": "孤月体",
+    "resourceId": "7290441418395357754",
+    "effectId": "25999015"
+  },
+  "宋体": {
+    "name": "宋体",
+    "resourceId": "6740513279296147982",
+    "effectId": "349517"
+  },
+  "小杉ゴシック": {
+    "name": "小杉ｺﾞｼｯｸ",
+    "resourceId": "6841482326321402375",
+    "effectId": "20403079"
+  },
+  "小薇体": {
+    "name": "小薇体",
+    "resourceId": "7265594602311127607",
+    "effectId": "20373097"
+  },
+  "尔雅新大黑": {
+    "name": "尔雅新大黑",
+    "resourceId": "7217732136894206501",
+    "effectId": "11593555"
+  },
+  "居酒屋": {
+    "name": "居酒屋",
+    "resourceId": "7013643566341689858",
+    "effectId": "20403285"
+  },
+  "山林体": {
+    "name": "山林体",
+    "resourceId": "7035912592925135396",
+    "effectId": "1459484"
+  },
+  "岩柚体": {
+    "name": "岩柚体",
+    "resourceId": "7290445914571805245",
+    "effectId": "25999002"
+  },
+  "峰骨体": {
+    "name": "峰骨体",
+    "resourceId": "7054126189211816462",
+    "effectId": "1530066"
+  },
+  "幸せ": {
+    "name": "幸せ",
+    "resourceId": "6990291634747347458",
+    "effectId": "20403193"
+  },
+  "幼萱体": {
+    "name": "幼萱体",
+    "resourceId": "7290446812442268217",
+    "effectId": "25998999"
+  },
+  "庞门正道标题体": {
+    "name": "庞门正道标题体",
+    "resourceId": "7265611148060267045",
+    "effectId": "20379302"
+  },
+  "庞门正道粗书体": {
+    "name": "庞门正道粗书体",
+    "resourceId": "7265611032465248805",
+    "effectId": "20379291"
+  },
+  "庞门正道轻松体": {
+    "name": "庞门正道轻松体",
+    "resourceId": "7265610901795902013",
+    "effectId": "20379295"
+  },
+  "张子山体": {
+    "name": "张子山体",
+    "resourceId": "6894206029785993736",
+    "effectId": "961476"
+  },
+  "彼岸体": {
+    "name": "彼岸体",
+    "resourceId": "7290440016646378042",
+    "effectId": "25999019"
+  },
+  "得意黑": {
+    "name": "得意黑",
+    "resourceId": "7399865900821647935",
+    "effectId": "77844112"
+  },
+  "德古拉": {
+    "name": "德古拉",
+    "resourceId": "7021353291850191368",
+    "effectId": "1404774"
+  },
+  "快乐体": {
+    "name": "快乐体",
+    "resourceId": "7265594331262620217",
+    "effectId": "20373113"
+  },
+  "快速体": {
+    "name": "快速体",
+    "resourceId": "7197366121069023804",
+    "effectId": "9182766"
+  },
+  "思源中宋": {
+    "name": "思源中宋",
+    "resourceId": "6807743192671195655",
+    "effectId": "643579"
+  },
+  "思源粗宋": {
+    "name": "思源粗宋",
+    "resourceId": "6807742980271641102",
+    "effectId": "643575"
+  },
+  "悠悠然": {
+    "name": "悠悠然",
+    "resourceId": "7081924596999393805",
+    "effectId": "1665070"
+  },
+  "悠然体": {
+    "name": "悠然体",
+    "resourceId": "6740436145831678467",
+    "effectId": "349311"
+  },
+  "悦妍体": {
+    "name": "悦妍体",
+    "resourceId": "7290447167821451813",
+    "effectId": "25998984"
+  },
+  "惊鸿体": {
+    "name": "惊鸿体",
+    "resourceId": "7203638484756599356",
+    "effectId": "9893376"
+  },
+  "手書": {
+    "name": "手書",
+    "resourceId": "7013643615326966273",
+    "effectId": "20403235"
+  },
+  "抖音美好体": {
+    "name": "抖音美好体",
+    "resourceId": "7244518590332801592",
+    "effectId": "15332487"
+  },
+  "招牌体": {
+    "name": "招牌体",
+    "resourceId": "7035914068053463565",
+    "effectId": "1459526"
+  },
+  "拼音体": {
+    "name": "拼音体",
+    "resourceId": "6740437635287749133",
+    "effectId": "349319"
+  },
+  "挥墨体": {
+    "name": "挥墨体",
+    "resourceId": "7037018943218782757",
+    "effectId": "1464398"
+  },
+  "教科書": {
+    "name": "教科書",
+    "resourceId": "6990291514886722050",
+    "effectId": "20403203"
+  },
+  "文研体": {
+    "name": "文研体",
+    "resourceId": "6990293257540342302",
+    "effectId": "1203468"
+  },
+  "文艺繁体": {
+    "name": "文艺繁体",
+    "resourceId": "6740437797456318983",
+    "effectId": "349321"
+  },
+  "文轩体": {
+    "name": "文轩体",
+    "resourceId": "7290445778273702455",
+    "effectId": "25998976"
+  },
+  "文雅体": {
+    "name": "文雅体",
+    "resourceId": "7068208151488631309",
+    "effectId": "1588334"
+  },
+  "新青年体": {
+    "name": "新青年体",
+    "resourceId": "6740435892441190919",
+    "effectId": "349309"
+  },
+  "方正王铎行草": {
+    "name": "方正王铎行草",
+    "resourceId": "6852191050547597832",
+    "effectId": "814918"
+  },
+  "方糖体": {
+    "name": "方糖体",
+    "resourceId": "7037017159280628231",
+    "effectId": "1464396"
+  },
+  "无界黑": {
+    "name": "无界黑",
+    "resourceId": "7203638485670957629",
+    "effectId": "9893370"
+  },
+  "日式标题": {
+    "name": "日式标题",
+    "resourceId": "7081925137355772453",
+    "effectId": "1665068"
+  },
+  "星光体": {
+    "name": "星光体",
+    "resourceId": "7216598789103030821",
+    "effectId": "11443542"
+  },
+  "晨风体": {
+    "name": "晨风体",
+    "resourceId": "7290440791967666725",
+    "effectId": "25999012"
+  },
+  "景天体": {
+    "name": "景天体",
+    "resourceId": "7290444063004693029",
+    "effectId": "25999010"
+  },
+  "晴雪体": {
+    "name": "晴雪体",
+    "resourceId": "7290445254241555005",
+    "effectId": "25999004"
+  },
+  "書道": {
+    "name": "書道",
+    "resourceId": "6990291666124935681",
+    "effectId": "20403191"
+  },
+  "有猫在": {
+    "name": "有猫在",
+    "resourceId": "6766524065151717901",
+    "effectId": "459290"
+  },
+  "未来黑": {
+    "name": "未来黑",
+    "resourceId": "7081925520866152997",
+    "effectId": "1665065"
+  },
+  "本黑体": {
+    "name": "本黑体",
+    "resourceId": "7200743888816968247",
+    "effectId": "9554613"
+  },
+  "李李体": {
+    "name": "李李体",
+    "resourceId": "7203638484752405053",
+    "effectId": "9893380"
+  },
+  "极简拼音": {
+    "name": "极简拼音",
+    "resourceId": "7070430470667768333",
+    "effectId": "1600484"
+  },
+  "柏青体": {
+    "name": "柏青体",
+    "resourceId": "7187746468785033787",
+    "effectId": "8393133"
+  },
+  "柳公权": {
+    "name": "柳公权",
+    "resourceId": "6852190880837669390",
+    "effectId": "814920"
+  },
+  "梅雨煎茶": {
+    "name": "梅雨煎茶",
+    "resourceId": "7081925245099053604",
+    "effectId": "1665067"
+  },
+  "梦寒体": {
+    "name": "梦寒体",
+    "resourceId": "7290444357499359781",
+    "effectId": "25999021"
+  },
+  "梦想家": {
+    "name": "梦想家",
+    "resourceId": "6914965725543141896",
+    "effectId": "1005688"
+  },
+  "梦桃体": {
+    "name": "梦桃体",
+    "resourceId": "7290444545689391653",
+    "effectId": "25998998"
+  },
+  "梦槐体": {
+    "name": "梦槐体",
+    "resourceId": "7290444451179139641",
+    "effectId": "25998996"
+  },
+  "棘薔薇ホ_ールト": {
+    "name": "棘薔薇ボールド",
+    "resourceId": "7236735801134944823",
+    "effectId": "20403299"
+  },
+  "棘薔薇ライト": {
+    "name": "棘薔薇ライト",
+    "resourceId": "7236735801105584701",
+    "effectId": "20403311"
+  },
+  "楚辰体": {
+    "name": "楚辰体",
+    "resourceId": "7070430593925779981",
+    "effectId": "1600482"
+  },
+  "楷書MCBK1": {
+    "name": "楷書MCBK1",
+    "resourceId": "7246698168547578369",
+    "effectId": "20404083"
+  },
+  "欣然体": {
+    "name": "欣然体",
+    "resourceId": "7068531082265629197",
+    "effectId": "1589146"
+  },
+  "正奇体": {
+    "name": "正奇体",
+    "resourceId": "7290447230488547901",
+    "effectId": "25999005"
+  },
+  "毛笔行楷": {
+    "name": "毛笔行楷",
+    "resourceId": "6912033793700270606",
+    "effectId": "999616"
+  },
+  "毡笔体": {
+    "name": "毡笔体",
+    "resourceId": "7035924520854622757",
+    "effectId": "1459716"
+  },
+  "汇文明朝体": {
+    "name": "汇文明朝体",
+    "resourceId": "7444913491762221577",
+    "effectId": "95241741"
+  },
+  "汉仪英雄体": {
+    "name": "汉仪英雄体",
+    "resourceId": "6740499052644798984",
+    "effectId": "349471"
+  },
+  "汉仪贤二体": {
+    "name": "汉仪贤二体",
+    "resourceId": "7265612201199669816",
+    "effectId": "20379294"
+  },
+  "江户招牌": {
+    "name": "江户招牌",
+    "resourceId": "7080096840875512334",
+    "effectId": "1654205"
+  },
+  "江湖体": {
+    "name": "江湖体",
+    "resourceId": "7080097079397192228",
+    "effectId": "1654203"
+  },
+  "沈尹默": {
+    "name": "沈尹默",
+    "resourceId": "6852190963947803143",
+    "effectId": "814919"
+  },
+  "油性マシ_ック": {
+    "name": "油性マジック",
+    "resourceId": "7236735801076224568",
+    "effectId": "20403341"
+  },
+  "油漆体": {
+    "name": "油漆体",
+    "resourceId": "7035906361040835079",
+    "effectId": "1459392"
+  },
+  "海岛森林_全字符": {
+    "name": "海岛森林-全字符",
+    "resourceId": "7445240658693984805",
+    "effectId": "95365506"
+  },
+  "清刻本悦": {
+    "name": "清刻本悦",
+    "resourceId": "7086429206543864350",
+    "effectId": "1698068"
+  },
+  "清酒体": {
+    "name": "清酒体",
+    "resourceId": "7290445172834308664",
+    "effectId": "25999017"
+  },
+  "渊亭体": {
+    "name": "渊亭体",
+    "resourceId": "7290447006659514941",
+    "effectId": "25999013"
+  },
+  "温宁体": {
+    "name": "温宁体",
+    "resourceId": "7290445705578025529",
+    "effectId": "25998977"
+  },
+  "温柔体": {
+    "name": "温柔体",
+    "resourceId": "7050009415155454500",
+    "effectId": "1511616"
+  },
+  "港风繁体": {
+    "name": "港风繁体",
+    "resourceId": "6740438140432945675",
+    "effectId": "349323"
+  },
+  "游园体": {
+    "name": "游园体",
+    "resourceId": "7290446760739082789",
+    "effectId": "25998988"
+  },
+  "游思体": {
+    "name": "游思体",
+    "resourceId": "7290446655604658748",
+    "effectId": "25998994"
+  },
+  "源ノ角コ_シック": {
+    "name": "源ノ角ゴシック",
+    "resourceId": "7236735800992338487",
+    "effectId": "20403397"
+  },
+  "漫语体": {
+    "name": "漫语体",
+    "resourceId": "7081925440264213000",
+    "effectId": "1665066"
+  },
+  "澄月": {
+    "name": "澄月",
+    "resourceId": "7246698168547561986",
+    "effectId": "20404007"
+  },
+  "瀞ノクーケ_ル明朝": {
+    "name": "瀞ノクーゲル明朝",
+    "resourceId": "7236735801088807482",
+    "effectId": "20403339"
+  },
+  "点宋体": {
+    "name": "点宋体",
+    "resourceId": "7080096967543493150",
+    "effectId": "1654204"
+  },
+  "烈金体": {
+    "name": "烈金体",
+    "resourceId": "7043773114546655781",
+    "effectId": "1488714"
+  },
+  "烟波宋": {
+    "name": "烟波宋",
+    "resourceId": "7068531367386026526",
+    "effectId": "1589144"
+  },
+  "爨宝子碑": {
+    "name": "爨宝子碑",
+    "resourceId": "6852191233356337671",
+    "effectId": "814916"
+  },
+  "特黑体": {
+    "name": "特黑体",
+    "resourceId": "6740439840254333443",
+    "effectId": "349329"
+  },
+  "玉轩体": {
+    "name": "玉轩体",
+    "resourceId": "7290446916402287163",
+    "effectId": "25999001"
+  },
+  "玩童体": {
+    "name": "玩童体",
+    "resourceId": "6766524209620324877",
+    "effectId": "459292"
+  },
+  "琉璃宋": {
+    "name": "琉璃宋",
+    "resourceId": "7020719089999942157",
+    "effectId": "1402720"
+  },
+  "瑞意宋": {
+    "name": "瑞意宋",
+    "resourceId": "7130447431891685895",
+    "effectId": "3997461"
+  },
+  "瑶蝶体": {
+    "name": "瑶蝶体",
+    "resourceId": "7290446536050217532",
+    "effectId": "25998987"
+  },
+  "甜甜圈": {
+    "name": "甜甜圈",
+    "resourceId": "7130634783163421215",
+    "effectId": "4009729"
+  },
+  "白舟武骨": {
+    "name": "白舟武骨",
+    "resourceId": "7212913285383852600",
+    "effectId": "10971151"
+  },
+  "目光体": {
+    "name": "目光体",
+    "resourceId": "7035921361348334117",
+    "effectId": "1459640"
+  },
+  "真言体": {
+    "name": "真言体",
+    "resourceId": "7003588300720050696",
+    "effectId": "1349505"
+  },
+  "知夏森林": {
+    "name": "知夏森林",
+    "resourceId": "7224042336223760954",
+    "effectId": "12441415"
+  },
+  "研宋体": {
+    "name": "研宋体",
+    "resourceId": "7130644288047682085",
+    "effectId": "4010355"
+  },
+  "研月体": {
+    "name": "研月体",
+    "resourceId": "7290446001947546149",
+    "effectId": "25998978"
+  },
+  "禅影体": {
+    "name": "禅影体",
+    "resourceId": "7278963576167993916",
+    "effectId": "22902355"
+  },
+  "秀英四号太かな": {
+    "name": "秀英四号太かな",
+    "resourceId": "7246698168543351298",
+    "effectId": "20404005"
+  },
+  "站酷仓耳渔阳体_W02": {
+    "name": "站酷仓耳渔阳体-W02",
+    "resourceId": "7265609366311539237",
+    "effectId": "20379308"
+  },
+  "站酷仓耳渔阳体_W03": {
+    "name": "站酷仓耳渔阳体-W03",
+    "resourceId": "7265610166744125989",
+    "effectId": "20379299"
+  },
+  "站酷仓耳渔阳体_W04": {
+    "name": "站酷仓耳渔阳体-W04",
+    "resourceId": "7265609848438395449",
+    "effectId": "20379307"
+  },
+  "站酷文艺体": {
+    "name": "站酷文艺体",
+    "resourceId": "7265593885475213880",
+    "effectId": "20373100"
+  },
+  "站酷酷黑体": {
+    "name": "站酷酷黑体",
+    "resourceId": "7265609486646121018",
+    "effectId": "20379297"
+  },
+  "童趣体": {
+    "name": "童趣体",
+    "resourceId": "7035888265290846756",
+    "effectId": "1459176"
+  },
+  "竹柏体": {
+    "name": "竹柏体",
+    "resourceId": "7290447547208831544",
+    "effectId": "25998983"
+  },
+  "竹风体": {
+    "name": "竹风体",
+    "resourceId": "7290447605065060901",
+    "effectId": "25998973"
+  },
+  "简中圆": {
+    "name": "简中圆",
+    "resourceId": "7050009066717844005",
+    "effectId": "1511618"
+  },
+  "糯米团": {
+    "name": "糯米团",
+    "resourceId": "6934225430266253837",
+    "effectId": "1053146"
+  },
+  "結月": {
+    "name": "結月",
+    "resourceId": "7013643491003601410",
+    "effectId": "20403297"
+  },
+  "纯真体": {
+    "name": "纯真体",
+    "resourceId": "7045185581772444174",
+    "effectId": "1494870"
+  },
+  "细体": {
+    "name": "细体",
+    "resourceId": "6740511815358222859",
+    "effectId": "349521"
+  },
+  "经典雅黑": {
+    "name": "经典雅黑",
+    "resourceId": "7043775037559542279",
+    "effectId": "1488718"
+  },
+  "综艺体": {
+    "name": "综艺体",
+    "resourceId": "6740499188347310605",
+    "effectId": "349467"
+  },
+  "综艺字": {
+    "name": "综艺字",
+    "resourceId": "7130642664080282149",
+    "effectId": "4010283"
+  },
+  "美佳体": {
+    "name": "美佳体",
+    "resourceId": "7203665054338650685",
+    "effectId": "9898774"
+  },
+  "聚珍体": {
+    "name": "聚珍体",
+    "resourceId": "7203638484752405051",
+    "effectId": "9893381"
+  },
+  "胡晓波男神体": {
+    "name": "胡晓波男神体",
+    "resourceId": "7265612031825285689",
+    "effectId": "20379293"
+  },
+  "胡晓波真帅体": {
+    "name": "胡晓波真帅体",
+    "resourceId": "7265611790313067069",
+    "effectId": "20379292"
+  },
+  "胡晓波骚包体": {
+    "name": "胡晓波骚包体",
+    "resourceId": "7265611912849658429",
+    "effectId": "20379298"
+  },
+  "芋圆体": {
+    "name": "芋圆体",
+    "resourceId": "7039989971796628005",
+    "effectId": "1478272"
+  },
+  "花语手书": {
+    "name": "花语手书",
+    "resourceId": "7081925028773630471",
+    "effectId": "1665069"
+  },
+  "芷云体": {
+    "name": "芷云体",
+    "resourceId": "7290447317247726139",
+    "effectId": "25998979"
+  },
+  "若烟体": {
+    "name": "若烟体",
+    "resourceId": "7290445344557503033",
+    "effectId": "25999000"
+  },
+  "荔枝体": {
+    "name": "荔枝体",
+    "resourceId": "6740498118342611464",
+    "effectId": "349483"
+  },
+  "萌趣体": {
+    "name": "萌趣体",
+    "resourceId": "7045186231122006535",
+    "effectId": "1494868"
+  },
+  "萧疏体": {
+    "name": "萧疏体",
+    "resourceId": "7290445832845791801",
+    "effectId": "25998989"
+  },
+  "蒹葭体": {
+    "name": "蒹葭体",
+    "resourceId": "7290443923556667959",
+    "effectId": "25999014"
+  },
+  "薯条少年": {
+    "name": "薯条少年",
+    "resourceId": "7068530728467698213",
+    "effectId": "1589148"
+  },
+  "蜡笔体": {
+    "name": "蜡笔体",
+    "resourceId": "6932407677234450952",
+    "effectId": "1049208"
+  },
+  "蝉影隶书": {
+    "name": "蝉影隶书",
+    "resourceId": "7045186520738697742",
+    "effectId": "1494867"
+  },
+  "蝶汐体": {
+    "name": "蝶汐体",
+    "resourceId": "7290441304029270587",
+    "effectId": "25999007"
+  },
+  "装甲明朝": {
+    "name": "装甲明朝",
+    "resourceId": "7265536455655559739",
+    "effectId": "20356625"
+  },
+  "解星テ_コール": {
+    "name": "解星デコール",
+    "resourceId": "7236735801088807461",
+    "effectId": "20403335"
+  },
+  "谷槐体": {
+    "name": "谷槐体",
+    "resourceId": "7290442552933618213",
+    "effectId": "25999006"
+  },
+  "谷秋体": {
+    "name": "谷秋体",
+    "resourceId": "7290442742822343205",
+    "effectId": "25999008"
+  },
+  "超级战甲": {
+    "name": "超级战甲",
+    "resourceId": "6970982657576407559",
+    "effectId": "1156412"
+  },
+  "超重要体": {
+    "name": "超重要体",
+    "resourceId": "7203638484752405048",
+    "effectId": "9893378"
+  },
+  "轻吟体": {
+    "name": "轻吟体",
+    "resourceId": "7035927184275411464",
+    "effectId": "1459730"
+  },
+  "轻烟体": {
+    "name": "轻烟体",
+    "resourceId": "7290445091401896507",
+    "effectId": "25998992"
+  },
+  "追光体": {
+    "name": "追光体",
+    "resourceId": "7203638485666763325",
+    "effectId": "9893371"
+  },
+  "造字工房朴月体": {
+    "name": "造字工房朴月体",
+    "resourceId": "7174426619228983816",
+    "effectId": "7046698"
+  },
+  "逸致拼音": {
+    "name": "逸致拼音",
+    "resourceId": "7070430706689643038",
+    "effectId": "1600480"
+  },
+  "醉冬体": {
+    "name": "醉冬体",
+    "resourceId": "7290447667463721531",
+    "effectId": "25998974"
+  },
+  "醉山体": {
+    "name": "醉山体",
+    "resourceId": "7290447771503432250",
+    "effectId": "25998980"
+  },
+  "金陵体": {
+    "name": "金陵体",
+    "resourceId": "7086699209738424840",
+    "effectId": "1698067"
+  },
+  "钟隶体": {
+    "name": "钟隶体",
+    "resourceId": "7290447395433747002",
+    "effectId": "25998975"
+  },
+  "锦瑟体": {
+    "name": "锦瑟体",
+    "resourceId": "7290443998345302586",
+    "effectId": "25999022"
+  },
+  "闘龍": {
+    "name": "闘龍",
+    "resourceId": "7246698168547561985",
+    "effectId": "20403941"
+  },
+  "陈森田": {
+    "name": "陈森田",
+    "resourceId": "6740499585669534215",
+    "effectId": "349461"
+  },
+  "雁兰体": {
+    "name": "雁兰体",
+    "resourceId": "7290446084780855867",
+    "effectId": "25998990"
+  },
+  "雅酷黑简": {
+    "name": "雅酷黑简",
+    "resourceId": "7130640934366089758",
+    "effectId": "4010137"
+  },
+  "霸燃手书": {
+    "name": "霸燃手书",
+    "resourceId": "7045187409960505886",
+    "effectId": "1494865"
+  },
+  "青松体": {
+    "name": "青松体",
+    "resourceId": "7290444911940211237",
+    "effectId": "25998985"
+  },
+  "青翼体": {
+    "name": "青翼体",
+    "resourceId": "7290445024435638842",
+    "effectId": "25998995"
+  },
+  "风铃悠悠": {
+    "name": "风铃悠悠",
+    "resourceId": "6903832640005083655",
+    "effectId": "979898"
+  },
+  "风雅宋": {
+    "name": "风雅宋",
+    "resourceId": "7208056673317950011",
+    "effectId": "10379505"
+  },
+  "飒爽手写": {
+    "name": "飒爽手写",
+    "resourceId": "7054125855676568095",
+    "effectId": "1530070"
+  },
+  "飞扬行书": {
+    "name": "飞扬行书",
+    "resourceId": "7035922620969128479",
+    "effectId": "1459678"
+  },
+  "飞驰体": {
+    "name": "飞驰体",
+    "resourceId": "7045186745100407310",
+    "effectId": "1494866"
+  },
+  "高字标志黑": {
+    "name": "高字标志黑",
+    "resourceId": "7268259518427959866",
+    "effectId": "20885841"
+  },
+  "高字湘黑体": {
+    "name": "高字湘黑体",
+    "resourceId": "7268259657167147577",
+    "effectId": "20885842"
+  },
+  "魏碑体": {
+    "name": "魏碑体",
+    "resourceId": "7035925927364137480",
+    "effectId": "1459722"
+  },
+  "鲁迅行书": {
+    "name": "鲁迅行书",
+    "resourceId": "6852191147230499341",
+    "effectId": "814917"
+  },
+  "鸿朗体": {
+    "name": "鸿朗体",
+    "resourceId": "7290443206641062456",
+    "effectId": "25999020"
+  },
+  "鸿潮榜书": {
+    "name": "鸿潮榜书",
+    "resourceId": "7080096689553412615",
+    "effectId": "1654206"
+  },
+  "黄令东齐伋复刻体": {
+    "name": "黄令东齐伋复刻体",
+    "resourceId": "7265535655105532476",
+    "effectId": "20356605"
+  },
+  "黄油体": {
+    "name": "黄油体",
+    "resourceId": "7265594455246246456",
+    "effectId": "20373099"
+  },
+  "黄金时代": {
+    "name": "黄金时代",
+    "resourceId": "7050010418932093471",
+    "effectId": "1511614"
+  },
+  "黎首体": {
+    "name": "黎首体",
+    "resourceId": "7290444159842783803",
+    "effectId": "25999009"
+  },
+  "黒明朝": {
+    "name": "黒明朝",
+    "resourceId": "7246698169310908930",
+    "effectId": "20404021"
+  },
+  "默陌手写": {
+    "name": "默陌手写",
+    "resourceId": "7025886295524119053",
+    "effectId": "1424938"
+  },
+  "검": {
+    "name": "검",
+    "resourceId": "6841117522335371789",
+    "effectId": "20402365"
+  },
+  "검은_고딕체": {
+    "name": "검은 고딕체",
+    "resourceId": "6808056243958059534",
+    "effectId": "20402283"
+  },
+  "고딕": {
+    "name": "고딕",
+    "resourceId": "6841143710177038856",
+    "effectId": "20402461"
+  },
+  "고딕체": {
+    "name": "고딕체",
+    "resourceId": "6808056385679397389",
+    "effectId": "20402279"
+  },
+  "귀염": {
+    "name": "귀염",
+    "resourceId": "6841117240457171470",
+    "effectId": "20402361"
+  },
+  "나눔_명조체": {
+    "name": "나눔 명조체",
+    "resourceId": "6808057418866496014",
+    "effectId": "20402271"
+  },
+  "낭만": {
+    "name": "낭만",
+    "resourceId": "6841119058838950414",
+    "effectId": "20402441"
+  },
+  "로맨틱가이": {
+    "name": "로맨틱가이",
+    "resourceId": "6808056744258834952",
+    "effectId": "20402275"
+  },
+  "로봇": {
+    "name": "로봇",
+    "resourceId": "6841119449815192071",
+    "effectId": "20402445"
+  },
+  "룬": {
+    "name": "룬",
+    "resourceId": "6841118098964091405",
+    "effectId": "20402401"
+  },
+  "버터": {
+    "name": "버터",
+    "resourceId": "6841119192150708744",
+    "effectId": "20402443"
+  },
+  "성냥개비": {
+    "name": "성냥개비",
+    "resourceId": "6841118217641923085",
+    "effectId": "20402431"
+  },
+  "소나무": {
+    "name": "소나무",
+    "resourceId": "6841116992846434829",
+    "effectId": "20402359"
+  },
+  "시트콤": {
+    "name": "시트콤",
+    "resourceId": "6841116836445032974",
+    "effectId": "20402357"
+  },
+  "십대": {
+    "name": "십대",
+    "resourceId": "6841117356756832776",
+    "effectId": "20402363"
+  },
+  "아기": {
+    "name": "아기",
+    "resourceId": "6808056941458231815",
+    "effectId": "645451"
+  },
+  "아이": {
+    "name": "아이",
+    "resourceId": "6841118486639415822",
+    "effectId": "20402433"
+  },
+  "유행": {
+    "name": "유행",
+    "resourceId": "6841117979371901454",
+    "effectId": "20402399"
+  },
+  "이야기": {
+    "name": "이야기",
+    "resourceId": "6841118628025209358",
+    "effectId": "20402435"
+  },
+  "전통": {
+    "name": "전통",
+    "resourceId": "6808056067201700360",
+    "effectId": "20402311"
+  },
+  "초승달": {
+    "name": "초승달",
+    "resourceId": "6841117705538376205",
+    "effectId": "20402369"
+  },
+  "추사체": {
+    "name": "추사체",
+    "resourceId": "6808057229309121038",
+    "effectId": "20402301"
+  },
+  "커피": {
+    "name": "커피",
+    "resourceId": "6841118775186559495",
+    "effectId": "20402437"
+  },
+  "필기": {
+    "name": "필기",
+    "resourceId": "6766523918946669069",
+    "effectId": "459288"
+  },
+  "한드": {
+    "name": "한드",
+    "resourceId": "6841118889850442254",
+    "effectId": "20402439"
+  },
+  "행복": {
+    "name": "행복",
+    "resourceId": "6841151352597385735",
+    "effectId": "20402465"
+  },
+  "흑백만": {
+    "name": "흑백만",
+    "resourceId": "6841116695759688205",
+    "effectId": "20402327"
+  },
+  "アドゴッシク": {
+    "name": "ｱﾄﾞｺﾞｯｼｸ",
+    "resourceId": "6841482093025825288",
+    "effectId": "20403099"
+  },
+  "オーバーラップ": {
+    "name": "ｵｰﾊﾞｰﾗｯﾌﾟ",
+    "resourceId": "6841482806573404680",
+    "effectId": "20403059"
+  },
+  "スクリプト": {
+    "name": "ｽｸﾘﾌﾟﾄ",
+    "resourceId": "6841483289438458381",
+    "effectId": "20403035"
+  },
+  "セリフ太字": {
+    "name": "ｾﾘﾌ太字",
+    "resourceId": "7020729846334493215",
+    "effectId": "1402800"
+  },
+  "セリフライト": {
+    "name": "ｾﾘﾌﾗｲﾄ",
+    "resourceId": "6841481513985380872",
+    "effectId": "20403113"
+  },
+  "モーダ太字": {
+    "name": "ﾓｰﾀﾞ太字",
+    "resourceId": "6841481374243754510",
+    "effectId": "20403121"
+  },
+  "モーダライト": {
+    "name": "ﾓｰﾀﾞﾗｲﾄ",
+    "resourceId": "6841480712739099150",
+    "effectId": "20403133"
+  },
+  "レギュラー": {
+    "name": "ﾚｷﾞｭﾗｰ",
+    "resourceId": "6841482701082464776",
+    "effectId": "20403061"
+  },
+  "Aa之云体": {
+    "name": "Aa之云体",
+    "resourceId": "7501533851718521394",
+    "effectId": "115474299"
+  },
+  "Aa乌日莫": {
+    "name": "Aa乌日莫",
+    "resourceId": "7501234570835006003",
+    "effectId": "115375585"
+  },
+  "Aa人间蹉跎": {
+    "name": "Aa人间蹉跎",
+    "resourceId": "7501532931635024434",
+    "effectId": "115473709"
+  },
+  "Aa全息黑体": {
+    "name": "Aa全息黑体",
+    "resourceId": "7497891126481785381",
+    "effectId": "114156127"
+  },
+  "Aa刃黑体": {
+    "name": "Aa刃黑体",
+    "resourceId": "7497895571210900005",
+    "effectId": "114159648"
+  },
+  "Aa剑豪体": {
+    "name": "Aa剑豪体",
+    "resourceId": "7501261456420114981",
+    "effectId": "115395999"
+  },
+  "Aa动员宋": {
+    "name": "Aa动员宋",
+    "resourceId": "7501238408837075483",
+    "effectId": "115377308"
+  },
+  "Aa勘亭流": {
+    "name": "Aa勘亭流",
+    "resourceId": "7501211609050649115",
+    "effectId": "115360771"
+  },
+  "Aa厚底黑": {
+    "name": "Aa厚底黑",
+    "resourceId": "7174431250067755577",
+    "effectId": "7047541"
+  },
+  "Aa古线体": {
+    "name": "Aa古线体",
+    "resourceId": "7501211793906209331",
+    "effectId": "115360774"
+  },
+  "Aa台灣漢字心動信號_简繁": {
+    "name": "Aa台灣漢字心動信號（简繁）",
+    "resourceId": "7497889331973984805",
+    "effectId": "114154846"
+  },
+  "Aa封神榜书": {
+    "name": "Aa封神榜书",
+    "resourceId": "7501235311461012018",
+    "effectId": "115375582"
+  },
+  "Aa小星星": {
+    "name": "Aa小星星",
+    "resourceId": "7501533449530905114",
+    "effectId": "115474013"
+  },
+  "Aa居酒屋": {
+    "name": "Aa居酒屋",
+    "resourceId": "7501539460945809957",
+    "effectId": "115478734"
+  },
+  "Aa巴洛克": {
+    "name": "Aa巴洛克",
+    "resourceId": "7501235648557224498",
+    "effectId": "115375583"
+  },
+  "Aa幻想": {
+    "name": "Aa幻想",
+    "resourceId": "7501533252969042470",
+    "effectId": "115473869"
+  },
+  "Aa德古拉简": {
+    "name": "Aa德古拉简",
+    "resourceId": "7497898575926399498",
+    "effectId": "114171804"
+  },
+  "Aa放放隶书": {
+    "name": "Aa放放隶书",
+    "resourceId": "7497890527145103881",
+    "effectId": "114155759"
+  },
+  "Aa新华墨竹体": {
+    "name": "Aa新华墨竹体",
+    "resourceId": "7497893640140755494",
+    "effectId": "114158131"
+  },
+  "Aa新华惊马体": {
+    "name": "Aa新华惊马体",
+    "resourceId": "7501238774051902002",
+    "effectId": "115377540"
+  },
+  "Aa新怪谈": {
+    "name": "Aa新怪谈",
+    "resourceId": "7501235484727710246",
+    "effectId": "115375584"
+  },
+  "Aa方块黑": {
+    "name": "Aa方块黑",
+    "resourceId": "7497893873037873714",
+    "effectId": "114158130"
+  },
+  "Aa未央宫词": {
+    "name": "Aa未央宫词",
+    "resourceId": "7497892647986532914",
+    "effectId": "114157130"
+  },
+  "Aa杜康手书": {
+    "name": "Aa杜康手书",
+    "resourceId": "7501262679810511370",
+    "effectId": "115396001"
+  },
+  "Aa欢乐堡": {
+    "name": "Aa欢乐堡",
+    "resourceId": "7501235116673339954",
+    "effectId": "115375586"
+  },
+  "Aa水玉圆体": {
+    "name": "Aa水玉圆体",
+    "resourceId": "7501211417521951270",
+    "effectId": "115360773"
+  },
+  "Aa浮梦体": {
+    "name": "Aa浮梦体",
+    "resourceId": "7501212180285493787",
+    "effectId": "115360769"
+  },
+  "Aa海豹体": {
+    "name": "Aa海豹体",
+    "resourceId": "7501212376713138698",
+    "effectId": "115360770"
+  },
+  "Aa清欢圆体": {
+    "name": "Aa清欢圆体",
+    "resourceId": "7497893259797074441",
+    "effectId": "114158127"
+  },
+  "Aa漆书": {
+    "name": "Aa漆书",
+    "resourceId": "7497890203277726235",
+    "effectId": "114155607"
+  },
+  "Aa烈焰隶书": {
+    "name": "Aa烈焰隶书",
+    "resourceId": "7501239212855792165",
+    "effectId": "115378827"
+  },
+  "Aa狂派手书": {
+    "name": "Aa狂派手书",
+    "resourceId": "7501260939212100146",
+    "effectId": "115396002"
+  },
+  "Aa疏漫宋": {
+    "name": "Aa疏漫宋",
+    "resourceId": "7497897887477535242",
+    "effectId": "114171805"
+  },
+  "Aa百物语": {
+    "name": "Aa百物语",
+    "resourceId": "7501234966815052339",
+    "effectId": "115375580"
+  },
+  "Aa祝融隶": {
+    "name": "Aa祝融隶",
+    "resourceId": "7501262524466074121",
+    "effectId": "115396000"
+  },
+  "Aa简正隶黑": {
+    "name": "Aa简正隶黑",
+    "resourceId": "7501238583911518729",
+    "effectId": "115377425"
+  },
+  "Aa芥末墩": {
+    "name": "Aa芥末墩",
+    "resourceId": "7501234746416960050",
+    "effectId": "115375581"
+  },
+  "Aa菊花体": {
+    "name": "Aa菊花体",
+    "resourceId": "7497894073559159323",
+    "effectId": "114158129"
+  },
+  "Aa融融宋": {
+    "name": "Aa融融宋",
+    "resourceId": "7501238214691131930",
+    "effectId": "115377151"
+  },
+  "Aa西风手书": {
+    "name": "Aa西风手书",
+    "resourceId": "7497891525213295114",
+    "effectId": "114156355"
+  },
+  "Aa跃然体": {
+    "name": "Aa跃然体",
+    "resourceId": "7501262110492463625",
+    "effectId": "115395996"
+  },
+  "Aa醒狮体": {
+    "name": "Aa醒狮体",
+    "resourceId": "7501260756655018533",
+    "effectId": "115395997"
+  },
+  "Aa金石体": {
+    "name": "Aa金石体",
+    "resourceId": "7497891337044234789",
+    "effectId": "114156237"
+  },
+  "Aa锐智体": {
+    "name": "Aa锐智体",
+    "resourceId": "7501238022352933413",
+    "effectId": "115377035"
+  },
+  "Aa锐甲黑": {
+    "name": "Aa锐甲黑",
+    "resourceId": "7497896024078291482",
+    "effectId": "114159647"
+  },
+  "Aa锐雅体": {
+    "name": "Aa锐雅体",
+    "resourceId": "7497896536597074483",
+    "effectId": "114159649"
+  },
+  "Aa镁宋": {
+    "name": "Aa镁宋",
+    "resourceId": "7497898052825387530",
+    "effectId": "114171803"
+  },
+  "Aa闲云体": {
+    "name": "Aa闲云体",
+    "resourceId": "7501261128207438386",
+    "effectId": "115396003"
+  },
+  "Aa霸道楷": {
+    "name": "Aa霸道楷",
+    "resourceId": "7501210878839099930",
+    "effectId": "115360768"
+  },
+  "Aa顽宋": {
+    "name": "Aa顽宋",
+    "resourceId": "7497896719514866203",
+    "effectId": "114159645"
+  },
+  "Aa鲸潮体": {
+    "name": "Aa鲸潮体",
+    "resourceId": "7501261289486815795",
+    "effectId": "115395998"
+  },
+  "Aa鹅卵石": {
+    "name": "Aa鹅卵石",
+    "resourceId": "7497894333161411098",
+    "effectId": "114158128"
+  },
+  "Aa麟兰宋": {
+    "name": "Aa麟兰宋",
+    "resourceId": "7497896347551404595",
+    "effectId": "114159646"
+  },
+  "Aa龙象体": {
+    "name": "Aa龙象体",
+    "resourceId": "7501211164332790298",
+    "effectId": "115360772"
+  },
+  "Atomic_Marker": {
+    "name": "Atomic-Marker",
+    "resourceId": "7490531359736205834",
+    "effectId": "111804574"
+  },
+  "Awelier": {
+    "name": "Awelier",
+    "resourceId": "7491984624688566835",
+    "effectId": "112259365"
+  },
+  "CC_Captial": {
+    "name": "CC-Captial",
+    "resourceId": "7418508570066424330",
+    "effectId": "84086581"
+  },
+  "CC_Chubby": {
+    "name": "CC-Chubby",
+    "resourceId": "7481130667518988850",
+    "effectId": "108570272"
+  },
+  "CC_Decocut": {
+    "name": "CC-Decocut",
+    "resourceId": "7419969356659954214",
+    "effectId": "84566362"
+  },
+  "CC_DerStil": {
+    "name": "CC-DerStil",
+    "resourceId": "7481130779821478426",
+    "effectId": "108570258"
+  },
+  "CC_Element": {
+    "name": "CC-Element",
+    "resourceId": "7416649778416587274",
+    "effectId": "83388253"
+  },
+  "CC_Fluffy": {
+    "name": "CC-Fluffy",
+    "resourceId": "7412942953905132049",
+    "effectId": "82112759"
+  },
+  "CC_Fusion": {
+    "name": "CC-Fusion",
+    "resourceId": "7441202923708617227",
+    "effectId": "93510805"
+  },
+  "CC_Glee": {
+    "name": "CC-Glee",
+    "resourceId": "7428153662695805478",
+    "effectId": "87224070"
+  },
+  "CC_Loopy_Letters": {
+    "name": "CC-Loopy Letters",
+    "resourceId": "7484186924291199526",
+    "effectId": "109692383"
+  },
+  "CC_Manga": {
+    "name": "CC-Manga",
+    "resourceId": "7484175941208379914",
+    "effectId": "109692410"
+  },
+  "CC_Moderno": {
+    "name": "CC-Moderno",
+    "resourceId": "7444152681741947403",
+    "effectId": "94915234"
+  },
+  "CC_MonoCut": {
+    "name": "CC-MonoCut",
+    "resourceId": "7416261331872911881",
+    "effectId": "83245166"
+  },
+  "CC_Piston": {
+    "name": "CC-Piston",
+    "resourceId": "7414496688611529255",
+    "effectId": "82624536"
+  },
+  "CC_Rapid": {
+    "name": "CC-Rapid",
+    "resourceId": "7434004568716874259",
+    "effectId": "89156910"
+  },
+  "CC_UltraMass": {
+    "name": "CC-UltraMass",
+    "resourceId": "7481130884687467046",
+    "effectId": "108570236"
+  },
+  "CC_Vita": {
+    "name": "CC-Vita",
+    "resourceId": "7419969457788817929",
+    "effectId": "84566385"
+  },
+  "CC_lemon": {
+    "name": "CC-lemon",
+    "resourceId": "7484188078546883082",
+    "effectId": "109692355"
+  },
+  "Clostan": {
+    "name": "Clostan",
+    "resourceId": "7491985061500162598",
+    "effectId": "112259661"
+  },
+  "Gildan": {
+    "name": "Gildan",
+    "resourceId": "7491984485504782874",
+    "effectId": "112260846"
+  },
+  "Gildan_It": {
+    "name": "Gildan-It",
+    "resourceId": "7491984248069427750",
+    "effectId": "112259122"
+  },
+  "JYruantang": {
+    "name": "JYruantang",
+    "resourceId": "7451897289527792178",
+    "effectId": "98222876"
+  },
+  "JYshiduo": {
+    "name": "JYshiduo",
+    "resourceId": "7451897058371310117",
+    "effectId": "98222874"
+  },
+  "JYzhuqingting": {
+    "name": "JYzhuqingting",
+    "resourceId": "7451897479320048166",
+    "effectId": "98222875"
+  },
+  "Mellow": {
+    "name": "Mellow",
+    "resourceId": "7491984798026568218",
+    "effectId": "112259480"
+  },
+  "Merry_Christmas": {
+    "name": "Merry Christmas",
+    "resourceId": "7451574186692055578",
+    "effectId": "98103035"
+  },
+  "Morska": {
+    "name": "Morska",
+    "resourceId": "7491984914565304870",
+    "effectId": "112259573"
+  },
+  "MyFont凌渡哥哥简": {
+    "name": "MyFont凌渡哥哥简",
+    "resourceId": "7316825302406009395",
+    "effectId": "36880890"
+  },
+  "MyFont凌渡猪猪简": {
+    "name": "MyFont凌渡猪猪简",
+    "resourceId": "7316826370200310298",
+    "effectId": "36880879"
+  },
+  "Railway_Gank": {
+    "name": "Railway-Gank",
+    "resourceId": "7490534157064344074",
+    "effectId": "111805300"
+  },
+  "Sugary": {
+    "name": "Sugary",
+    "resourceId": "7491984099733672485",
+    "effectId": "112259022"
+  },
+  "Sugary_Dreams_Italic": {
+    "name": "Sugary-Dreams-Italic",
+    "resourceId": "7490531151350600219",
+    "effectId": "111804589"
+  },
+  "Thinker_Alt1": {
+    "name": "Thinker-Alt1",
+    "resourceId": "7490531314752295450",
+    "effectId": "111804584"
+  },
+  "Ugly_Dave_Alternates": {
+    "name": "Ugly-Dave-Alternates",
+    "resourceId": "7490531414392181258",
+    "effectId": "111804564"
+  },
+  "Vogue": {
+    "name": "Vogue",
+    "resourceId": "7491983297870828058",
+    "effectId": "112258561"
+  },
+  "ZY_Amity": {
+    "name": "ZY Amity",
+    "resourceId": "7311977316970664449",
+    "effectId": "34200643"
+  },
+  "ZY_Balloonbillow": {
+    "name": "ZY Balloonbillow",
+    "resourceId": "7353574360667394561",
+    "effectId": "55106512"
+  },
+  "ZY_Blossom": {
+    "name": "ZY Blossom",
+    "resourceId": "7304640684311450113",
+    "effectId": "30910322"
+  },
+  "ZY_Brief": {
+    "name": "ZY Brief",
+    "resourceId": "7311977774799917570",
+    "effectId": "34200651"
+  },
+  "ZY_Classical": {
+    "name": "ZY Classical",
+    "resourceId": "7311977840574992897",
+    "effectId": "34200639"
+  },
+  "ZY_Concise": {
+    "name": "ZY Concise",
+    "resourceId": "7317175365288333826",
+    "effectId": "37544776"
+  },
+  "ZY_Coruscant": {
+    "name": "ZY Coruscant",
+    "resourceId": "7302355236243378689",
+    "effectId": "30000836"
+  },
+  "ZY_Courage": {
+    "name": "ZY Courage",
+    "resourceId": "7304640798488793602",
+    "effectId": "30910326"
+  },
+  "ZY_Daisy": {
+    "name": "ZY Daisy",
+    "resourceId": "7302355415038169601",
+    "effectId": "30000858"
+  },
+  "ZY_Dots_Art": {
+    "name": "ZY Dots Art",
+    "resourceId": "7407288650473411088",
+    "effectId": "80464454"
+  },
+  "ZY_Elegant_Black": {
+    "name": "ZY Elegant-Black",
+    "resourceId": "7324166053649453570",
+    "effectId": "40250742"
+  },
+  "ZY_Elixir": {
+    "name": "ZY Elixir",
+    "resourceId": "7302355533313348097",
+    "effectId": "30000844"
+  },
+  "ZY_Fabulous": {
+    "name": "ZY Fabulous",
+    "resourceId": "7302355634538680833",
+    "effectId": "30000832"
+  },
+  "ZY_Fantasy": {
+    "name": "ZY Fantasy",
+    "resourceId": "7350189137770582529",
+    "effectId": "53177510"
+  },
+  "ZY_Flexible": {
+    "name": "ZY Flexible",
+    "resourceId": "7320169752465248769",
+    "effectId": "38698722"
+  },
+  "ZY_Flourishing_Italic": {
+    "name": "ZY Flourishing-Italic",
+    "resourceId": "7330606083335000577",
+    "effectId": "43287756"
+  },
+  "ZY_Fortitude": {
+    "name": "ZY Fortitude",
+    "resourceId": "7330160852353421825",
+    "effectId": "43041469"
+  },
+  "ZY_Genial": {
+    "name": "ZY Genial",
+    "resourceId": "7343835314105881090",
+    "effectId": "49626244"
+  },
+  "ZY_Harmony": {
+    "name": "ZY Harmony",
+    "resourceId": "7311977407244669441",
+    "effectId": "34200663"
+  },
+  "ZY_Ingenious": {
+    "name": "ZY Ingenious",
+    "resourceId": "7332772999801606657",
+    "effectId": "44370268"
+  },
+  "ZY_Kindly_Breeze": {
+    "name": "ZY Kindly Breeze",
+    "resourceId": "7407289076090409489",
+    "effectId": "80464440"
+  },
+  "ZY_Loose": {
+    "name": "ZY Loose",
+    "resourceId": "7311977919948001793",
+    "effectId": "34200631"
+  },
+  "ZY_Loyalty": {
+    "name": "ZY Loyalty",
+    "resourceId": "7371704099433091600",
+    "effectId": "66322554"
+  },
+  "ZY_Majestic": {
+    "name": "ZY Majestic",
+    "resourceId": "7322744435404444161",
+    "effectId": "39631829"
+  },
+  "ZY_Modern": {
+    "name": "ZY Modern",
+    "resourceId": "7347670651626328577",
+    "effectId": "51844020"
+  },
+  "ZY_Multiplicity": {
+    "name": "ZY Multiplicity",
+    "resourceId": "7371704261878485521",
+    "effectId": "66322523"
+  },
+  "ZY_Pace": {
+    "name": "ZY Pace",
+    "resourceId": "7311978000008876546",
+    "effectId": "34200623"
+  },
+  "ZY_Panacea": {
+    "name": "ZY Panacea",
+    "resourceId": "7302355742936273410",
+    "effectId": "30000850"
+  },
+  "ZY_Relax": {
+    "name": "ZY Relax",
+    "resourceId": "7311977487469122049",
+    "effectId": "34200615"
+  },
+  "ZY_Rhythm": {
+    "name": "ZY Rhythm",
+    "resourceId": "7311978076647199233",
+    "effectId": "34200633"
+  },
+  "ZY_Slender": {
+    "name": "ZY Slender",
+    "resourceId": "7311977578821063170",
+    "effectId": "34200655"
+  },
+  "ZY_Spunk": {
+    "name": "ZY Spunk",
+    "resourceId": "7304640886703395329",
+    "effectId": "30910324"
+  },
+  "ZY_Squiggle": {
+    "name": "ZY Squiggle",
+    "resourceId": "7371704357009494529",
+    "effectId": "66322535"
+  },
+  "ZY_Starry": {
+    "name": "ZY Starry",
+    "resourceId": "7304640983893807618",
+    "effectId": "31942077"
+  },
+  "ZY_Steady": {
+    "name": "ZY Steady",
+    "resourceId": "7340237950094938625",
+    "effectId": "48055822"
+  },
+  "ZY_Tactful": {
+    "name": "ZY Tactful",
+    "resourceId": "7343835205418881537",
+    "effectId": "49626266"
+  },
+  "ZY_Timing": {
+    "name": "ZY Timing",
+    "resourceId": "7304641084833927682",
+    "effectId": "30910320"
+  },
+  "ZY_Trend": {
+    "name": "ZY Trend",
+    "resourceId": "7347670845185069569",
+    "effectId": "51844010"
+  },
+  "ZY_Upright": {
+    "name": "ZY Upright",
+    "resourceId": "7394802257847390737",
+    "effectId": "76415424"
+  },
+  "ZY_Vigour": {
+    "name": "ZY Vigour",
+    "resourceId": "7340906771109646849",
+    "effectId": "48332840"
+  },
+  "ZY_Vision": {
+    "name": "ZY Vision",
+    "resourceId": "7340906978828358145",
+    "effectId": "48332846"
+  },
+  "ZYLAA_Demure": {
+    "name": "ZYLAA Demure",
+    "resourceId": "7313895257991549442",
+    "effectId": "35459490"
+  },
+  "ZYLAA_Flechazo": {
+    "name": "ZYLAA Flechazo",
+    "resourceId": "7313895610061427201",
+    "effectId": "35459194"
+  },
+  "ZYLAA_Gambol": {
+    "name": "ZYLAA Gambol",
+    "resourceId": "7313895522496942593",
+    "effectId": "35459480"
+  },
+  "ZYLAA_Infinity": {
+    "name": "ZYLAA Infinity",
+    "resourceId": "7313895149266801153",
+    "effectId": "35459464"
+  },
+  "ZYLAA_Serein": {
+    "name": "ZYLAA Serein",
+    "resourceId": "7313895348269748738",
+    "effectId": "35459448"
+  },
+  "ZYLAA_lavender": {
+    "name": "ZYLAA lavender",
+    "resourceId": "7313895433011466754",
+    "effectId": "35459252"
+  },
+  "一笔壹画加油体": {
+    "name": "一笔壹画加油体",
+    "resourceId": "7390218575979483659",
+    "effectId": "74697345"
+  },
+  "一笔壹画潮黑体": {
+    "name": "一笔壹画潮黑体",
+    "resourceId": "7390218461990883876",
+    "effectId": "74696981"
+  },
+  "三极云隶体中": {
+    "name": "三极云隶体中",
+    "resourceId": "7312720330986885642",
+    "effectId": "34549534"
+  },
+  "三极力量体简_粗": {
+    "name": "三极力量体简-粗",
+    "resourceId": "7405555944769196595",
+    "effectId": "79942352"
+  },
+  "三极古拙楷书": {
+    "name": "三极古拙楷书",
+    "resourceId": "7410300778998403610",
+    "effectId": "81318534"
+  },
+  "三极妙漫体": {
+    "name": "三极妙漫体",
+    "resourceId": "7405556011081142822",
+    "effectId": "79942353"
+  },
+  "三极宋黑体超粗": {
+    "name": "三极宋黑体超粗",
+    "resourceId": "7312720224510284326",
+    "effectId": "34549526"
+  },
+  "三极拙墨体": {
+    "name": "三极拙墨体",
+    "resourceId": "7405556255906861605",
+    "effectId": "79942349"
+  },
+  "三极拙隶简体": {
+    "name": "三极拙隶简体",
+    "resourceId": "7312720520011584038",
+    "effectId": "34549528"
+  },
+  "三极极宋超粗": {
+    "name": "三极极宋超粗",
+    "resourceId": "7494187329054052901",
+    "effectId": "112957135"
+  },
+  "三极榜楷简体": {
+    "name": "三极榜楷简体",
+    "resourceId": "7410300778990015027",
+    "effectId": "81318537"
+  },
+  "三极欢乐体": {
+    "name": "三极欢乐体",
+    "resourceId": "7405555876368486939",
+    "effectId": "79942350"
+  },
+  "三极正雅黑粗": {
+    "name": "三极正雅黑粗",
+    "resourceId": "7312720421177004571",
+    "effectId": "34549517"
+  },
+  "三极气泡体": {
+    "name": "三极气泡体",
+    "resourceId": "7405556128832033317",
+    "effectId": "79942351"
+  },
+  "三极泼墨体": {
+    "name": "三极泼墨体",
+    "resourceId": "7405556071848219186",
+    "effectId": "79942347"
+  },
+  "三极活力黑简体_粗": {
+    "name": "三极活力黑简体 粗",
+    "resourceId": "7410300778994209307",
+    "effectId": "81318539"
+  },
+  "三极浓密仙粗": {
+    "name": "三极浓密仙粗",
+    "resourceId": "7312720141865718282",
+    "effectId": "34549529"
+  },
+  "三极湘乡体": {
+    "name": "三极湘乡体",
+    "resourceId": "7410300778994209289",
+    "effectId": "81318538"
+  },
+  "三极纯真体粗": {
+    "name": "三极纯真体粗",
+    "resourceId": "7312719708283736627",
+    "effectId": "34549518"
+  },
+  "三极罗丽黑简体_粗": {
+    "name": "三极罗丽黑简体-粗",
+    "resourceId": "7410300778994209290",
+    "effectId": "81318535"
+  },
+  "三极萌喵简体": {
+    "name": "三极萌喵简体",
+    "resourceId": "7410300778994225674",
+    "effectId": "81318536"
+  },
+  "三极行楷简体_粗": {
+    "name": "三极行楷简体-粗",
+    "resourceId": "7405556194279952905",
+    "effectId": "79942348"
+  },
+  "三极铿锵体": {
+    "name": "三极铿锵体",
+    "resourceId": "7312720059191792154",
+    "effectId": "34549521"
+  },
+  "三极黑宋体中粗": {
+    "name": "三极黑宋体中粗",
+    "resourceId": "7312719852194501158",
+    "effectId": "34549520"
+  },
+  "云书法三行魏碑体": {
+    "name": "云书法三行魏碑体",
+    "resourceId": "7316822178538721830",
+    "effectId": "36880893"
+  },
+  "云书法手书建刚静心楷简": {
+    "name": "云书法手书建刚静心楷简",
+    "resourceId": "7316823183905002010",
+    "effectId": "36880886"
+  },
+  "云书法生如夏花简": {
+    "name": "云书法生如夏花简",
+    "resourceId": "7316822784103944713",
+    "effectId": "36880894"
+  },
+  "云书法罗西硬笔楷书体": {
+    "name": "云书法罗西硬笔楷书体",
+    "resourceId": "7316819473019703859",
+    "effectId": "36880892"
+  },
+  "云书法萨瓦迪卡简": {
+    "name": "云书法萨瓦迪卡简",
+    "resourceId": "7316821586038755877",
+    "effectId": "36880889"
+  },
+  "亦然体": {
+    "name": "亦然体",
+    "resourceId": "7290457372814742073",
+    "effectId": "26003134"
+  },
+  "仓耳丝柔体": {
+    "name": "仓耳丝柔体",
+    "resourceId": "7423616269384946186",
+    "effectId": "85757836"
+  },
+  "仓耳丰黑": {
+    "name": "仓耳丰黑",
+    "resourceId": "7423616269397545499",
+    "effectId": "85757844"
+  },
+  "仓耳体": {
+    "name": "仓耳体",
+    "resourceId": "7423616268759994890",
+    "effectId": "85757842"
+  },
+  "仓耳力士": {
+    "name": "仓耳力士",
+    "resourceId": "7423616269326225946",
+    "effectId": "85757837"
+  },
+  "仓耳明黑": {
+    "name": "仓耳明黑",
+    "resourceId": "7423616269552718345",
+    "effectId": "85757841"
+  },
+  "仓耳曙黑": {
+    "name": "仓耳曙黑",
+    "resourceId": "7423616268755800603",
+    "effectId": "85757840"
+  },
+  "仓耳榜黑": {
+    "name": "仓耳榜黑",
+    "resourceId": "7423616269313643035",
+    "effectId": "85757838"
+  },
+  "仓耳状元楷": {
+    "name": "仓耳状元楷",
+    "resourceId": "7423616268764189222",
+    "effectId": "85757849"
+  },
+  "仓耳视频体": {
+    "name": "仓耳视频体",
+    "resourceId": "7423616269338808841",
+    "effectId": "85757847"
+  },
+  "仓耳趣黑": {
+    "name": "仓耳趣黑",
+    "resourceId": "7423616269397529115",
+    "effectId": "85757839"
+  },
+  "仓耳酷黑": {
+    "name": "仓耳酷黑",
+    "resourceId": "7423616268759994930",
+    "effectId": "85757853"
+  },
+  "优设书华体": {
+    "name": "优设书华体",
+    "resourceId": "7438524730103042599",
+    "effectId": "91065725"
+  },
+  "优设字由棒棒体": {
+    "name": "优设字由棒棒体",
+    "resourceId": "7311914390259765811",
+    "effectId": "34131538"
+  },
+  "优设字美体": {
+    "name": "优设字美体",
+    "resourceId": "7438524940153786934",
+    "effectId": "91065726"
+  },
+  "优设招牌体": {
+    "name": "优设招牌体",
+    "resourceId": "7438524840576815627",
+    "effectId": "91065727"
+  },
+  "修羽体": {
+    "name": "修羽体",
+    "resourceId": "7290456770160366139",
+    "effectId": "26003131"
+  },
+  "凌丝体": {
+    "name": "凌丝体",
+    "resourceId": "7290455877864133157",
+    "effectId": "26003145"
+  },
+  "利飞体": {
+    "name": "利飞体",
+    "resourceId": "7423616268764189193",
+    "effectId": "85757848"
+  },
+  "剪映专辑": {
+    "name": "剪映专辑",
+    "resourceId": "7479022906626806298",
+    "effectId": "107789541"
+  },
+  "剪映云迹": {
+    "name": "剪映云迹",
+    "resourceId": "7502335387969262130",
+    "effectId": "115815828"
+  },
+  "剪映半山海": {
+    "name": "剪映半山海",
+    "resourceId": "7497171321915183625",
+    "effectId": "113931114"
+  },
+  "剪映印章": {
+    "name": "剪映印章",
+    "resourceId": "7499001991096439347",
+    "effectId": "114520924"
+  },
+  "剪映团子": {
+    "name": "剪映团子",
+    "resourceId": "7494617559677800970",
+    "effectId": "113096610"
+  },
+  "剪映圆隶": {
+    "name": "剪映圆隶",
+    "resourceId": "7497162943239295539",
+    "effectId": "113927430"
+  },
+  "剪映手书": {
+    "name": "剪映手书",
+    "resourceId": "7486448265496367625",
+    "effectId": "110450154"
+  },
+  "剪映新年体": {
+    "name": "剪映新年体",
+    "resourceId": "7463380715107783206",
+    "effectId": "102584862"
+  },
+  "剪映春日部": {
+    "name": "剪映春日部",
+    "resourceId": "7481618551309079077",
+    "effectId": "108780445"
+  },
+  "剪映狗爬体": {
+    "name": "剪映狗爬体",
+    "resourceId": "7485673940988203558",
+    "effectId": "110206413"
+  },
+  "剪映细毛笔": {
+    "name": "剪映细毛笔",
+    "resourceId": "7502351067770786341",
+    "effectId": "115825070"
+  },
+  "剪映香蕉": {
+    "name": "剪映香蕉",
+    "resourceId": "7497163735652373018",
+    "effectId": "113927966"
+  },
+  "励字俊林简": {
+    "name": "励字俊林简",
+    "resourceId": "7316745865731772955",
+    "effectId": "36825422"
+  },
+  "励字勇敢黑简_大黑": {
+    "name": "励字勇敢黑简 大黑",
+    "resourceId": "7316817704143295003",
+    "effectId": "36880884"
+  },
+  "励字大黑简繁": {
+    "name": "励字大黑简繁",
+    "resourceId": "7316745335257174578",
+    "effectId": "36825420"
+  },
+  "励字姚体简繁": {
+    "name": "励字姚体简繁",
+    "resourceId": "7316817407664722441",
+    "effectId": "36880881"
+  },
+  "励字小怪兽简": {
+    "name": "励字小怪兽简",
+    "resourceId": "7316747164716110345",
+    "effectId": "36825428"
+  },
+  "励字志向黑简_特粗": {
+    "name": "励字志向黑简 特粗",
+    "resourceId": "7316819223840297481",
+    "effectId": "36880880"
+  },
+  "励字憨憨简": {
+    "name": "励字憨憨简",
+    "resourceId": "7316745679055884837",
+    "effectId": "36825429"
+  },
+  "励字敲可爱简_中粗": {
+    "name": "励字敲可爱简 中粗",
+    "resourceId": "7316746541820023306",
+    "effectId": "36825430"
+  },
+  "励字星宜简": {
+    "name": "励字星宜简",
+    "resourceId": "7316747352956473882",
+    "effectId": "36825423"
+  },
+  "励字玉树临风简": {
+    "name": "励字玉树临风简",
+    "resourceId": "7316818084935766565",
+    "effectId": "36880878"
+  },
+  "励字行楷简繁": {
+    "name": "励字行楷简繁",
+    "resourceId": "7316817018030658075",
+    "effectId": "36880877"
+  },
+  "励字趣石简": {
+    "name": "励字趣石简",
+    "resourceId": "7316746949489594931",
+    "effectId": "36825427"
+  },
+  "励字趣黑简繁": {
+    "name": "励字趣黑简繁",
+    "resourceId": "7316746727430558234",
+    "effectId": "36825424"
+  },
+  "励字逆反差圆舞简_超级黑": {
+    "name": "励字逆反差圆舞简 超级黑",
+    "resourceId": "7316746365185298981",
+    "effectId": "36825426"
+  },
+  "励字造梦简_特粗": {
+    "name": "励字造梦简 特粗",
+    "resourceId": "7316818766493389339",
+    "effectId": "36880891"
+  },
+  "励字隶书简繁": {
+    "name": "励字隶书简繁",
+    "resourceId": "7316746076373914139",
+    "effectId": "36825425"
+  },
+  "华书体": {
+    "name": "华书体",
+    "resourceId": "7290455554504266298",
+    "effectId": "26003140"
+  },
+  "听露体": {
+    "name": "听露体",
+    "resourceId": "7290456595102700089",
+    "effectId": "26003132"
+  },
+  "唧唧国王": {
+    "name": "唧唧国王",
+    "resourceId": "7312719555653014053",
+    "effectId": "34549532"
+  },
+  "壮楷体": {
+    "name": "壮楷体",
+    "resourceId": "7441547528874496539",
+    "effectId": "93697432"
+  },
+  "妙如体": {
+    "name": "妙如体",
+    "resourceId": "7290456177559736889",
+    "effectId": "26003137"
+  },
+  "字由爱驾公路体": {
+    "name": "字由爱驾公路体",
+    "resourceId": "7311912714970862107",
+    "effectId": "34131532"
+  },
+  "字语云黑宋": {
+    "name": "字语云黑宋",
+    "resourceId": "7312719287796371978",
+    "effectId": "34549538"
+  },
+  "字语俊言体": {
+    "name": "字语俊言体",
+    "resourceId": "7495685759022666278",
+    "effectId": "113453150"
+  },
+  "字语叙黑体": {
+    "name": "字语叙黑体",
+    "resourceId": "7495677959626297907",
+    "effectId": "113448754"
+  },
+  "字语叙黑体_中粗": {
+    "name": "字语叙黑体-中粗",
+    "resourceId": "7495667671212495386",
+    "effectId": "113443244"
+  },
+  "字语叙黑体_常规": {
+    "name": "字语叙黑体-常规",
+    "resourceId": "7495679051764339251",
+    "effectId": "113449404"
+  },
+  "字语叙黑体_粗体": {
+    "name": "字语叙黑体-粗体",
+    "resourceId": "7495676881946022451",
+    "effectId": "113448362"
+  },
+  "字语叙黑体_细体": {
+    "name": "字语叙黑体-细体",
+    "resourceId": "7495679735909847589",
+    "effectId": "113449788"
+  },
+  "字语叙黑体_超粗": {
+    "name": "字语叙黑体-超粗",
+    "resourceId": "7495661432017523250",
+    "effectId": "113442102"
+  },
+  "字语古兰体": {
+    "name": "字语古兰体",
+    "resourceId": "7312718551096234523",
+    "effectId": "34549527"
+  },
+  "字语古映体": {
+    "name": "字语古映体",
+    "resourceId": "7495686582133854730",
+    "effectId": "113453641"
+  },
+  "字语咏宋体": {
+    "name": "字语咏宋体",
+    "resourceId": "7312719367769166386",
+    "effectId": "34549533"
+  },
+  "字语咏宏体": {
+    "name": "字语咏宏体",
+    "resourceId": "7312719426845938203",
+    "effectId": "34549522"
+  },
+  "字语咏楷体": {
+    "name": "字语咏楷体",
+    "resourceId": "7312719210373714459",
+    "effectId": "34549530"
+  },
+  "字语嘟嘟体": {
+    "name": "字语嘟嘟体",
+    "resourceId": "7312718329347576347",
+    "effectId": "34549523"
+  },
+  "字语圆体": {
+    "name": "字语圆体",
+    "resourceId": "7495689259223880202",
+    "effectId": "113454943"
+  },
+  "字语康宋体": {
+    "name": "字语康宋体",
+    "resourceId": "7495657467548799515",
+    "effectId": "113436253"
+  },
+  "字语康宋体繁体": {
+    "name": "字语康宋体繁体",
+    "resourceId": "7495691210900640293",
+    "effectId": "113456064"
+  },
+  "字语文乐体": {
+    "name": "字语文乐体",
+    "resourceId": "7495684286788407818",
+    "effectId": "113452362"
+  },
+  "字语文乐体_粗体": {
+    "name": "字语文乐体-粗体",
+    "resourceId": "7495683757769232906",
+    "effectId": "113452063"
+  },
+  "字语文乐体_细体": {
+    "name": "字语文乐体-细体",
+    "resourceId": "7495684762376344091",
+    "effectId": "113452597"
+  },
+  "字语文刻体": {
+    "name": "字语文刻体",
+    "resourceId": "7495683056359969306",
+    "effectId": "113451682"
+  },
+  "字语文熙体": {
+    "name": "字语文熙体",
+    "resourceId": "7495685451823452723",
+    "effectId": "113452995"
+  },
+  "字语文酷体": {
+    "name": "字语文酷体",
+    "resourceId": "7312718751328113162",
+    "effectId": "34549524"
+  },
+  "字语文雅体": {
+    "name": "字语文雅体",
+    "resourceId": "7312718961991225894",
+    "effectId": "34549525"
+  },
+  "字语文韬体": {
+    "name": "字语文韬体",
+    "resourceId": "7312718857334952498",
+    "effectId": "34549539"
+  },
+  "字语文韵体": {
+    "name": "字语文韵体",
+    "resourceId": "7312719046229627402",
+    "effectId": "34549537"
+  },
+  "字语漫雅手书": {
+    "name": "字语漫雅手书",
+    "resourceId": "7495686373119103526",
+    "effectId": "113453534"
+  },
+  "字语萌酱体": {
+    "name": "字语萌酱体",
+    "resourceId": "7495690155840246298",
+    "effectId": "113455471"
+  },
+  "字语软糖体": {
+    "name": "字语软糖体",
+    "resourceId": "7312718629982704166",
+    "effectId": "34549535"
+  },
+  "字语颖黑体": {
+    "name": "字语颖黑体",
+    "resourceId": "7312719121404138021",
+    "effectId": "34549516"
+  },
+  "宜宋": {
+    "name": "宜宋",
+    "resourceId": "7423616269825348122",
+    "effectId": "85757843"
+  },
+  "小可爱体": {
+    "name": "小可爱体",
+    "resourceId": "7423616269267505691",
+    "effectId": "85757845"
+  },
+  "少年南波万": {
+    "name": "少年南波万",
+    "resourceId": "7441547528870302258",
+    "effectId": "93697433"
+  },
+  "山雁体": {
+    "name": "山雁体",
+    "resourceId": "7290456514370736698",
+    "effectId": "26003150"
+  },
+  "幽梦体": {
+    "name": "幽梦体",
+    "resourceId": "7290457477873668666",
+    "effectId": "26003126"
+  },
+  "归雁体": {
+    "name": "归雁体",
+    "resourceId": "7290455353756488247",
+    "effectId": "26003136"
+  },
+  "怜秋体": {
+    "name": "怜秋体",
+    "resourceId": "7290455783932695100",
+    "effectId": "26003139"
+  },
+  "承英体": {
+    "name": "承英体",
+    "resourceId": "7290455103704666679",
+    "effectId": "26003146"
+  },
+  "星汉宋": {
+    "name": "星汉宋",
+    "resourceId": "7423616268764189211",
+    "effectId": "85757834"
+  },
+  "景曜体": {
+    "name": "景曜体",
+    "resourceId": "7290455645264810555",
+    "effectId": "26003133"
+  },
+  "月亮供电不足": {
+    "name": "月亮供电不足",
+    "resourceId": "7312720704959418930",
+    "effectId": "34549519"
+  },
+  "未光体": {
+    "name": "未光体",
+    "resourceId": "7290456683027894839",
+    "effectId": "26003147"
+  },
+  "毛体行楷": {
+    "name": "毛体行楷",
+    "resourceId": "7452649447441306121",
+    "effectId": "98548489"
+  },
+  "毛体行草": {
+    "name": "毛体行草",
+    "resourceId": "7452649545395081755",
+    "effectId": "98548450"
+  },
+  "汉字之美棒棒糖粗简": {
+    "name": "汉字之美棒棒糖粗简",
+    "resourceId": "7316732709747823114",
+    "effectId": "36795730"
+  },
+  "汉字之美玉龙简": {
+    "name": "汉字之美玉龙简",
+    "resourceId": "7316745091178041865",
+    "effectId": "36825421"
+  },
+  "汉字之美郝刚牡丹体简": {
+    "name": "汉字之美郝刚牡丹体简",
+    "resourceId": "7316816467062690330",
+    "effectId": "36880888"
+  },
+  "流苏体": {
+    "name": "流苏体",
+    "resourceId": "7290455967735484987",
+    "effectId": "26003142"
+  },
+  "游乐体": {
+    "name": "游乐体",
+    "resourceId": "7290457554574905914",
+    "effectId": "26003128"
+  },
+  "点字佳楷": {
+    "name": "点字佳楷",
+    "resourceId": "7311912796520714779",
+    "effectId": "34131531"
+  },
+  "点字奇巧": {
+    "name": "点字奇巧",
+    "resourceId": "7311913943188902427",
+    "effectId": "34131533"
+  },
+  "点字小隶书": {
+    "name": "点字小隶书",
+    "resourceId": "7311914134109426203",
+    "effectId": "34131539"
+  },
+  "点字玄真宋": {
+    "name": "点字玄真宋",
+    "resourceId": "7311914225767551498",
+    "effectId": "34131530"
+  },
+  "点字王者风范": {
+    "name": "点字王者风范",
+    "resourceId": "7311914033571959333",
+    "effectId": "34131529"
+  },
+  "点字艺圆": {
+    "name": "点字艺圆",
+    "resourceId": "7311914298060575283",
+    "effectId": "34131536"
+  },
+  "点字青花楷": {
+    "name": "点字青花楷",
+    "resourceId": "7311913734081876506",
+    "effectId": "34131534"
+  },
+  "点字青花隶": {
+    "name": "点字青花隶",
+    "resourceId": "7311913858942112306",
+    "effectId": "34131535"
+  },
+  "烟客体": {
+    "name": "烟客体",
+    "resourceId": "7290457082921226811",
+    "effectId": "26003138"
+  },
+  "爱你是无解命题": {
+    "name": "爱你是无解命题",
+    "resourceId": "7311911945655816730",
+    "effectId": "34131537"
+  },
+  "爱民小楷": {
+    "name": "爱民小楷",
+    "resourceId": "7423616268760011314",
+    "effectId": "85757851"
+  },
+  "玄鸟体": {
+    "name": "玄鸟体",
+    "resourceId": "7290456889668670013",
+    "effectId": "26003129"
+  },
+  "知新体": {
+    "name": "知新体",
+    "resourceId": "7423616268952932902",
+    "effectId": "85757852"
+  },
+  "章鱼小丸子": {
+    "name": "章鱼小丸子",
+    "resourceId": "7423616269254922762",
+    "effectId": "85757850"
+  },
+  "竹言体": {
+    "name": "竹言体",
+    "resourceId": "7423616269850513947",
+    "effectId": "85757835"
+  },
+  "花锦体": {
+    "name": "花锦体",
+    "resourceId": "7290455460186952251",
+    "effectId": "26003144"
+  },
+  "莫雪体": {
+    "name": "莫雪体",
+    "resourceId": "7290456347177390629",
+    "effectId": "26003143"
+  },
+  "蕴行体": {
+    "name": "蕴行体",
+    "resourceId": "7441547528878690867",
+    "effectId": "93697435"
+  },
+  "造字侠今朝醉简": {
+    "name": "造字侠今朝醉简",
+    "resourceId": "7316824086712160806",
+    "effectId": "36880876"
+  },
+  "造字侠寻味江湖简": {
+    "name": "造字侠寻味江湖简",
+    "resourceId": "7316824437930594867",
+    "effectId": "36880883"
+  },
+  "造字侠昊仔简繁": {
+    "name": "造字侠昊仔简繁",
+    "resourceId": "7316823873930924582",
+    "effectId": "36880885"
+  },
+  "造字侠永刚漆书简繁": {
+    "name": "造字侠永刚漆书简繁",
+    "resourceId": "7316824945592373770",
+    "effectId": "36880882"
+  },
+  "造字侠陈坤风行简繁": {
+    "name": "造字侠陈坤风行简繁",
+    "resourceId": "7316823545399480841",
+    "effectId": "36880887"
+  },
+  "锋舞九天": {
+    "name": "锋舞九天",
+    "resourceId": "7423616268764205595",
+    "effectId": "85757854"
+  },
+  "阳华体": {
+    "name": "阳华体",
+    "resourceId": "7290457161887388219",
+    "effectId": "26003127"
+  },
+  "阳煦体": {
+    "name": "阳煦体",
+    "resourceId": "7290457267030200869",
+    "effectId": "26003130"
+  },
+  "雅月体": {
+    "name": "雅月体",
+    "resourceId": "7423616268764189234",
+    "effectId": "85757855"
+  },
+  "雅韵体": {
+    "name": "雅韵体",
+    "resourceId": "7290456990571041340",
+    "effectId": "26003135"
+  },
+  "青印体": {
+    "name": "青印体",
+    "resourceId": "7290456429276697149",
+    "effectId": "26003149"
+  },
+  "青春加糖体": {
+    "name": "青春加糖体",
+    "resourceId": "7441547528874496538",
+    "effectId": "93697434"
+  },
+  "青禾体": {
+    "name": "青禾体",
+    "resourceId": "7423616269275894310",
+    "effectId": "85757846"
+  },
+  "青鸟华光中长宋": {
+    "name": "青鸟华光中长宋",
+    "resourceId": "7410326723805319706",
+    "effectId": "81332681"
+  },
+  "青鸟华光书宋2": {
+    "name": "青鸟华光书宋2",
+    "resourceId": "7410326723780153893",
+    "effectId": "81332684"
+  },
+  "青鸟华光仿宋2": {
+    "name": "青鸟华光仿宋2",
+    "resourceId": "7410326723327185435",
+    "effectId": "81332685"
+  },
+  "青鸟华光大标宋": {
+    "name": "青鸟华光大标宋",
+    "resourceId": "7410326723322974746",
+    "effectId": "81332679"
+  },
+  "青鸟华光报宋2": {
+    "name": "青鸟华光报宋2",
+    "resourceId": "7410326723314586149",
+    "effectId": "81332677"
+  },
+  "青鸟华光标题黑": {
+    "name": "青鸟华光标题黑",
+    "resourceId": "7410326723318780467",
+    "effectId": "81332682"
+  },
+  "青鸟华光楷体2": {
+    "name": "青鸟华光楷体2",
+    "resourceId": "7410326723318780453",
+    "effectId": "81332676"
+  },
+  "青鸟华光粗黑": {
+    "name": "青鸟华光粗黑",
+    "resourceId": "7410326723327169051",
+    "effectId": "81332680"
+  },
+  "青鸟华光细黑": {
+    "name": "青鸟华光细黑",
+    "resourceId": "7410326723792736795",
+    "effectId": "81332678"
+  },
+  "青鸟华光细黑1": {
+    "name": "青鸟华光细黑1",
+    "resourceId": "7410326723796931109",
+    "effectId": "81332673"
+  },
+  "青鸟华光美黑": {
+    "name": "青鸟华光美黑",
+    "resourceId": "7410326723327169034",
+    "effectId": "81332683"
+  },
+  "青鸟华光黑体": {
+    "name": "青鸟华光黑体",
+    "resourceId": "7410326723331363337",
+    "effectId": "81332674"
+  },
+  "青鸟华光黑变": {
+    "name": "青鸟华光黑变",
+    "resourceId": "7410326723322991154",
+    "effectId": "81332672"
+  },
+  "飞鸟集": {
+    "name": "飞鸟集",
+    "resourceId": "7130643143719916069",
+    "effectId": "4010301"
+  },
+  "高字标志圆": {
+    "name": "高字标志圆",
+    "resourceId": "7312720780599497225",
+    "effectId": "34549540"
+  },
+  "鱼太闲躺平体": {
+    "name": "鱼太闲躺平体",
+    "resourceId": "7312720611694875162",
+    "effectId": "34549531"
+  },
+  "鸣翠体": {
+    "name": "鸣翠体",
+    "resourceId": "7290456267212984889",
+    "effectId": "26003148"
+  },
+  "鹿鸣体": {
+    "name": "鹿鸣体",
+    "resourceId": "7290456058328257084",
+    "effectId": "26003141"
+  },
+  "黑糖体": {
+    "name": "黑糖体",
+    "resourceId": "7070430083919385119",
+    "effectId": "1600490"
+  }
+} as const satisfies Record<string, FontMeta>;

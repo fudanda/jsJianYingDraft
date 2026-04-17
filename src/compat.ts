@@ -1,4 +1,5 @@
 import { DraftFolder } from "./draft-folder.js";
+import { ExportFramerate, ExportResolution, JianyingController } from "./jianying-controller.js";
 import { AudioMaterial, CropSettings, VideoMaterial } from "./materials.js";
 import {
   AudioSegment,
@@ -29,6 +30,13 @@ export const Crop_settings = CropSettings;
 export const Video_material = VideoMaterial;
 /** @deprecated Use AudioMaterial instead. */
 export const Audio_material = AudioMaterial;
+
+/** @deprecated Use JianyingController instead. */
+export const Jianying_controller = JianyingController;
+/** @deprecated Use ExportResolution instead. */
+export const Export_resolution = ExportResolution;
+/** @deprecated Use ExportFramerate instead. */
+export const Export_framerate = ExportFramerate;
 
 /** @deprecated Use ClipSettings instead. */
 export const Clip_settings = ClipSettings;

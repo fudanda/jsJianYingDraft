@@ -39,3 +39,17 @@ export class ExtensionFailedError extends Error {
     this.name = "ExtensionFailedError";
   }
 }
+
+export class AutomationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "AutomationError";
+  }
+}
+
+export class DraftNotFoundError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "DraftNotFoundError";
+  }
+}

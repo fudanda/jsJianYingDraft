@@ -16,8 +16,10 @@ TypeScript migration of `pyJianYingDraft` with npm packaging support.
 - Preset string shortcuts for audio effects / video-text animations / transitions / masks / mix modes
 - Full metadata preset collections (subpath import): `jsjianyingdraft/metadata`
 - Bundled JianYing draft templates
+- Windows automation export controller: `JianyingController`, `ExportResolution`, `ExportFramerate`
+- Media metadata auto-probing for local files (duration / width / height)
 - Python-style compatibility aliases (`snake_case`) for smoother migration
-- Python-style metadata enum aliases under `jsjianyingdraft/metadata` (for example: `VideoSceneEffectType`, `FilterType`, `TextIntro`)
+- Python-style metadata enum aliases under `jsjianyingdraft/metadata` (for example: `VideoSceneEffectType`, `FilterType`, `TextIntro`, `FontType`)
 
 ## Install
 
@@ -79,13 +81,34 @@ script
   .save();
 ```
 
+## Windows export automation
+
+```ts
+import {
+  ExportFramerate,
+  ExportResolution,
+  JianyingController
+} from "jsjianyingdraft";
+
+const ctrl = new JianyingController();
+ctrl.exportDraft("demo-ts", {
+  outputPath: "D:/exports/demo-ts.mp4",
+  resolution: ExportResolution.RES_1080P,
+  framerate: ExportFramerate.FR_30,
+  timeout: 1200
+});
+```
+
 ## Notes
 
-- Media auto-probing is not included in this first TypeScript batch; pass media duration/size manually.
+- `JianyingController` currently relies on Windows UI automation and is only supported on Windows.
+- Windows automation export flow currently targets JianYing 6.x and below (same limitation as pyJianYingDraft).
+- `VideoMaterial` and `AudioMaterial` now auto-detect media metadata when possible (prefers `ffprobe`, with lightweight fallback parsing for common PNG/JPEG/GIF/BMP images and WAV audio).
+- You can still override detected values manually via constructor options (for example `duration`, `width`, `height`).
 - `addEffect` and `addFilter` now accept either a custom metadata object or a typed preset key (for example: `"vcr"`, `"boom"`, `"lofi2"`).
 - `AudioSegment.addEffect`, `VideoSegment.addAnimation` / `addMask` / `addTransition` / `setMixMode`, and `TextSegment.addAnimation` also accept preset strings (for example: `"echo"`, `"fadeIn"`, `"dissolve"`, `"circle"`, `"screen"`).
 - Text `addEffect()` writes both material refs and `content.styles.effectStyle`, which matches pyJianYingDraft draft behavior more closely.
 - Most core classes/methods also provide deprecated Python-style aliases (for example: `Script_file`, `Draft_folder`, `add_track`, `replace_material_by_seg`) to reduce migration friction.
-- `jsjianyingdraft/metadata` now also exports Python-style enum objects and deprecated snake_case aliases (for example: `VideoSceneEffectType` / `Video_scene_effect_type`).
+- `jsjianyingdraft/metadata` now also exports Python-style enum objects and deprecated snake_case aliases (for example: `VideoSceneEffectType` / `Video_scene_effect_type`, `FontType` / `Font_type`).
 - Full preset catalogs are exported from `jsjianyingdraft/metadata`; import a preset object and pass it to `addEffect` / `addFilter` for any advanced effect name.
 - Metadata presets are auto-generated from `pyJianYingDraft`; regenerate with `npm run generate:metadata`.

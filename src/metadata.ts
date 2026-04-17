@@ -1,5 +1,6 @@
-import type { EffectMeta, VideoEffectType } from "./segment.js";
+import type { EffectMeta, FontMeta, VideoEffectType } from "./segment.js";
 import {
+  GENERATED_FONT_PRESETS,
   GENERATED_FILTER_PRESETS,
   GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS,
   GENERATED_VIDEO_SCENE_EFFECT_PRESETS
@@ -81,6 +82,7 @@ export const VIDEO_CHARACTER_EFFECT_PRESETS = withAliases(
   VIDEO_CHARACTER_ALIASES
 );
 export const FILTER_PRESETS = withAliases(GENERATED_FILTER_PRESETS, FILTER_ALIASES);
+export const FONT_PRESETS = GENERATED_FONT_PRESETS;
 
 // Python metadata enum-style exports for migration friendliness.
 export const VideoSceneEffectType = VIDEO_SCENE_EFFECT_PRESETS;
@@ -98,6 +100,7 @@ export const TextLoopAnim = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", 
 export const TransitionType = TRANSITION_PRESETS;
 export const MaskType = MASK_PRESETS;
 export const MixModeType = MIX_MODE_PRESETS;
+export const FontType = FONT_PRESETS;
 
 // Deprecated snake_case compatibility aliases.
 /** @deprecated Use VideoSceneEffectType instead. */
@@ -130,13 +133,17 @@ export const Transition_type = TransitionType;
 export const Mask_type = MaskType;
 /** @deprecated Use MixModeType instead. */
 export const Mix_mode_type = MixModeType;
+/** @deprecated Use FontType instead. */
+export const Font_type = FontType;
 
 export type VideoSceneEffectPresetKey = keyof typeof VIDEO_SCENE_EFFECT_PRESETS;
 export type VideoCharacterEffectPresetKey = keyof typeof VIDEO_CHARACTER_EFFECT_PRESETS;
 export type VideoEffectPresetKey = VideoSceneEffectPresetKey | VideoCharacterEffectPresetKey;
 export type FilterPresetKey = keyof typeof FILTER_PRESETS;
+export type FontPresetKey = keyof typeof FONT_PRESETS;
 export type VideoEffectPresetInput = VideoEffectPresetKey | string;
 export type FilterPresetInput = FilterPresetKey | string;
+export type FontPresetInput = FontPresetKey | string;
 
 export interface ResolvedVideoEffectMeta {
   meta: EffectMeta;
@@ -167,6 +174,12 @@ const filterNameIndex = new Map<string, EffectMeta>();
 for (const [key, meta] of Object.entries(FILTER_PRESETS)) {
   filterNameIndex.set(normalizeName(key), meta);
   filterNameIndex.set(normalizeName(meta.name), meta);
+}
+
+const fontNameIndex = new Map<string, FontMeta>();
+for (const [key, meta] of Object.entries(FONT_PRESETS)) {
+  fontNameIndex.set(normalizeName(key), meta);
+  fontNameIndex.set(normalizeName(meta.name), meta);
 }
 
 export function resolveVideoEffectMeta(effectMeta: EffectMeta | VideoEffectPresetInput): ResolvedVideoEffectMeta {
@@ -208,6 +221,22 @@ export function resolveFilterMeta(filterMeta: EffectMeta | FilterPresetInput): E
     return fromName;
   }
   throw new Error(`Unknown filter preset "${filterMeta}"`);
+}
+
+export function resolveFontMeta(fontMeta: FontMeta | FontPresetInput): FontMeta {
+  if (typeof fontMeta !== "string") {
+    return fontMeta;
+  }
+
+  if (hasOwn(FONT_PRESETS, fontMeta)) {
+    return FONT_PRESETS[fontMeta];
+  }
+
+  const fromName = fontNameIndex.get(normalizeName(fontMeta));
+  if (fromName) {
+    return fromName;
+  }
+  throw new Error(`Unknown font preset "${fontMeta}"`);
 }
 
 export {

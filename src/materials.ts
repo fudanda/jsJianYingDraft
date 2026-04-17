@@ -2,6 +2,8 @@ import { randomUUID } from "node:crypto";
 import { existsSync } from "node:fs";
 import { basename, extname, resolve } from "node:path";
 
+import { probeAudioDurationUs, probeMedia } from "./media-probe.js";
+
 export class CropSettings {
   upperLeftX: number;
   upperLeftY: number;
@@ -67,23 +69,37 @@ export class VideoMaterial {
 
     const ext = extname(absPath).toLowerCase();
     const isImage = [".jpg", ".jpeg", ".png", ".webp", ".bmp", ".gif"].includes(ext);
+    let cachedProbe: ReturnType<typeof probeMedia> | null = null;
+    const getProbe = () => {
+      if (cachedProbe === null) {
+        cachedProbe = probeMedia(absPath);
+      }
+      return cachedProbe;
+    };
 
-    this.materialType = options.materialType ?? (isImage ? "photo" : "video");
+    const inferredType: VideoMaterialType = isImage ? "photo" : "video";
+
+    this.materialType = options.materialType ?? inferredType;
     this.materialName = options.materialName ?? basename(absPath);
     this.materialId = randomUUID().replaceAll("-", "");
     this.localMaterialId = "";
     this.path = absPath;
     this.cropSettings = options.cropSettings ?? new CropSettings();
-    this.width = options.width ?? 1920;
-    this.height = options.height ?? 1080;
+    this.width = options.width ?? getProbe().width ?? 1920;
+    this.height = options.height ?? getProbe().height ?? 1080;
 
     if (options.duration !== undefined) {
       this.duration = Math.round(options.duration);
     } else if (this.materialType === "photo") {
       this.duration = 10_800 * 1_000_000;
     } else {
+      const probedDuration = getProbe().durationUs;
+      if (probedDuration !== null) {
+        this.duration = probedDuration;
+        return;
+      }
       throw new Error(
-        `Video duration is required for "${this.materialName}". Pass duration in microseconds in constructor options.`
+        `Video duration could not be auto-detected for "${this.materialName}". Pass duration in microseconds in constructor options.`
       );
     }
   }
@@ -113,7 +129,7 @@ export class VideoMaterial {
 
 export interface AudioMaterialOptions {
   materialName?: string;
-  duration: number;
+  duration?: number;
 }
 
 export class AudioMaterial {
@@ -122,7 +138,7 @@ export class AudioMaterial {
   path: string;
   duration: number;
 
-  constructor(filePath: string, options: AudioMaterialOptions) {
+  constructor(filePath: string, options: AudioMaterialOptions = {}) {
     const absPath = resolve(filePath);
     if (!existsSync(absPath)) {
       throw new Error(`Cannot find ${absPath}`);
@@ -131,7 +147,21 @@ export class AudioMaterial {
     this.materialName = options.materialName ?? basename(absPath);
     this.materialId = randomUUID().replaceAll("-", "");
     this.path = absPath;
-    this.duration = Math.round(options.duration);
+
+    if (options.duration !== undefined) {
+      this.duration = Math.round(options.duration);
+      return;
+    }
+
+    const probedDuration = probeAudioDurationUs(absPath);
+    if (probedDuration !== null) {
+      this.duration = probedDuration;
+      return;
+    }
+
+    throw new Error(
+      `Audio duration could not be auto-detected for "${this.materialName}". Pass duration in microseconds in constructor options.`
+    );
   }
 
   exportJson(): Record<string, unknown> {

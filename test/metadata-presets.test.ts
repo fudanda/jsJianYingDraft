@@ -15,6 +15,7 @@ import {
   AudioSceneEffectType,
   FILTER_PRESETS,
   FilterType,
+  FONT_PRESETS,
   GroupAnimationType,
   IntroType,
   MASK_PRESETS,
@@ -33,11 +34,14 @@ import {
   VIDEO_ANIMATION_PRESETS,
   VideoCharacterEffectType,
   VIDEO_CHARACTER_EFFECT_PRESETS,
+  FontType,
+  Font_type,
   VideoSceneEffectType,
   VIDEO_SCENE_EFFECT_PRESETS,
   Video_scene_effect_type,
   resolveAudioEffectMeta,
   resolveFilterMeta,
+  resolveFontMeta,
   resolveMaskMeta,
   resolveMixModeMeta,
   resolveTextAnimationMeta,
@@ -68,6 +72,7 @@ describe("metadata presets", () => {
     expect(Object.keys(VIDEO_SCENE_EFFECT_PRESETS).length).toBeGreaterThan(1_090);
     expect(Object.keys(VIDEO_CHARACTER_EFFECT_PRESETS).length).toBeGreaterThan(230);
     expect(Object.keys(FILTER_PRESETS).length).toBeGreaterThan(1_040);
+    expect(Object.keys(FONT_PRESETS).length).toBeGreaterThan(700);
 
     const byDisplayName = resolveVideoEffectMeta("BOOM！");
     expect(byDisplayName.effectType).toBe("face_effect");
@@ -111,9 +116,19 @@ describe("metadata presets", () => {
     expect(TransitionType.dissolve.effectId).toBe(TRANSITION_PRESETS.dissolve.effectId);
     expect(MaskType.circle.resourceType).toBe("circle");
     expect(MixModeType.screen.effectId).toBe(MIX_MODE_PRESETS.screen.effectId);
+    expect(FontType.Anton.resourceId).toBe(FONT_PRESETS.Anton.resourceId);
 
     // snake_case compatibility alias
     expect(Video_scene_effect_type.vcr.effectId).toBe(VideoSceneEffectType.vcr.effectId);
+    expect(Font_type.Anton.resourceId).toBe(FontType.Anton.resourceId);
+  });
+
+  it("resolves font presets by key and display name", () => {
+    expect(resolveFontMeta("Anton").resourceId).toBe(FONT_PRESETS.Anton.resourceId);
+    expect(resolveFontMeta("Anton").name).toBe("Anton");
+    expect(resolveFontMeta("HarmonyOS_Sans_SC_Regular").resourceId).toBe(
+      FONT_PRESETS.HarmonyOS_Sans_SC_Regular.resourceId
+    );
   });
 
   it("resolves scene/character effect preset keys", () => {

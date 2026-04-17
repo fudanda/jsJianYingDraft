@@ -1,5 +1,31 @@
 # jsjianyingdraft
 
+## 0.5.0
+
+### Minor Changes
+
+- Migrate Windows automation export controller from `pyJianYingDraft`.
+
+  - Add `JianyingController` with `getWindow`, `switchToHome`, and `exportDraft`.
+  - Add export enums `ExportResolution` and `ExportFramerate`.
+  - Add migration-friendly snake_case aliases: `Jianying_controller`, `Export_resolution`, `Export_framerate`.
+  - Add `AutomationError` and `DraftNotFoundError` for automation failure mapping.
+  - Add tests and documentation for Windows export automation usage.
+
+- Implement media metadata auto-probing for local materials.
+
+  - `VideoMaterial` now auto-detects `duration`, `width`, and `height` when possible.
+  - `AudioMaterial` now supports omitted `duration` and auto-detects it when possible.
+  - Auto-probing prefers `ffprobe`, with lightweight fallbacks for common image formats (PNG/JPEG/GIF/BMP) and WAV audio.
+  - Constructor options still allow explicit manual overrides.
+
+- Add font metadata compatibility exports for migration from `pyJianYingDraft`.
+
+  - Generate and export full font presets as `FONT_PRESETS` under `jsjianyingdraft/metadata`.
+  - Add Python-style font enum aliases: `FontType` and deprecated `Font_type`.
+  - Add `resolveFontMeta` helper to resolve font presets by key or display name.
+  - Add tests and docs for font metadata compatibility.
+
 ## 0.4.0
 
 ### Minor Changes
