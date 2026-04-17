@@ -53,3 +53,10 @@ export class DraftNotFoundError extends Error {
     this.name = "DraftNotFoundError";
   }
 }
+
+export class ExportTimeoutError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ExportTimeoutError";
+  }
+}

@@ -76,6 +76,37 @@ function pickByProp<
   return output as T;
 }
 
+type EnumLookupMethods<TValue> = {
+  fromName(name: string): TValue;
+  from_name(name: string): TValue;
+};
+
+function normalizeEnumMemberName(name: string): string {
+  return name.toLowerCase().replace(/[\s_]+/g, "");
+}
+
+function withFromNameMethods<T extends Record<string, unknown>>(
+  source: T
+): T & EnumLookupMethods<T[keyof T]> {
+  const output = { ...source } as T & EnumLookupMethods<T[keyof T]>;
+  const index = new Map<string, T[keyof T]>();
+  for (const [key, value] of Object.entries(source) as Array<[string, T[keyof T]]>) {
+    index.set(normalizeEnumMemberName(key), value);
+  }
+
+  const lookup = (name: string): T[keyof T] => {
+    const found = index.get(normalizeEnumMemberName(name));
+    if (found !== undefined) {
+      return found;
+    }
+    throw new Error(`Effect named '${name}' not found`);
+  };
+
+  Object.defineProperty(output, "fromName", { value: lookup, enumerable: false });
+  Object.defineProperty(output, "from_name", { value: lookup, enumerable: false });
+  return output;
+}
+
 export const VIDEO_SCENE_EFFECT_PRESETS = withAliases(GENERATED_VIDEO_SCENE_EFFECT_PRESETS, VIDEO_SCENE_ALIASES);
 export const VIDEO_CHARACTER_EFFECT_PRESETS = withAliases(
   GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS,
@@ -85,22 +116,22 @@ export const FILTER_PRESETS = withAliases(GENERATED_FILTER_PRESETS, FILTER_ALIAS
 export const FONT_PRESETS = GENERATED_FONT_PRESETS;
 
 // Python metadata enum-style exports for migration friendliness.
-export const VideoSceneEffectType = VIDEO_SCENE_EFFECT_PRESETS;
-export const VideoCharacterEffectType = VIDEO_CHARACTER_EFFECT_PRESETS;
-export const FilterType = FILTER_PRESETS;
-export const AudioSceneEffectType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "sound_effect");
-export const ToneEffectType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "tone");
-export const SpeechToSongType = pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "speech_to_song");
-export const IntroType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "in");
-export const OutroType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "out");
-export const GroupAnimationType = pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "group");
-export const TextIntro = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "in");
-export const TextOutro = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "out");
-export const TextLoopAnim = pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "loop");
-export const TransitionType = TRANSITION_PRESETS;
-export const MaskType = MASK_PRESETS;
-export const MixModeType = MIX_MODE_PRESETS;
-export const FontType = FONT_PRESETS;
+export const VideoSceneEffectType = withFromNameMethods(VIDEO_SCENE_EFFECT_PRESETS);
+export const VideoCharacterEffectType = withFromNameMethods(VIDEO_CHARACTER_EFFECT_PRESETS);
+export const FilterType = withFromNameMethods(FILTER_PRESETS);
+export const AudioSceneEffectType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "sound_effect"));
+export const ToneEffectType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "tone"));
+export const SpeechToSongType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "speech_to_song"));
+export const IntroType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "in"));
+export const OutroType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "out"));
+export const GroupAnimationType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "group"));
+export const TextIntro = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "in"));
+export const TextOutro = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "out"));
+export const TextLoopAnim = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "loop"));
+export const TransitionType = withFromNameMethods(TRANSITION_PRESETS);
+export const MaskType = withFromNameMethods(MASK_PRESETS);
+export const MixModeType = withFromNameMethods(MIX_MODE_PRESETS);
+export const FontType = withFromNameMethods(FONT_PRESETS);
 
 // Deprecated snake_case compatibility aliases.
 /** @deprecated Use VideoSceneEffectType instead. */

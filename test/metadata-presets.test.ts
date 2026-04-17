@@ -123,6 +123,20 @@ describe("metadata presets", () => {
     expect(Font_type.Anton.resourceId).toBe(FontType.Anton.resourceId);
   });
 
+  it("supports python-style from_name lookups on enum-style metadata exports", () => {
+    expect(VideoSceneEffectType.from_name("V_C_R").effectId).toBe(VideoSceneEffectType.vcr.effectId);
+    expect(VideoCharacterEffectType.fromName("B O O M").effectId).toBe(VideoCharacterEffectType.boom.effectId);
+    expect(FilterType.from_name("lofi_2").effectId).toBe(FilterType.lofi2.effectId);
+    expect(FontType.from_name("HarmonyOS Sans SC Regular").resourceId).toBe(FontType.HarmonyOS_Sans_SC_Regular.resourceId);
+    expect(TextLoopAnim.from_name("text glitch loop").animationType).toBe("loop");
+
+    // snake_case enum aliases should preserve from_name
+    expect(Video_scene_effect_type.from_name("v c r").effectId).toBe(VideoSceneEffectType.vcr.effectId);
+    expect(Font_type.fromName("anton").resourceId).toBe(FontType.Anton.resourceId);
+
+    expect(() => FilterType.from_name("not_exist")).toThrow();
+  });
+
   it("resolves font presets by key and display name", () => {
     expect(resolveFontMeta("Anton").resourceId).toBe(FONT_PRESETS.Anton.resourceId);
     expect(resolveFontMeta("Anton").name).toBe("Anton");

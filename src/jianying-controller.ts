@@ -1,6 +1,6 @@
 import { spawnSync } from "node:child_process";
 
-import { AutomationError, DraftNotFoundError } from "./errors.js";
+import { AutomationError, DraftNotFoundError, ExportTimeoutError } from "./errors.js";
 
 export enum ExportResolution {
   RES_8K = "8K",
@@ -431,7 +431,7 @@ function Invoke-ExportDraft {
         Start-Sleep -Seconds 1
     }
 
-    throw "AutomationError: 导出超时，时限为 $TimeoutSeconds 秒"
+    throw "ExportTimeout: 导出超时，时限为 $TimeoutSeconds 秒"
 }
 
 try {
@@ -498,6 +498,10 @@ export class JianyingController {
     const draftNotFoundMatch = combined.match(/DraftNotFound:\s*([^\r\n]+)/);
     if (draftNotFoundMatch?.[1]) {
       throw new DraftNotFoundError(draftNotFoundMatch[1]);
+    }
+    const exportTimeoutMatch = combined.match(/ExportTimeout:\s*([^\r\n]+)/);
+    if (exportTimeoutMatch?.[1]) {
+      throw new ExportTimeoutError(exportTimeoutMatch[1]);
     }
 
     const msg = combined.trim() || "Unknown automation error";

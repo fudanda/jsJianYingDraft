@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   AutomationError,
   DraftNotFoundError,
+  ExportTimeoutError,
   Export_framerate,
   Export_resolution,
   ExportFramerate,
@@ -62,6 +63,20 @@ describe("JianyingController", () => {
 
     expect(() => controller.exportDraft("foo")).toThrowError(DraftNotFoundError);
     expect(() => controller.exportDraft("foo")).toThrowError("未找到名为foo的剪映草稿");
+  });
+
+  it("maps ExportTimeout failures to ExportTimeoutError", () => {
+    const controller = new JianyingController({
+      runner: () => ({
+        status: 1,
+        stdout: "",
+        stderr: "ExportTimeout: 导出超时，时限为1200秒"
+      }),
+      skipPlatformCheck: true
+    });
+
+    expect(() => controller.exportDraft("foo")).toThrowError(ExportTimeoutError);
+    expect(() => controller.exportDraft("foo")).toThrowError("导出超时，时限为1200秒");
   });
 
   it("maps other failures to AutomationError", () => {

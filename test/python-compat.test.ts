@@ -17,6 +17,7 @@ import {
   Text_shadow,
   Text_style,
   Timerange,
+  TrackType,
   Track_type,
   Video_material,
   Video_segment,
@@ -102,5 +103,16 @@ describe("python-style compatibility aliases", () => {
     expect(track.check_material_type(audioMaterial)).toBe(true);
     track.process_timerange(0, new Timerange(0, 800_000), Shrink_mode.cutTail, [Extend_mode.cutMaterialTail]);
     expect(track.segments[0]?.duration).toBe(800_000);
+  });
+
+  it("supports TrackType from_name/fromName helpers", () => {
+    expect(TrackType.from_name("video")).toBe(TrackType.video);
+    expect(TrackType.fromName("audio")).toBe(TrackType.audio);
+
+    expect(Track_type.from_name("text")).toBe(Track_type.text);
+    expect(Track_type.fromName("effect")).toBe(Track_type.effect);
+
+    expect(() => TrackType.from_name("VIDEO")).toThrow("Invalid track type: VIDEO");
+    expect(() => Track_type.fromName("unknown")).toThrow("Invalid track type: unknown");
   });
 });

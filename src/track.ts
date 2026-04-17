@@ -18,6 +18,29 @@ export enum TrackType {
   adjust = "adjust"
 }
 
+function isTrackTypeName(name: string): name is TrackType {
+  return (
+    name === TrackType.video ||
+    name === TrackType.audio ||
+    name === TrackType.effect ||
+    name === TrackType.filter ||
+    name === TrackType.sticker ||
+    name === TrackType.text ||
+    name === TrackType.adjust
+  );
+}
+
+export namespace TrackType {
+  export function fromName(name: string): TrackType {
+    if (isTrackTypeName(name)) {
+      return name;
+    }
+    throw new Error(`Invalid track type: ${name}`);
+  }
+
+  export const from_name = fromName;
+}
+
 export const TRACK_META: Record<TrackType, TrackMeta> = {
   [TrackType.video]: { renderIndex: 0, allowModify: true },
   [TrackType.audio]: { renderIndex: 0, allowModify: true },

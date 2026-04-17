@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 
-import { AudioMaterial, VideoMaterial } from "./materials.js";
+import { AudioMaterial, AudioMaterialOptions, VideoMaterial, VideoMaterialOptions } from "./materials.js";
 import {
   AudioEffectPresetInput,
   FilterPresetInput,
@@ -846,6 +846,12 @@ export interface VideoSegmentOptions {
   clipSettings?: ClipSettings;
 }
 
+export interface VideoSegmentPathOptions extends VideoSegmentOptions {
+  materialOptions?: VideoMaterialOptions;
+  /** @deprecated Use materialOptions instead. */
+  material_options?: VideoMaterialOptions;
+}
+
 export interface AddMaskOptions {
   centerX?: number;
   centerY?: number;
@@ -868,7 +874,13 @@ export class VideoSegment extends VisualSegment {
   transition: Transition | null;
   backgroundFilling: BackgroundFilling | null;
 
-  constructor(material: VideoMaterial, targetTimerange: Timerange, options: VideoSegmentOptions = {}) {
+  constructor(material: VideoMaterial, targetTimerange: Timerange, options?: VideoSegmentOptions);
+  constructor(materialPath: string, targetTimerange: Timerange, options?: VideoSegmentPathOptions);
+  constructor(material: VideoMaterial | string, targetTimerange: Timerange, options: VideoSegmentPathOptions = {}) {
+    const resolvedMaterial =
+      typeof material === "string"
+        ? new VideoMaterial(material, options.materialOptions ?? options.material_options ?? {})
+        : material;
     const sourceTimerange = options.sourceTimerange;
     const sourceAndSpeed = sourceTimerange !== undefined && options.speed !== undefined;
 
@@ -886,13 +898,13 @@ export class VideoSegment extends VisualSegment {
       finalSource = new Timerange(0, Math.round(targetTimerange.duration * finalSpeed));
     }
 
-    if (finalSource && finalSource.end > material.duration) {
-      throw new Error(`Source timerange ${finalSource} exceeds material duration (${material.duration})`);
+    if (finalSource && finalSource.end > resolvedMaterial.duration) {
+      throw new Error(`Source timerange ${finalSource} exceeds material duration (${resolvedMaterial.duration})`);
     }
 
     super(
       TrackType.video,
-      material.materialId,
+      resolvedMaterial.materialId,
       finalSource ?? null,
       finalTarget,
       finalSpeed,
@@ -900,8 +912,8 @@ export class VideoSegment extends VisualSegment {
       options.changePitch ?? false,
       options.clipSettings
     );
-    this.materialInstance = material;
-    this.materialSize = [material.width, material.height];
+    this.materialInstance = resolvedMaterial;
+    this.materialSize = [resolvedMaterial.width, resolvedMaterial.height];
     this.fade = null;
     this.effects = [];
     this.filters = [];
@@ -1108,12 +1120,24 @@ export interface AudioSegmentOptions {
   changePitch?: boolean;
 }
 
+export interface AudioSegmentPathOptions extends AudioSegmentOptions {
+  materialOptions?: AudioMaterialOptions;
+  /** @deprecated Use materialOptions instead. */
+  material_options?: AudioMaterialOptions;
+}
+
 export class AudioSegment extends MediaSegment {
   readonly materialInstance: AudioMaterial;
   fade: AudioFade | null;
   effects: AudioEffect[];
 
-  constructor(material: AudioMaterial, targetTimerange: Timerange, options: AudioSegmentOptions = {}) {
+  constructor(material: AudioMaterial, targetTimerange: Timerange, options?: AudioSegmentOptions);
+  constructor(materialPath: string, targetTimerange: Timerange, options?: AudioSegmentPathOptions);
+  constructor(material: AudioMaterial | string, targetTimerange: Timerange, options: AudioSegmentPathOptions = {}) {
+    const resolvedMaterial =
+      typeof material === "string"
+        ? new AudioMaterial(material, options.materialOptions ?? options.material_options ?? {})
+        : material;
     const sourceTimerange = options.sourceTimerange;
     const sourceAndSpeed = sourceTimerange !== undefined && options.speed !== undefined;
 
@@ -1131,20 +1155,20 @@ export class AudioSegment extends MediaSegment {
       finalSource = new Timerange(0, Math.round(targetTimerange.duration * finalSpeed));
     }
 
-    if (finalSource && finalSource.end > material.duration) {
-      throw new Error(`Source timerange ${finalSource} exceeds material duration (${material.duration})`);
+    if (finalSource && finalSource.end > resolvedMaterial.duration) {
+      throw new Error(`Source timerange ${finalSource} exceeds material duration (${resolvedMaterial.duration})`);
     }
 
     super(
       TrackType.audio,
-      material.materialId,
+      resolvedMaterial.materialId,
       finalSource ?? null,
       finalTarget,
       finalSpeed,
       options.volume ?? 1.0,
       options.changePitch ?? false
     );
-    this.materialInstance = material;
+    this.materialInstance = resolvedMaterial;
     this.fade = null;
     this.effects = [];
   }
