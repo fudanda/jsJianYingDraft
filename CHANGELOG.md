@@ -1,5 +1,34 @@
 # jsjianyingdraft
 
+## 0.7.0
+
+### Minor Changes
+
+- 0f9d202: Add migration-friendly path constructors for media segments.
+
+  - `VideoSegment` now supports creating directly from a file path string.
+  - `AudioSegment` now supports creating directly from a file path string.
+  - Add optional segment path constructor media options:
+    - `materialOptions` (recommended)
+    - `material_options` (deprecated alias)
+
+### Patch Changes
+
+- 0f9d202: Add Python-compatible `TrackType.from_name` API.
+
+  - Add `TrackType.from_name(name)` and `TrackType.fromName(name)` helpers.
+  - Keep behavior aligned with pyJianYingDraft: exact name matching for track type strings.
+
+- 0f9d202: Add Python-compatible `from_name` metadata enum lookup APIs.
+
+  - Add `from_name(name)` and `fromName(name)` to Python-style metadata enum exports in `jsjianyingdraft/metadata`.
+  - Support case-insensitive matching while ignoring spaces and underscores.
+
+- 0f9d202: Improve automation export error mapping by introducing a dedicated timeout error.
+
+  - Add `ExportTimeoutError`.
+  - Map controller export timeout failures to `ExportTimeoutError` instead of generic `AutomationError`.
+
 ## 0.6.0
 
 ### Minor Changes
