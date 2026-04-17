@@ -1,0 +1,52 @@
+{
+  "name": "jsjianyingdraft",
+  "version": "0.1.0",
+  "description": "TypeScript JianYing draft generator (migration from pyJianYingDraft)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown src/index.ts --format esm,cjs --dts --sourcemap --clean --out-dir dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish",
+    "check:publint": "publint run --strict",
+    "check:attw": "attw --pack .",
+    "check:release": "npm run clean && npm run build && npm run typecheck && npm run test && npm run check:publint && npm run check:attw",
+    "prepublishOnly": "npm run check:release"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.30.0",
+    "@types/node": "^22.15.18",
+    "publint": "^0.3.18",
+    "rimraf": "^6.0.1",
+    "tsdown": "^0.21.9",
+    "typescript": "^5.8.3",
+    "vitest": "^4.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
