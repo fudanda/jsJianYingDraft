@@ -1,0 +1,4 @@
+interface:
+  display_name: "jsJianYingDraft Assistant"
+  short_description: "Implement JianYing draft workflows with jsjianyingdraft APIs"
+  default_prompt: "Use $js-jianyingdraft to implement or update JianYing draft workflows in this repository."
