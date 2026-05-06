@@ -35,10 +35,10 @@ describe("preset shortcuts", () => {
     const audio = new AudioMaterial(audioPath, { duration: 2_000_000 });
 
     const videoSegment = new VideoSegment(video, new Timerange(0, 1_500_000));
-    videoSegment.addAnimation("渐显").addAnimation("fadeOut").setMixMode("滤色").addMask("circle").addTransition("叠化");
+    videoSegment.addAnimation("渐显").addAnimation("渐隐").setMixMode("滤色").addMask("圆形").addTransition("叠化");
 
     const audioSegment = new AudioSegment(audio, new Timerange(0, 1_500_000));
-    audioSegment.addEffect("回音").addEffect("robotTone");
+    audioSegment.addEffect("回音").addEffect("男生");
 
     const script = new ScriptFile(1920, 1080);
     script.addTrack(TrackType.video).addTrack(TrackType.audio);
@@ -60,7 +60,7 @@ describe("preset shortcuts", () => {
 
   it("supports text animation string presets including loop", () => {
     const textSegment = new TextSegment("hello", new Timerange(0, 1_500_000));
-    textSegment.addAnimation("textFadeIn").addAnimation("渐隐").addAnimation("色差故障");
+    textSegment.addAnimation("卡拉OK").addAnimation("渐隐").addAnimation("VHS");
 
     const script = new ScriptFile(1920, 1080);
     script.addTrack(TrackType.text).addSegment(textSegment);

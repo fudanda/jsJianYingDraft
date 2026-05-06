@@ -56,7 +56,28 @@ Recommended approach:
 
 Example:
 
-- `VideoSceneEffectType.from_name("V_C_R")` -> same as `VideoSceneEffectType.vcr`
+- `VideoSceneEffectType.from_name("V_C_R")` -> same as `VideoSceneEffectType.VCR`
+
+### Breaking: py-style enum members only
+
+Metadata enum member keys now strictly follow py member names. Previous English shortcut keys were removed.
+
+| Removed key | New key |
+| --- | --- |
+| `VideoSceneEffectType.vcr` | `VideoSceneEffectType.VCR` |
+| `VideoCharacterEffectType.boom` | `VideoCharacterEffectType.BOOM` |
+| `FilterType.lofi2` | `FilterType.Lofi_II` |
+| `AudioSceneEffectType.echo` | `AudioSceneEffectType.回音` |
+| `ToneEffectType.maleTone` | `ToneEffectType.男生` |
+| `SpeechToSongType.lofiSong` | `SpeechToSongType.Lofi` |
+| `IntroType.fadeIn` | `IntroType.渐显` |
+| `OutroType.fadeOut` | `OutroType.渐隐` |
+| `GroupAnimationType.split3` | `GroupAnimationType.三分割` |
+| `TextIntro.textFadeIn` | `TextIntro.渐显` |
+| `TextLoopAnim.textGlitchLoop` | `TextLoopAnim.色差故障` |
+| `TransitionType.dissolve` | `TransitionType.叠化` |
+| `MaskType.circle` | `MaskType.圆形` |
+| `MixModeType.screen` | `MixModeType.滤色` |
 
 ### `importSrt` style semantics
 
@@ -116,7 +137,7 @@ script.addSegment(
 script.importSrt("D:/assets/subtitle.srt", "subtitle", {
   textStyle: new TextStyle({ size: 6, autoWrapping: true })
 });
-script.addFilter(FilterType.from_name("lofi_2"), new Timerange(0, 8_000_000), undefined, 70);
+script.addFilter(FilterType.from_name("lofi ii"), new Timerange(0, 8_000_000), undefined, 70);
 
 script.save();
 ```

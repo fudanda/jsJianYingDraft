@@ -1,80 +1,33 @@
-import type { EffectMeta, FontMeta, VideoEffectType } from "./segment.js";
-import {
-  GENERATED_FONT_PRESETS,
-  GENERATED_FILTER_PRESETS,
-  GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS,
-  GENERATED_VIDEO_SCENE_EFFECT_PRESETS
-} from "./metadata.generated.js";
+import type { EffectMeta, FontMeta } from "./segment.js";
+import { GENERATED_FONT_PRESETS } from "./metadata.generated.js";
 import {
   AUDIO_EFFECT_PRESETS,
+  AUDIO_SCENE_EFFECT_PRESETS,
+  FILTER_PRESETS,
   MASK_PRESETS,
   MIX_MODE_PRESETS,
+  SPEECH_TO_SONG_PRESETS,
   TEXT_ANIMATION_PRESETS,
+  TEXT_INTRO_PRESETS,
+  TEXT_LOOP_ANIMATION_PRESETS,
+  TEXT_OUTRO_PRESETS,
+  TONE_EFFECT_PRESETS,
   TRANSITION_PRESETS,
   VIDEO_ANIMATION_PRESETS,
+  VIDEO_CHARACTER_EFFECT_PRESETS,
+  VIDEO_GROUP_ANIMATION_PRESETS,
+  VIDEO_INTRO_PRESETS,
+  VIDEO_OUTRO_PRESETS,
+  VIDEO_SCENE_EFFECT_PRESETS,
   resolveAudioEffectMeta,
+  resolveFilterMeta,
   resolveMaskMeta,
   resolveMixModeMeta,
   resolveTextAnimationMeta,
   resolveTransitionMeta,
-  resolveVideoAnimationMeta
+  resolveVideoAnimationMeta,
+  resolveVideoEffectMeta
 } from "./metadata-lite.js";
-
-const VIDEO_SCENE_ALIASES = {
-  n1998: "_1998",
-  s70: "_70s",
-  dvUi: "DV界面",
-  jvc: "JVC",
-  vcr: "VCR",
-  betamax: "betamax",
-  xSignal: "X_Signal",
-  newYear: "New_Year"
-} as const satisfies Record<string, keyof typeof GENERATED_VIDEO_SCENE_EFFECT_PRESETS>;
-
-const VIDEO_CHARACTER_ALIASES = {
-  boom: "BOOM",
-  x: "X",
-  crash: "crash",
-  hit: "击中",
-  split: "分身",
-  halo1: "光环_I"
-} as const satisfies Record<string, keyof typeof GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS>;
-
-const FILTER_ALIASES = {
-  n1980: "_1980",
-  abg: "ABG",
-  ditto: "Ditto",
-  ke1: "KE1",
-  kv5d: "KV5D",
-  lofi2: "Lofi_II",
-  vhs3: "VHS_III",
-  brightSummer: "亮夏"
-} as const satisfies Record<string, keyof typeof GENERATED_FILTER_PRESETS>;
-
-function withAliases<T extends Record<string, EffectMeta>, A extends Record<string, keyof T>>(
-  source: T,
-  aliases: A
-): T & { [K in keyof A]: T[A[K]] } {
-  const output: Record<string, EffectMeta> = { ...source };
-  for (const [alias, originalKey] of Object.entries(aliases)) {
-    output[alias] = source[originalKey as keyof T] as EffectMeta;
-  }
-  return output as T & { [K in keyof A]: T[A[K]] };
-}
-
-function pickByProp<
-  T extends Record<string, object>,
-  P extends string,
-  V extends string | number | boolean
->(source: T, prop: P, value: V): T {
-  const output: Record<string, object> = {};
-  for (const [key, meta] of Object.entries(source) as Array<[keyof T & string, T[keyof T]]>) {
-    if ((meta as Record<string, unknown>)[prop] === value) {
-      output[key] = meta;
-    }
-  }
-  return output as T;
-}
 
 type EnumLookupMethods<TValue> = {
   fromName(name: string): TValue;
@@ -107,27 +60,21 @@ function withFromNameMethods<T extends Record<string, unknown>>(
   return output;
 }
 
-export const VIDEO_SCENE_EFFECT_PRESETS = withAliases(GENERATED_VIDEO_SCENE_EFFECT_PRESETS, VIDEO_SCENE_ALIASES);
-export const VIDEO_CHARACTER_EFFECT_PRESETS = withAliases(
-  GENERATED_VIDEO_CHARACTER_EFFECT_PRESETS,
-  VIDEO_CHARACTER_ALIASES
-);
-export const FILTER_PRESETS = withAliases(GENERATED_FILTER_PRESETS, FILTER_ALIASES);
 export const FONT_PRESETS = GENERATED_FONT_PRESETS;
 
 // Python metadata enum-style exports for migration friendliness.
 export const VideoSceneEffectType = withFromNameMethods(VIDEO_SCENE_EFFECT_PRESETS);
 export const VideoCharacterEffectType = withFromNameMethods(VIDEO_CHARACTER_EFFECT_PRESETS);
 export const FilterType = withFromNameMethods(FILTER_PRESETS);
-export const AudioSceneEffectType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "sound_effect"));
-export const ToneEffectType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "tone"));
-export const SpeechToSongType = withFromNameMethods(pickByProp(AUDIO_EFFECT_PRESETS, "categoryId", "speech_to_song"));
-export const IntroType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "in"));
-export const OutroType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "out"));
-export const GroupAnimationType = withFromNameMethods(pickByProp(VIDEO_ANIMATION_PRESETS, "animationType", "group"));
-export const TextIntro = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "in"));
-export const TextOutro = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "out"));
-export const TextLoopAnim = withFromNameMethods(pickByProp(TEXT_ANIMATION_PRESETS, "animationType", "loop"));
+export const AudioSceneEffectType = withFromNameMethods(AUDIO_SCENE_EFFECT_PRESETS);
+export const ToneEffectType = withFromNameMethods(TONE_EFFECT_PRESETS);
+export const SpeechToSongType = withFromNameMethods(SPEECH_TO_SONG_PRESETS);
+export const IntroType = withFromNameMethods(VIDEO_INTRO_PRESETS);
+export const OutroType = withFromNameMethods(VIDEO_OUTRO_PRESETS);
+export const GroupAnimationType = withFromNameMethods(VIDEO_GROUP_ANIMATION_PRESETS);
+export const TextIntro = withFromNameMethods(TEXT_INTRO_PRESETS);
+export const TextOutro = withFromNameMethods(TEXT_OUTRO_PRESETS);
+export const TextLoopAnim = withFromNameMethods(TEXT_LOOP_ANIMATION_PRESETS);
 export const TransitionType = withFromNameMethods(TRANSITION_PRESETS);
 export const MaskType = withFromNameMethods(MASK_PRESETS);
 export const MixModeType = withFromNameMethods(MIX_MODE_PRESETS);
@@ -176,11 +123,6 @@ export type VideoEffectPresetInput = VideoEffectPresetKey | string;
 export type FilterPresetInput = FilterPresetKey | string;
 export type FontPresetInput = FontPresetKey | string;
 
-export interface ResolvedVideoEffectMeta {
-  meta: EffectMeta;
-  effectType: VideoEffectType;
-}
-
 function hasOwn<T extends object>(value: T, key: string): key is Extract<keyof T, string> {
   return Object.prototype.hasOwnProperty.call(value, key);
 }
@@ -189,69 +131,10 @@ function normalizeName(name: string): string {
   return name.toLowerCase().replace(/[\s_-]+/g, "");
 }
 
-const videoEffectNameIndex = new Map<string, ResolvedVideoEffectMeta>();
-for (const [key, meta] of Object.entries(VIDEO_SCENE_EFFECT_PRESETS)) {
-  const resolved: ResolvedVideoEffectMeta = { meta, effectType: "video_effect" };
-  videoEffectNameIndex.set(normalizeName(key), resolved);
-  videoEffectNameIndex.set(normalizeName(meta.name), resolved);
-}
-for (const [key, meta] of Object.entries(VIDEO_CHARACTER_EFFECT_PRESETS)) {
-  const resolved: ResolvedVideoEffectMeta = { meta, effectType: "face_effect" };
-  videoEffectNameIndex.set(normalizeName(key), resolved);
-  videoEffectNameIndex.set(normalizeName(meta.name), resolved);
-}
-
-const filterNameIndex = new Map<string, EffectMeta>();
-for (const [key, meta] of Object.entries(FILTER_PRESETS)) {
-  filterNameIndex.set(normalizeName(key), meta);
-  filterNameIndex.set(normalizeName(meta.name), meta);
-}
-
 const fontNameIndex = new Map<string, FontMeta>();
 for (const [key, meta] of Object.entries(FONT_PRESETS)) {
   fontNameIndex.set(normalizeName(key), meta);
   fontNameIndex.set(normalizeName(meta.name), meta);
-}
-
-export function resolveVideoEffectMeta(effectMeta: EffectMeta | VideoEffectPresetInput): ResolvedVideoEffectMeta {
-  if (typeof effectMeta !== "string") {
-    return { meta: effectMeta, effectType: "video_effect" };
-  }
-
-  if (hasOwn(VIDEO_SCENE_EFFECT_PRESETS, effectMeta)) {
-    return {
-      meta: VIDEO_SCENE_EFFECT_PRESETS[effectMeta],
-      effectType: "video_effect"
-    };
-  }
-  if (hasOwn(VIDEO_CHARACTER_EFFECT_PRESETS, effectMeta)) {
-    return {
-      meta: VIDEO_CHARACTER_EFFECT_PRESETS[effectMeta],
-      effectType: "face_effect"
-    };
-  }
-
-  const fromName = videoEffectNameIndex.get(normalizeName(effectMeta));
-  if (fromName) {
-    return fromName;
-  }
-  throw new Error(`Unknown video effect preset "${effectMeta}"`);
-}
-
-export function resolveFilterMeta(filterMeta: EffectMeta | FilterPresetInput): EffectMeta {
-  if (typeof filterMeta !== "string") {
-    return filterMeta;
-  }
-
-  if (hasOwn(FILTER_PRESETS, filterMeta)) {
-    return FILTER_PRESETS[filterMeta];
-  }
-
-  const fromName = filterNameIndex.get(normalizeName(filterMeta));
-  if (fromName) {
-    return fromName;
-  }
-  throw new Error(`Unknown filter preset "${filterMeta}"`);
 }
 
 export function resolveFontMeta(fontMeta: FontMeta | FontPresetInput): FontMeta {
@@ -272,23 +155,38 @@ export function resolveFontMeta(fontMeta: FontMeta | FontPresetInput): FontMeta 
 
 export {
   AUDIO_EFFECT_PRESETS,
+  AUDIO_SCENE_EFFECT_PRESETS,
+  FILTER_PRESETS,
   MASK_PRESETS,
   MIX_MODE_PRESETS,
+  SPEECH_TO_SONG_PRESETS,
   TEXT_ANIMATION_PRESETS,
+  TEXT_INTRO_PRESETS,
+  TEXT_LOOP_ANIMATION_PRESETS,
+  TEXT_OUTRO_PRESETS,
+  TONE_EFFECT_PRESETS,
   TRANSITION_PRESETS,
   VIDEO_ANIMATION_PRESETS,
+  VIDEO_CHARACTER_EFFECT_PRESETS,
+  VIDEO_GROUP_ANIMATION_PRESETS,
+  VIDEO_INTRO_PRESETS,
+  VIDEO_OUTRO_PRESETS,
+  VIDEO_SCENE_EFFECT_PRESETS,
   resolveAudioEffectMeta,
+  resolveFilterMeta,
   resolveMaskMeta,
   resolveMixModeMeta,
   resolveTextAnimationMeta,
   resolveTransitionMeta,
-  resolveVideoAnimationMeta
+  resolveVideoAnimationMeta,
+  resolveVideoEffectMeta
 };
 
 export type {
   AudioEffectPresetInput,
   MaskPresetInput,
   MixModePresetInput,
+  ResolvedVideoEffectMeta,
   TextAnimationPresetInput,
   TransitionPresetInput,
   VideoAnimationPresetInput

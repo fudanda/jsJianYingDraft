@@ -12,10 +12,13 @@ import {
 } from "../src/index.js";
 import {
   AUDIO_EFFECT_PRESETS,
+  AUDIO_SCENE_EFFECT_PRESETS,
   AudioSceneEffectType,
   FILTER_PRESETS,
   FilterType,
   FONT_PRESETS,
+  FontType,
+  Font_type,
   GroupAnimationType,
   IntroType,
   MASK_PRESETS,
@@ -23,21 +26,27 @@ import {
   MIX_MODE_PRESETS,
   MixModeType,
   OutroType,
+  SPEECH_TO_SONG_PRESETS,
   SpeechToSongType,
   TEXT_ANIMATION_PRESETS,
+  TEXT_INTRO_PRESETS,
+  TEXT_LOOP_ANIMATION_PRESETS,
+  TEXT_OUTRO_PRESETS,
   TextIntro,
   TextLoopAnim,
   TextOutro,
+  TONE_EFFECT_PRESETS,
   ToneEffectType,
   TRANSITION_PRESETS,
   TransitionType,
   VIDEO_ANIMATION_PRESETS,
-  VideoCharacterEffectType,
   VIDEO_CHARACTER_EFFECT_PRESETS,
-  FontType,
-  Font_type,
-  VideoSceneEffectType,
+  VIDEO_GROUP_ANIMATION_PRESETS,
+  VIDEO_INTRO_PRESETS,
+  VIDEO_OUTRO_PRESETS,
   VIDEO_SCENE_EFFECT_PRESETS,
+  VideoCharacterEffectType,
+  VideoSceneEffectType,
   Video_scene_effect_type,
   resolveAudioEffectMeta,
   resolveFilterMeta,
@@ -68,103 +77,120 @@ afterEach(() => {
 });
 
 describe("metadata presets", () => {
-  it("contains full generated preset collections", () => {
-    expect(Object.keys(VIDEO_SCENE_EFFECT_PRESETS).length).toBeGreaterThan(1_090);
-    expect(Object.keys(VIDEO_CHARACTER_EFFECT_PRESETS).length).toBeGreaterThan(230);
-    expect(Object.keys(FILTER_PRESETS).length).toBeGreaterThan(1_040);
-    expect(Object.keys(FONT_PRESETS).length).toBeGreaterThan(700);
+  it("matches py full preset counts", () => {
+    expect(Object.keys(VIDEO_SCENE_EFFECT_PRESETS).length).toBe(1_097);
+    expect(Object.keys(VIDEO_CHARACTER_EFFECT_PRESETS).length).toBe(240);
+    expect(Object.keys(FILTER_PRESETS).length).toBe(1_052);
+    expect(Object.keys(FONT_PRESETS).length).toBe(798);
+
+    expect(Object.keys(AUDIO_SCENE_EFFECT_PRESETS).length).toBe(85);
+    expect(Object.keys(TONE_EFFECT_PRESETS).length).toBe(57);
+    expect(Object.keys(SPEECH_TO_SONG_PRESETS).length).toBe(6);
+    expect(Object.keys(AUDIO_EFFECT_PRESETS).length).toBe(148);
+
+    expect(Object.keys(VIDEO_INTRO_PRESETS).length).toBe(155);
+    expect(Object.keys(VIDEO_OUTRO_PRESETS).length).toBe(124);
+    expect(Object.keys(VIDEO_GROUP_ANIMATION_PRESETS).length).toBe(123);
+
+    expect(Object.keys(TEXT_INTRO_PRESETS).length).toBe(145);
+    expect(Object.keys(TEXT_OUTRO_PRESETS).length).toBe(97);
+    expect(Object.keys(TEXT_LOOP_ANIMATION_PRESETS).length).toBe(93);
+
+    expect(Object.keys(TRANSITION_PRESETS).length).toBe(453);
+    expect(Object.keys(MASK_PRESETS).length).toBe(6);
+    expect(Object.keys(MIX_MODE_PRESETS).length).toBe(10);
+  });
+
+  it("exports grouped animation helpers", () => {
+    expect(Object.keys(VIDEO_ANIMATION_PRESETS.in).length).toBe(155);
+    expect(Object.keys(VIDEO_ANIMATION_PRESETS.out).length).toBe(124);
+    expect(Object.keys(VIDEO_ANIMATION_PRESETS.group).length).toBe(123);
+    expect(Object.keys(TEXT_ANIMATION_PRESETS.in).length).toBe(145);
+    expect(Object.keys(TEXT_ANIMATION_PRESETS.out).length).toBe(97);
+    expect(Object.keys(TEXT_ANIMATION_PRESETS.loop).length).toBe(93);
+  });
+
+  it("resolves py-style preset keys and names", () => {
+    expect(resolveAudioEffectMeta("回音").categoryId).toBe("sound_effect");
+    expect(resolveVideoAnimationMeta("渐显").animationType).toBe("in");
+    expect(resolveTextAnimationMeta("VHS").animationType).toBe("loop");
+    expect(resolveTransitionMeta("叠化").effectId).toBe(TRANSITION_PRESETS.叠化.effectId);
+    expect(resolveMaskMeta("圆形").resourceType).toBe("circle");
+    expect(resolveMixModeMeta("滤色").effectId).toBe(MIX_MODE_PRESETS.滤色.effectId);
 
     const byDisplayName = resolveVideoEffectMeta("BOOM！");
     expect(byDisplayName.effectType).toBe("face_effect");
-
-    const filterByDisplayName = resolveFilterMeta("Lofi II");
-    expect(filterByDisplayName.effectId).toBe(FILTER_PRESETS.Lofi_II.effectId);
+    expect(resolveFilterMeta("Lofi II").effectId).toBe(FILTER_PRESETS.Lofi_II.effectId);
   });
 
-  it("exports additional preset helpers from metadata subpath", () => {
-    expect(Object.keys(AUDIO_EFFECT_PRESETS).length).toBeGreaterThanOrEqual(6);
-    expect(Object.keys(VIDEO_ANIMATION_PRESETS).length).toBeGreaterThanOrEqual(3);
-    expect(Object.keys(TEXT_ANIMATION_PRESETS).length).toBeGreaterThanOrEqual(3);
-    expect(Object.keys(TRANSITION_PRESETS).length).toBeGreaterThanOrEqual(3);
-    expect(Object.keys(MASK_PRESETS).length).toBeGreaterThanOrEqual(6);
-    expect(Object.keys(MIX_MODE_PRESETS).length).toBeGreaterThanOrEqual(10);
+  it("exports python-style enum members and snake_case aliases", () => {
+    expect(VideoSceneEffectType.VCR.effectId).toBe(VIDEO_SCENE_EFFECT_PRESETS.VCR.effectId);
+    expect(VideoCharacterEffectType.BOOM.effectId).toBe(VIDEO_CHARACTER_EFFECT_PRESETS.BOOM.effectId);
+    expect(FilterType.Lofi_II.effectId).toBe(FILTER_PRESETS.Lofi_II.effectId);
 
-    expect(resolveAudioEffectMeta("echo").categoryId).toBe("sound_effect");
-    expect(resolveVideoAnimationMeta("fadeIn").animationType).toBe("in");
-    expect(resolveTextAnimationMeta("textGlitchLoop").animationType).toBe("loop");
-    expect(resolveTransitionMeta("dissolve").effectId).toBe(TRANSITION_PRESETS.dissolve.effectId);
-    expect(resolveMaskMeta("circle").resourceType).toBe("circle");
-    expect(resolveMixModeMeta("screen").effectId).toBe(MIX_MODE_PRESETS.screen.effectId);
-  });
+    expect(AudioSceneEffectType.回音.categoryId).toBe("sound_effect");
+    expect(ToneEffectType.男生.categoryId).toBe("tone");
+    expect(SpeechToSongType.Lofi.categoryId).toBe("speech_to_song");
 
-  it("exports python-style metadata enum aliases", () => {
-    expect(VideoSceneEffectType.vcr.effectId).toBe(VIDEO_SCENE_EFFECT_PRESETS.vcr.effectId);
-    expect(VideoCharacterEffectType.boom.effectId).toBe(VIDEO_CHARACTER_EFFECT_PRESETS.boom.effectId);
-    expect(FilterType.lofi2.effectId).toBe(FILTER_PRESETS.lofi2.effectId);
+    expect(IntroType.渐显.animationType).toBe("in");
+    expect(OutroType.渐隐.animationType).toBe("out");
+    expect(GroupAnimationType.三分割.animationType).toBe("group");
+    expect(TextIntro.卡拉OK.animationType).toBe("in");
+    expect(TextOutro.渐隐.animationType).toBe("out");
+    expect(TextLoopAnim.VHS.animationType).toBe("loop");
 
-    expect(AudioSceneEffectType.echo.categoryId).toBe("sound_effect");
-    expect(ToneEffectType.maleTone.categoryId).toBe("tone");
-    expect(SpeechToSongType.lofiSong.categoryId).toBe("speech_to_song");
-
-    expect(IntroType.fadeIn.animationType).toBe("in");
-    expect(OutroType.fadeOut.animationType).toBe("out");
-    expect(GroupAnimationType.split3.animationType).toBe("group");
-    expect(TextIntro.textFadeIn.animationType).toBe("in");
-    expect(TextOutro.textFadeOut.animationType).toBe("out");
-    expect(TextLoopAnim.textGlitchLoop.animationType).toBe("loop");
-
-    expect(TransitionType.dissolve.effectId).toBe(TRANSITION_PRESETS.dissolve.effectId);
-    expect(MaskType.circle.resourceType).toBe("circle");
-    expect(MixModeType.screen.effectId).toBe(MIX_MODE_PRESETS.screen.effectId);
+    expect(TransitionType.叠化.effectId).toBe(TRANSITION_PRESETS.叠化.effectId);
+    expect(MaskType.圆形.resourceType).toBe("circle");
+    expect(MixModeType.滤色.effectId).toBe(MIX_MODE_PRESETS.滤色.effectId);
     expect(FontType.Anton.resourceId).toBe(FONT_PRESETS.Anton.resourceId);
 
-    // snake_case compatibility alias
-    expect(Video_scene_effect_type.vcr.effectId).toBe(VideoSceneEffectType.vcr.effectId);
+    expect(Video_scene_effect_type.VCR.effectId).toBe(VideoSceneEffectType.VCR.effectId);
     expect(Font_type.Anton.resourceId).toBe(FontType.Anton.resourceId);
   });
 
-  it("supports python-style from_name lookups on enum-style metadata exports", () => {
-    expect(VideoSceneEffectType.from_name("V_C_R").effectId).toBe(VideoSceneEffectType.vcr.effectId);
-    expect(VideoCharacterEffectType.fromName("B O O M").effectId).toBe(VideoCharacterEffectType.boom.effectId);
-    expect(FilterType.from_name("lofi_2").effectId).toBe(FilterType.lofi2.effectId);
+  it("supports python-style from_name lookups", () => {
+    expect(VideoSceneEffectType.from_name("V_C_R").effectId).toBe(VideoSceneEffectType.VCR.effectId);
+    expect(VideoCharacterEffectType.fromName("B O O M").effectId).toBe(VideoCharacterEffectType.BOOM.effectId);
+    expect(FilterType.from_name("lofi_ii").effectId).toBe(FilterType.Lofi_II.effectId);
     expect(FontType.from_name("HarmonyOS Sans SC Regular").resourceId).toBe(FontType.HarmonyOS_Sans_SC_Regular.resourceId);
-    expect(TextLoopAnim.from_name("text glitch loop").animationType).toBe("loop");
+    expect(TextLoopAnim.from_name("v h s").animationType).toBe("loop");
 
-    // snake_case enum aliases should preserve from_name
-    expect(Video_scene_effect_type.from_name("v c r").effectId).toBe(VideoSceneEffectType.vcr.effectId);
+    expect(Video_scene_effect_type.from_name("v c r").effectId).toBe(VideoSceneEffectType.VCR.effectId);
     expect(Font_type.fromName("anton").resourceId).toBe(FontType.Anton.resourceId);
-
     expect(() => FilterType.from_name("not_exist")).toThrow();
+  });
+
+  it("throws on ambiguous animation/effect names", () => {
+    expect(() => resolveVideoAnimationMeta("Kira游动")).toThrow(/Ambiguous/);
+    expect(() => resolveTextAnimationMeta("弹簧")).toThrow(/Ambiguous/);
+    expect(() => resolveVideoEffectMeta("梦境")).toThrow(/Ambiguous/);
+  });
+
+  it("removes old english shortcut keys", () => {
+    expect(() => resolveAudioEffectMeta("echo")).toThrow();
+    expect(() => resolveVideoAnimationMeta("fadeIn")).toThrow();
+    expect(() => resolveTextAnimationMeta("textFadeIn")).toThrow();
+    expect(() => resolveTransitionMeta("dissolve")).toThrow();
+    expect(() => resolveMaskMeta("circle")).toThrow();
+    expect(() => resolveMixModeMeta("screen")).toThrow();
+    expect(() => resolveVideoEffectMeta("n1998")).toThrow();
+    expect(() => resolveFilterMeta("lofi2")).toThrow();
   });
 
   it("resolves font presets by key and display name", () => {
     expect(resolveFontMeta("Anton").resourceId).toBe(FONT_PRESETS.Anton.resourceId);
-    expect(resolveFontMeta("Anton").name).toBe("Anton");
     expect(resolveFontMeta("HarmonyOS_Sans_SC_Regular").resourceId).toBe(
       FONT_PRESETS.HarmonyOS_Sans_SC_Regular.resourceId
     );
   });
 
-  it("resolves scene/character effect preset keys", () => {
-    const vcr = resolveVideoEffectMeta("vcr");
-    expect(vcr.meta.effectId).toBe(VIDEO_SCENE_EFFECT_PRESETS.vcr.effectId);
-    expect(vcr.effectType).toBe("video_effect");
-
-    const boom = resolveVideoEffectMeta("boom");
-    expect(boom.meta.effectId).toBe(VIDEO_CHARACTER_EFFECT_PRESETS.boom.effectId);
-    expect(boom.effectType).toBe("face_effect");
-
-    const lofi = resolveFilterMeta("lofi2");
-    expect(lofi.effectId).toBe(FILTER_PRESETS.lofi2.effectId);
-  });
-
-  it("accepts preset keys in ScriptFile addEffect/addFilter", () => {
+  it("accepts py preset keys in ScriptFile addEffect/addFilter", () => {
     const script = new ScriptFile(1920, 1080);
     script.addTrack(TrackType.effect).addTrack(TrackType.filter);
 
-    script.addEffect("vcr", new Timerange(0, 1_000_000));
-    script.addEffect("boom", new Timerange(1_000_000, 1_000_000));
-    script.addFilter("lofi2", new Timerange(0, 2_000_000), undefined, 70);
+    script.addEffect("VCR", new Timerange(0, 1_000_000));
+    script.addEffect("BOOM", new Timerange(1_000_000, 1_000_000));
+    script.addFilter("Lofi_II", new Timerange(0, 2_000_000), undefined, 70);
 
     expect(script.materials.videoEffects.length).toBe(2);
     expect(script.materials.filters.length).toBe(1);
@@ -175,13 +201,13 @@ describe("metadata presets", () => {
     expect(script.materials.filters[0]?.exportJson().value).toBeCloseTo(0.7);
   });
 
-  it("accepts preset keys in VideoSegment addEffect/addFilter", () => {
+  it("accepts py preset keys in VideoSegment addEffect/addFilter", () => {
     const videoPath = createTempFile("video.mp4");
     const video = new VideoMaterial(videoPath, { duration: 2_000_000, width: 1920, height: 1080 });
 
     const segment = new VideoSegment(video, new Timerange(0, 2_000_000));
-    segment.addEffect("boom");
-    segment.addFilter("n1980", 60);
+    segment.addEffect("BOOM");
+    segment.addFilter("Lofi_II", 60);
 
     const effectPayload = segment.effects[0]?.exportJson();
     expect(effectPayload?.type).toBe("face_effect");

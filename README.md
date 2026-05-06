@@ -135,8 +135,8 @@ import { FilterType, VideoSceneEffectType } from "jsjianyingdraft/metadata";
 const script = new ScriptFile(1920, 1080);
 script.addTrack(TrackType.effect).addTrack(TrackType.filter);
 
-const vcr = VideoSceneEffectType.from_name("v c r");
-const lofi2 = FilterType.fromName("LOFI_2");
+const vcr = VideoSceneEffectType.from_name("V_C_R");
+const lofi2 = FilterType.fromName("lofi ii");
 
 script.addEffect(vcr, new Timerange(0, 1_000_000));
 script.addFilter(lofi2, new Timerange(0, 1_000_000));
@@ -146,6 +146,7 @@ Notes:
 
 - metadata enum-style exports support `from_name` / `fromName`
 - metadata lookup ignores case, spaces, and underscores
+- metadata enum member keys now follow py-style names (for example `MaskType.圆形`, `IntroType.渐显`)
 - `TrackType.from_name` is stricter and expects exact track names (`video`, `audio`, `text`, ...)
 
 ### 4) Windows automation export with explicit timeout handling

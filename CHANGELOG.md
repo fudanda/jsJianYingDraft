@@ -1,5 +1,18 @@
 # jsjianyingdraft
 
+## 1.0.0
+
+### Major Changes
+
+- Align metadata enums and preset resolution with `pyJianYingDraft` metadata in strict 1:1 mode.
+
+  - Expand generated metadata catalogs to include full `Audio/Tone/Speech/Intro/Outro/Group/Text*/Transition/Mask/Mix` coverage (plus existing scene/character/filter/font catalogs).
+  - Update `jsjianyingdraft/metadata` enum-style exports to use py member names only.
+  - Remove legacy English enum member keys and English preset shortcut parsing from both `jsjianyingdraft/metadata` and the main entry resolvers.
+  - Keep deprecated `snake_case` type alias exports (such as `Video_scene_effect_type`) for type-surface migration compatibility.
+
+  This is a breaking change. See `docs/migration-from-py.md` for the key migration map.
+
 ## 0.7.0
 
 ### Minor Changes
